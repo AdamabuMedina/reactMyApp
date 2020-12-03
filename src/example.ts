@@ -88,7 +88,28 @@ switch (method) {
 
 const sum = calculate(Methods.sub, 2, 2)
 
-const ArrowFn = () => {}
+const ArrowFn: FnInterface = (value) => 2;
+
+type TypeFn = () => number
+
+interface FnInterface {
+    (a: number): void;
+}
 
 
 type StrangeTsTypes = any | unknown | never
+
+const some: any = 2
+some.reduce()
+
+const un: unknown = 2;
+
+if (typeof un === "string") {
+    un.concat()
+}
+
+function neverFn(): void {
+throw new Error ("my exception")
+}
+
+const someValue = neverFn()
