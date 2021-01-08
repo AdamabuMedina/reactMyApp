@@ -1,7 +1,8 @@
 // #1 concat('Hello ', 'World') // -> Hello World
 
-function concatStr(strOne: string, strTwo: string) {
-    return strOne.concat(strTwo)
+type TFnConcat = (strOne: string, strTwo: string) => string;
+const concat: TFnConcat = (strOne = "Hello ", strTwo = "world") => {
+  return strOne + strTwo;
 }
 
 // #2 Написать интерфайс
@@ -9,15 +10,7 @@ function concatStr(strOne: string, strTwo: string) {
 interface IMyHomeTask {
     howIDolt: string;
     someArray: Array<string | number>;
-    withDate: { howIDolt: string; someArray: Array<string | number> }[];
-}
-
-const IMyHomeTask: IMyHomeTask = {
-    howIDolt: "I Do It Wel",
-    someArray: ["string one", "string two", 42],
-    withDate: [
-        { howIDolt: "I Do It Wel", someArray: ["string one", "string two", 42] },
-    ],
+    withData?: Array<IMyHomeTask>;
 }
 
 // #3 Типизация функций, используя Generic
@@ -27,12 +20,6 @@ interface IMyArrayReduce<T> {
 
     reduce(fn: (accumulator: T, value: T) => T, initialValue: number): T;
 }
-
-const arNumber: IMyArrayReduce<number> = [1, 2, 3]
-const initialValue: number = 0
-arNumber.reduce((ac, val) => ac + val, initialValue)
-const arString: IMyArrayReduce<string> = ["1", "2", "3"];
-arNumber.reduce((ac, val) => ac + val, initialValue)
 
 // #4Работа с MappedTypes
 
@@ -48,19 +35,6 @@ interface IHomeTask {
 
 type TMyPartialFour<T> = {
     [N in keyof T]?: T[N] extends object ? TMyPartialFour<T[N]> : T[N];
-}
-
-const homeTask: TMyPartialFour<IHomeTask> = {
-    externalData: {
-        value: "win",
-    },
-}
-
-const homeTask2: TMyPartialFour<IHomeTask> = {
-    externalData: {
-        value: "win",
-        basis: 15,
-    },
 }
 
 // Сложные примеры
