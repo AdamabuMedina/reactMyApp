@@ -15,10 +15,9 @@ interface IMyHomeTask {
 
 // #3 Типизация функций, используя Generic
 
-interface IMyArrayReduce<T> {
+interface IMyArray<T> {
     [N: number]: T;
-
-    reduce(fn: (accumulator: T, value: T) => T, initialValue: number): T;
+    reduce<U>(fn: (accumulator: T, value: T, index: T, array: Array<number>) => U, initialValue: T): U;
 }
 
 // #4Работа с MappedTypes
