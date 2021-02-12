@@ -2,7 +2,7 @@ import { hot } from "react-hot-loader/root"
 import * as React from "react"
 import styles from "./header.css"
 
-function HeaderComponent() {
+function Header() {
    console.log(styles, styles.example);
    return (
       <header>
@@ -11,4 +11,4 @@ function HeaderComponent() {
    )
 }
 
-export const Header = hot(HeaderComponent)
+export const HeaderComponent = hot(Header)
