@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./cardTextContentTitle.css"
+import styles from "./cardtextcontenttitile.css"
 
 export function CardTextContentTitle() {
     return (

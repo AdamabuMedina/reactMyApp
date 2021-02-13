@@ -1,8 +1,6 @@
 .card {
   background-color: var(--white);
   border-radius: 7px;
-  display: flex;
-  flex-flow: row wrap;
   position: relative;
 }
 
@@ -10,20 +8,23 @@
   flex: 1 1 100%;
 }
 
-@media all and (min-width: 1024px) {
-  .card:hover,
-  .card:focus-within {
-    outline: 1px solid var(--greyD9);
-  }
-
-  .card:hover h2 a,
-  .card:focus-within h2 a {
-    color: var(--orange);
+@media (max-width: 1024px) {
+  .card {
+    padding: 22px 0 0 0;
+    margin-bottom: 15px;
   }
 }
 
-@media all and (min-width: 1540px) {
+
+@media (min-width: 1024px) {
   .card {
-    padding: 0 60px;
+    margin-bottom: 42px;
+    display: flex;
+  }
+  .card:hover, .card:focus-within {
+    outline: 1px solid var(--greyD9);
+  }
+  .card:hover h2 a, .card:focus-within h2 a {
+    color: var(--orange);
   }
 }
