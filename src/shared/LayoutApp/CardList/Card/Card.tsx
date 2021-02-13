@@ -10,6 +10,7 @@ export function Card() {
         <li className={styles.card}>
             <CardPreview/>
             <CardTextContent/>
+            <CardMenu/>
         </li>
     )
 }
