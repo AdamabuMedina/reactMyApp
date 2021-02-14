@@ -121,6 +121,50 @@ eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../n
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js?!./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css":
+/*!*********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css ***!
+  \*********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".karmabutton__karmaValue--3q7b1 {\\r\\n    font-style: normal;\\r\\n    font-weight: 500;\\r\\n}\\r\\n\\r\\nsvg.karmabutton__down--j9tVe {\\r\\n    transform: rotate(180deg);\\r\\n}\\r\\n\\r\\n@media (max-width: 1024px) {\\r\\n    .karmabutton__karmaValue--3q7b1 {\\r\\n        margin: 0 5px;\\r\\n        color: var(--greyC4);\\r\\n        font-size: 12px;\\r\\n        line-height: 14px;\\r\\n    }\\r\\n}\\r\\n\\r\\n@media (min-width: 1024px) {\\r\\n    .karmabutton__karmaCounter--2d3RE {\\r\\n        display: flex;\\r\\n        flex-direction: column;\\r\\n    }\\r\\n\\r\\n    .karmabutton__karmaCounter--2d3RE > button.karmabutton__up--2aWNS:hover > svg > path {\\r\\n        fill: var(--green);\\r\\n    }\\r\\n\\r\\n    .karmabutton__karmaCounter--2d3RE > button.karmabutton__down--j9tVe:hover > svg > path {\\r\\n        fill: var(--orange);\\r\\n    }\\r\\n\\r\\n    .karmabutton__karmaValue--3q7b1 {\\r\\n        margin: 7px 0;\\r\\n        color: var(--black);\\r\\n        font-size: 14px;\\r\\n        line-height: 16px;\\r\\n    }\\r\\n}\\r\\n\", \"\"]);\n// Exports\nexports.locals = {\n\t\"karmaValue\": \"karmabutton__karmaValue--3q7b1\",\n\t\"down\": \"karmabutton__down--j9tVe\",\n\t\"karmaCounter\": \"karmabutton__karmaCounter--2d3RE\",\n\t\"up\": \"karmabutton__up--2aWNS\"\n};\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css?./node_modules/css-loader/dist/cjs.js??ref--5-1");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./src/shared/LayoutApp/CardList/Card/Controls/controls.css":
+/*!******************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/shared/LayoutApp/CardList/Card/Controls/controls.css ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".controls__controls--_MM-S {\\r\\n    display: flex;\\r\\n    justify-content: space-between;\\r\\n    align-items: center;\\r\\n}\\r\\n\\r\\n@media (max-width: 1024px) {\\r\\n    .controls__controls--_MM-S {\\r\\n        padding: 10px 20px;\\r\\n    }\\r\\n}\\r\\n\\r\\n@media (min-width: 1024px) {\\r\\n    .controls__controls--_MM-S {\\r\\n        padding: 0;\\r\\n        position: absolute;\\r\\n        right: 3%;\\r\\n        top: 25px;\\r\\n        order: 3;\\r\\n    }\\r\\n}\", \"\"]);\n// Exports\nexports.locals = {\n\t\"controls\": \"controls__controls--_MM-S\"\n};\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/controls.css?./node_modules/css-loader/dist/cjs.js??ref--5-1");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./src/shared/LayoutApp/CardList/Card/Menu/menu.css":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/shared/LayoutApp/CardList/Card/Menu/menu.css ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".menu__menuButton--2r9em {\\r\\n    width: 31px;\\r\\n    height: 31px;\\r\\n    display: flex;\\r\\n    align-items: center;\\r\\n    justify-content: center;\\r\\n    border-radius: 31px;\\r\\n    background: transparent;\\r\\n    border: 0;\\r\\n}\\r\\n\\r\\n.menu__menuButton--2r9em:active, .menu__menuButton--2r9em:hover {\\r\\n    background-color: rgba(51, 51, 51, .1);\\r\\n}\\r\\n\\r\\n@media (max-width: 1024px) {\\r\\n    .menu__menuButton--2r9em {\\r\\n        transform: rotate(90deg);\\r\\n    }\\r\\n}\\r\\n\\r\\n@media (min-width: 1024px) {\\r\\n    .menu__menuButton--2r9em {\\r\\n        transform: rotate(180deg);\\r\\n    }\\r\\n\\r\\n    .menu__menuButton--2r9em:hover {\\r\\n        background-color: rgba(51, 51, 51, .1);\\r\\n    }\\r\\n}\", \"\"]);\n// Exports\nexports.locals = {\n\t\"menuButton\": \"menu__menuButton--2r9em\"\n};\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/menu.css?./node_modules/css-loader/dist/cjs.js??ref--5-1");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./src/shared/LayoutApp/CardList/Card/Preview/preview.css":
+/*!****************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/shared/LayoutApp/CardList/Card/Preview/preview.css ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".preview__preview--1FGJ- {\\r\\n    display: flex;\\r\\n    max-height: 178px;\\r\\n}\\r\\n\\r\\n.preview__previewImg--2uURX {\\r\\n    object-fit: cover;\\r\\n}\\r\\n\\r\\n@media (max-width: 1024px) {\\r\\n    .preview__preview--1FGJ- {\\r\\n        margin-left: 0;\\r\\n    }\\r\\n\\r\\n    .preview__previewImg--2uURX {\\r\\n        width: 100%;\\r\\n    }\\r\\n}\\r\\n\\r\\n@media (min-width: 1024px) {\\r\\n    .preview__preview--1FGJ- {\\r\\n        margin-left: 40px;\\r\\n    }\\r\\n\\r\\n    .preview__previewImg--2uURX {\\r\\n        width: 190px;\\r\\n        height: 105px;\\r\\n        border-radius: 2%;\\r\\n        order: 1;\\r\\n    }\\r\\n}\", \"\"]);\n// Exports\nexports.locals = {\n\t\"preview\": \"preview__preview--1FGJ-\",\n\t\"previewImg\": \"preview__previewImg--2uURX\"\n};\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Preview/preview.css?./node_modules/css-loader/dist/cjs.js??ref--5-1");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js?!./src/shared/LayoutApp/CardList/Card/TextContent/Title/title.css":
 /*!************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/shared/LayoutApp/CardList/Card/TextContent/Title/title.css ***!
@@ -161,7 +205,7 @@ eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".card__card--20YfB {\\r\\n  background-color: var(--white);\\r\\n  border-radius: 7px;\\r\\n  position: relative;\\r\\n}\\r\\n\\r\\n.card__card--20YfB > * {\\r\\n  flex: 1 1 100%;\\r\\n}\\r\\n\\r\\n@media (max-width: 1024px) {\\r\\n  .card__card--20YfB {\\r\\n    padding: 22px 0 0 0;\\r\\n    margin-bottom: 15px;\\r\\n  }\\r\\n}\\r\\n\\r\\n\\r\\n@media (min-width: 1024px) {\\r\\n  .card__card--20YfB {\\r\\n    margin-bottom: 42px;\\r\\n    display: flex;\\r\\n  }\\r\\n  .card__card--20YfB:hover, .card__card--20YfB:focus-within {\\r\\n    outline: 1px solid var(--greyD9);\\r\\n  }\\r\\n  .card__card--20YfB:hover h2 a, .card__card--20YfB:focus-within h2 a {\\r\\n    color: var(--orange);\\r\\n  }\\r\\n}\", \"\"]);\n// Exports\nexports.locals = {\n\t\"card\": \"card__card--20YfB\"\n};\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/card.css?./node_modules/css-loader/dist/cjs.js??ref--5-1");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".card__card--20YfB {\\r\\n    background-color: var(--white);\\r\\n    border-radius: 7px;\\r\\n    position: relative;\\r\\n}\\r\\n\\r\\n.card__menu--1eMpG {\\r\\n    position: absolute;\\r\\n}\\r\\n\\r\\n@media (max-width: 1024px) {\\r\\n    .card__card--20YfB {\\r\\n        padding: 22px 0 0 0;\\r\\n        margin-bottom: 15px;\\r\\n    }\\r\\n\\r\\n    .card__menu--1eMpG {\\r\\n        right: 15px;\\r\\n        top: 17px;\\r\\n    }\\r\\n}\\r\\n\\r\\n@media (min-width: 1024px) {\\r\\n    .card__card--20YfB {\\r\\n        padding: 0;\\r\\n        display: flex;\\r\\n    }\\r\\n\\r\\n    .card__menu--1eMpG {\\r\\n        right: 80px;\\r\\n        top: 40px;\\r\\n    }\\r\\n\\r\\n    .card__card--20YfB:hover, .card__card--20YfB:focus-within {\\r\\n        outline: 1px solid var(--greyD9);\\r\\n    }\\r\\n\\r\\n    .card__card--20YfB:hover h2 a, .card__card--20YfB:focus-within h2 a {\\r\\n        color: var(--orange);\\r\\n    }\\r\\n}\", \"\"]);\n// Exports\nexports.locals = {\n\t\"card\": \"card__card--20YfB\",\n\t\"menu\": \"card__menu--1eMpG\"\n};\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/card.css?./node_modules/css-loader/dist/cjs.js??ref--5-1");
 
 /***/ }),
 
@@ -598,7 +642,151 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Card = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nvar card_css_1 = __importDefault(__webpack_require__(/*! ./card.css */ \"./src/shared/LayoutApp/CardList/Card/card.css\"));\r\nvar TextContent_1 = __webpack_require__(/*! ./TextContent */ \"./src/shared/LayoutApp/CardList/Card/TextContent/index.ts\");\r\nfunction Card() {\r\n    return (react_1.default.createElement(\"li\", { className: card_css_1.default.card },\r\n        react_1.default.createElement(TextContent_1.TextContent, null)));\r\n}\r\nexports.Card = Card;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Card.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Card = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nvar card_css_1 = __importDefault(__webpack_require__(/*! ./card.css */ \"./src/shared/LayoutApp/CardList/Card/card.css\"));\r\nvar TextContent_1 = __webpack_require__(/*! ./TextContent */ \"./src/shared/LayoutApp/CardList/Card/TextContent/index.ts\");\r\nvar Preview_1 = __webpack_require__(/*! ./Preview */ \"./src/shared/LayoutApp/CardList/Card/Preview/index.ts\");\r\nvar Menu_1 = __webpack_require__(/*! ./Menu */ \"./src/shared/LayoutApp/CardList/Card/Menu/index.ts\");\r\nvar Controls_1 = __webpack_require__(/*! ./Controls */ \"./src/shared/LayoutApp/CardList/Card/Controls/index.ts\");\r\nvar KarmaButton_1 = __webpack_require__(/*! ./Controls/KarmaButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/index.ts\");\r\nfunction Card() {\r\n    return (react_1.default.createElement(\"li\", { className: card_css_1.default.card },\r\n        react_1.default.createElement(TextContent_1.TextContent, null),\r\n        react_1.default.createElement(Preview_1.Preview, { imgSource: \"https://avatars.mds.yandex.net/get-pdb/903199/8f573f02-a18b-4d2b-9342-4c0a9f639e3d/s1200?webp=false\" }),\r\n        react_1.default.createElement(Menu_1.Menu, { cssStyle: card_css_1.default.menu }),\r\n        react_1.default.createElement(Controls_1.Controls, null,\r\n            react_1.default.createElement(KarmaButton_1.KarmaButton, { value: \"123\" }))));\r\n}\r\nexports.Card = Card;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Card.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Controls.tsx":
+/*!******************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Controls.tsx ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Controls = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nvar controls_css_1 = __importDefault(__webpack_require__(/*! ./controls.css */ \"./src/shared/LayoutApp/CardList/Card/Controls/controls.css\"));\r\nfunction Controls(_a) {\r\n    var children = _a.children;\r\n    return (react_1.default.createElement(\"div\", { className: controls_css_1.default.controls }, children));\r\n}\r\nexports.Controls = Controls;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Controls.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/KarmaButton.tsx":
+/*!*********************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/KarmaButton.tsx ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.KarmaButton = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nvar karmabutton_css_1 = __importDefault(__webpack_require__(/*! ./karmabutton.css */ \"./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css\"));\r\nfunction KarmaButton(props) {\r\n    return (react_1.default.createElement(\"div\", { className: karmabutton_css_1.default.karmaCounter },\r\n        react_1.default.createElement(\"button\", { className: karmabutton_css_1.default.up },\r\n            react_1.default.createElement(\"svg\", { width: \"19\", height: \"10\", viewBox: \"0 0 19 10\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n                react_1.default.createElement(\"path\", { d: \"M9.5 0L0 10H19L9.5 0Z\", fill: \"#C4C4C4\" }))),\r\n        react_1.default.createElement(\"span\", { className: karmabutton_css_1.default.karmaValue }, props.value),\r\n        react_1.default.createElement(\"button\", { className: karmabutton_css_1.default.down },\r\n            react_1.default.createElement(\"svg\", { width: \"19\", height: \"10\", viewBox: \"0 0 19 10\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n                react_1.default.createElement(\"path\", { d: \"M9.5 10L19 0L8.74228e-07 -1.66103e-06L9.5 10Z\", fill: \"#C4C4C4\" })))));\r\n}\r\nexports.KarmaButton = KarmaButton;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/KarmaButton.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/index.ts":
+/*!**************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/index.ts ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./KarmaButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/KarmaButton.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css":
+/*!*********************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_5_1_karmabutton_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./karmabutton.css */ \"./node_modules/css-loader/dist/cjs.js?!./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css\");\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_5_1_karmabutton_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_5_1_karmabutton_css__WEBPACK_IMPORTED_MODULE_1__);\n\n            \n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ref_5_1_karmabutton_css__WEBPACK_IMPORTED_MODULE_1___default.a, options);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_css_loader_dist_cjs_js_ref_5_1_karmabutton_css__WEBPACK_IMPORTED_MODULE_1___default.a.locals || {});\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/controls.css":
+/*!******************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/controls.css ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_5_1_controls_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./controls.css */ \"./node_modules/css-loader/dist/cjs.js?!./src/shared/LayoutApp/CardList/Card/Controls/controls.css\");\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_5_1_controls_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_5_1_controls_css__WEBPACK_IMPORTED_MODULE_1__);\n\n            \n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ref_5_1_controls_css__WEBPACK_IMPORTED_MODULE_1___default.a, options);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_css_loader_dist_cjs_js_ref_5_1_controls_css__WEBPACK_IMPORTED_MODULE_1___default.a.locals || {});\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/controls.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/index.ts":
+/*!**************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/index.ts ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Controls */ \"./src/shared/LayoutApp/CardList/Card/Controls/Controls.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Menu/Menu.tsx":
+/*!**********************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Menu/Menu.tsx ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Menu = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nvar menu_css_1 = __importDefault(__webpack_require__(/*! ./menu.css */ \"./src/shared/LayoutApp/CardList/Card/Menu/menu.css\"));\r\nfunction Menu(props) {\r\n    return (react_1.default.createElement(\"div\", { className: props.cssStyle },\r\n        react_1.default.createElement(\"button\", { className: menu_css_1.default.menuButton },\r\n            react_1.default.createElement(\"svg\", { width: \"5\", height: \"20\", viewBox: \"0 0 5 20\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n                react_1.default.createElement(\"circle\", { cx: \"2.5\", cy: \"2.5\", r: \"2.5\", fill: \"#D9D9D9\" }),\r\n                react_1.default.createElement(\"circle\", { cx: \"2.5\", cy: \"10\", r: \"2.5\", fill: \"#D9D9D9\" }),\r\n                react_1.default.createElement(\"circle\", { cx: \"2.5\", cy: \"17.5\", r: \"2.5\", fill: \"#D9D9D9\" })))));\r\n}\r\nexports.Menu = Menu;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/Menu.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Menu/index.ts":
+/*!**********************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Menu/index.ts ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Menu */ \"./src/shared/LayoutApp/CardList/Card/Menu/Menu.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Menu/menu.css":
+/*!**********************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Menu/menu.css ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_5_1_menu_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./menu.css */ \"./node_modules/css-loader/dist/cjs.js?!./src/shared/LayoutApp/CardList/Card/Menu/menu.css\");\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_5_1_menu_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_5_1_menu_css__WEBPACK_IMPORTED_MODULE_1__);\n\n            \n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ref_5_1_menu_css__WEBPACK_IMPORTED_MODULE_1___default.a, options);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_css_loader_dist_cjs_js_ref_5_1_menu_css__WEBPACK_IMPORTED_MODULE_1___default.a.locals || {});\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/menu.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Preview/Preview.tsx":
+/*!****************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Preview/Preview.tsx ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Preview = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nvar preview_css_1 = __importDefault(__webpack_require__(/*! ./preview.css */ \"./src/shared/LayoutApp/CardList/Card/Preview/preview.css\"));\r\nfunction Preview(props) {\r\n    return (react_1.default.createElement(\"div\", { className: preview_css_1.default.preview },\r\n        react_1.default.createElement(\"img\", { className: preview_css_1.default.previewImg, src: props.imgSource, alt: \"preview\" })));\r\n}\r\nexports.Preview = Preview;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Preview/Preview.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Preview/index.ts":
+/*!*************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Preview/index.ts ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Preview */ \"./src/shared/LayoutApp/CardList/Card/Preview/Preview.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Preview/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Preview/preview.css":
+/*!****************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Preview/preview.css ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_5_1_preview_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./preview.css */ \"./node_modules/css-loader/dist/cjs.js?!./src/shared/LayoutApp/CardList/Card/Preview/preview.css\");\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_5_1_preview_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_5_1_preview_css__WEBPACK_IMPORTED_MODULE_1__);\n\n            \n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ref_5_1_preview_css__WEBPACK_IMPORTED_MODULE_1___default.a, options);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_css_loader_dist_cjs_js_ref_5_1_preview_css__WEBPACK_IMPORTED_MODULE_1___default.a.locals || {});\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Preview/preview.css?");
 
 /***/ }),
 
