@@ -1,0 +1,13 @@
+@media (max-width: 1024px) {
+    .actions {
+        width: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1024px) {
+    .actions {
+        display: none;
+    }
+}

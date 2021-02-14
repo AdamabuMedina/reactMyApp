@@ -153,7 +153,147 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Card = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar card_css_1 = __importDefault(__webpack_require__(/*! ./card.css */ \"./src/shared/LayoutApp/CardList/Card/card.css\"));\r\nvar TextContent_1 = __webpack_require__(/*! ./TextContent */ \"./src/shared/LayoutApp/CardList/Card/TextContent/index.ts\");\r\nvar Preview_1 = __webpack_require__(/*! ./Preview */ \"./src/shared/LayoutApp/CardList/Card/Preview/index.ts\");\r\nvar Menu_1 = __webpack_require__(/*! ./Menu */ \"./src/shared/LayoutApp/CardList/Card/Menu/index.ts\");\r\nvar Controls_1 = __webpack_require__(/*! ./Controls */ \"./src/shared/LayoutApp/CardList/Card/Controls/index.ts\");\r\nvar KarmaButton_1 = __webpack_require__(/*! ./Controls/KarmaButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/index.ts\");\r\nfunction Card() {\r\n    return (react_1.default.createElement(\"li\", { className: card_css_1.default.card },\r\n        react_1.default.createElement(TextContent_1.TextContent, null),\r\n        react_1.default.createElement(Preview_1.Preview, { imgSource: \"https://avatars.mds.yandex.net/get-pdb/903199/8f573f02-a18b-4d2b-9342-4c0a9f639e3d/s1200?webp=false\" }),\r\n        react_1.default.createElement(Menu_1.Menu, { cssStyle: card_css_1.default.menu }),\r\n        react_1.default.createElement(Controls_1.Controls, null,\r\n            react_1.default.createElement(KarmaButton_1.KarmaButton, { value: \"123\" }))));\r\n}\r\nexports.Card = Card;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Card.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Card = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar card_css_1 = __importDefault(__webpack_require__(/*! ./card.css */ \"./src/shared/LayoutApp/CardList/Card/card.css\"));\r\nvar TextContent_1 = __webpack_require__(/*! ./TextContent */ \"./src/shared/LayoutApp/CardList/Card/TextContent/index.ts\");\r\nvar Preview_1 = __webpack_require__(/*! ./Preview */ \"./src/shared/LayoutApp/CardList/Card/Preview/index.ts\");\r\nvar Menu_1 = __webpack_require__(/*! ./Menu */ \"./src/shared/LayoutApp/CardList/Card/Menu/index.ts\");\r\nvar Controls_1 = __webpack_require__(/*! ./Controls */ \"./src/shared/LayoutApp/CardList/Card/Controls/index.ts\");\r\nvar KarmaButton_1 = __webpack_require__(/*! ./Controls/KarmaButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/index.ts\");\r\nvar CommentButton_1 = __webpack_require__(/*! ./Controls/CommentButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/index.ts\");\r\nvar Actions_1 = __webpack_require__(/*! ./Controls/Actions */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/index.ts\");\r\nvar ShareButton_1 = __webpack_require__(/*! ./Controls/Actions/ShareButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/index.ts\");\r\nvar SaveButton_1 = __webpack_require__(/*! ./Controls/Actions/SaveButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/index.ts\");\r\nfunction Card() {\r\n    return (react_1.default.createElement(\"li\", { className: card_css_1.default.card },\r\n        react_1.default.createElement(TextContent_1.TextContent, null),\r\n        react_1.default.createElement(Preview_1.Preview, { imgSource: \"https://avatars.mds.yandex.net/get-pdb/903199/8f573f02-a18b-4d2b-9342-4c0a9f639e3d/s1200?webp=false\" }),\r\n        react_1.default.createElement(Menu_1.Menu, { cssStyle: card_css_1.default.menu }),\r\n        react_1.default.createElement(Controls_1.Controls, null,\r\n            react_1.default.createElement(KarmaButton_1.KarmaButton, { value: \"123\" }),\r\n            react_1.default.createElement(CommentButton_1.CommentButton, { commentCount: \"234\" }),\r\n            react_1.default.createElement(Actions_1.Actions, null,\r\n                react_1.default.createElement(ShareButton_1.ShareButton, null),\r\n                react_1.default.createElement(SaveButton_1.SaveButton, null)))));\r\n}\r\nexports.Card = Card;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Card.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/Actions.tsx":
+/*!*************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/Actions.tsx ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Actions = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar actions_css_1 = __importDefault(__webpack_require__(/*! ./actions.css */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/actions.css\"));\r\nfunction Actions(_a) {\r\n    var children = _a.children;\r\n    return (react_1.default.createElement(\"div\", { className: actions_css_1.default.actions }, children));\r\n}\r\nexports.Actions = Actions;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/Actions.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/SaveButton.tsx":
+/*!***************************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/SaveButton.tsx ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.SaveButton = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar savebutton_css_1 = __importDefault(__webpack_require__(/*! ./savebutton.css */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/savebutton.css\"));\r\nfunction SaveButton() {\r\n    return (react_1.default.createElement(\"button\", { className: savebutton_css_1.default.saveButton },\r\n        react_1.default.createElement(\"svg\", { width: \"20\", height: \"20\", viewBox: \"0 0 20 20\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n            react_1.default.createElement(\"circle\", { cx: \"10\", cy: \"10\", r: \"10\", fill: \"#C4C4C4\" }),\r\n            react_1.default.createElement(\"path\", { d: \"M6 7H5V14C5 14.55 5.45 15 6 15H13V14H6V7ZM14 5H8C7.45 5 7 5.45 7 6V12C7 12.55 7.45 13 8 13H14C14.55 13 15 12.55 15 12V6C15 5.45 14.55 5 14 5ZM13.5 9.5H11.5V11.5H10.5V9.5H8.5V8.5H10.5V6.5H11.5V8.5H13.5V9.5Z\", fill: \"white\" }))));\r\n}\r\nexports.SaveButton = SaveButton;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/SaveButton.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/index.ts":
+/*!*********************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/index.ts ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./SaveButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/SaveButton.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/savebutton.css":
+/*!***************************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/savebutton.css ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"saveButton\": \"savebutton__saveButton--1OPgN\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/savebutton.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/ShareButton.tsx":
+/*!*****************************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/ShareButton.tsx ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.ShareButton = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar sharebutton_css_1 = __importDefault(__webpack_require__(/*! ./sharebutton.css */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/sharebutton.css\"));\r\nfunction ShareButton() {\r\n    return (react_1.default.createElement(\"button\", { className: sharebutton_css_1.default.shareButton },\r\n        react_1.default.createElement(\"svg\", { width: \"20\", height: \"20\", viewBox: \"0 0 20 20\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n            react_1.default.createElement(\"circle\", { cx: \"10\", cy: \"10\", r: \"10\", fill: \"#C4C4C4\" }),\r\n            react_1.default.createElement(\"path\", { d: \"M11.6667 12.0683C11.3289 12.0683 11.0267 12.2189 10.7956 12.4548L7.62667 10.3715C7.64889 10.256 7.66667 10.1406 7.66667 10.0201C7.66667 9.8996 7.64889 9.78414 7.62667 9.66867L10.76 7.60542C11 7.85643 11.3156 8.01205 11.6667 8.01205C12.4044 8.01205 13 7.33936 13 6.50602C13 5.67269 12.4044 5 11.6667 5C10.9289 5 10.3333 5.67269 10.3333 6.50602C10.3333 6.62651 10.3511 6.74197 10.3733 6.85743L7.24 8.92068C7 8.66968 6.68444 8.51406 6.33333 8.51406C5.59556 8.51406 5 9.18675 5 10.0201C5 10.8534 5.59556 11.5261 6.33333 11.5261C6.68444 11.5261 7 11.3705 7.24 11.1195L10.4044 13.2078C10.3822 13.3133 10.3689 13.4237 10.3689 13.5341C10.3689 14.3424 10.9511 15 11.6667 15C12.3822 15 12.9644 14.3424 12.9644 13.5341C12.9644 12.7259 12.3822 12.0683 11.6667 12.0683Z\", fill: \"white\" }))));\r\n}\r\nexports.ShareButton = ShareButton;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/ShareButton.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/index.ts":
+/*!**********************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/index.ts ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./ShareButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/ShareButton.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/sharebutton.css":
+/*!*****************************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/sharebutton.css ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"shareButton\": \"sharebutton__shareButton--B6DwU\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/sharebutton.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/actions.css":
+/*!*************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/actions.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"actions\": \"actions__actions--1rkM8\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/actions.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/index.ts":
+/*!**********************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/index.ts ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Actions */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/Actions.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/CommentButton.tsx":
+/*!*************************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/CommentButton.tsx ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.CommentButton = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar commentbutton_css_1 = __importDefault(__webpack_require__(/*! ./commentbutton.css */ \"./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/commentbutton.css\"));\r\nfunction CommentButton(props) {\r\n    return (react_1.default.createElement(\"div\", { className: commentbutton_css_1.default.commentsButton },\r\n        react_1.default.createElement(\"svg\", { width: \"15\", height: \"15\", viewBox: \"0 0 15 15\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n            react_1.default.createElement(\"path\", { d: \"M12.75 0H1.41667C0.6375 0 0 0.6375 0 1.41667V9.91667C0 10.6958 0.6375 11.3333 1.41667 11.3333H11.3333L14.1667 14.1667V1.41667C14.1667 0.6375 13.5292 0 12.75 0ZM11.3333 8.5H2.83333V7.08333H11.3333V8.5ZM11.3333 6.375H2.83333V4.95833H11.3333V6.375ZM11.3333 4.25H2.83333V2.83333H11.3333V4.25Z\", fill: \"#C4C4C4\" })),\r\n        react_1.default.createElement(\"span\", { className: commentbutton_css_1.default.commentsNumber }, props.commentCount)));\r\n}\r\nexports.CommentButton = CommentButton;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/CommentButton.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/commentbutton.css":
+/*!*************************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/commentbutton.css ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"commentsButton\": \"commentbutton__commentsButton--iFdBH\",\n\t\"commentsNumber\": \"commentbutton__commentsNumber--2tY9G\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/commentbutton.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/index.ts":
+/*!****************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/index.ts ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./CommentButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/CommentButton.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/index.ts?");
 
 /***/ }),
 
