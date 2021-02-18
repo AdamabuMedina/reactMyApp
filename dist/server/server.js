@@ -106,7 +106,19 @@ eval("\r\n/*\r\n  MIT License http://www.opensource.org/licenses/mit-license.php
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.App = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar root_1 = __webpack_require__(/*! react-hot-loader/root */ \"react-hot-loader/root\");\r\nvar Layout_1 = __webpack_require__(/*! ./shared/LayoutApp/Layout/Layout */ \"./src/shared/LayoutApp/Layout/Layout.tsx\");\r\n__webpack_require__(/*! ./main.global.css */ \"./src/main.global.css\");\r\nvar Header_1 = __webpack_require__(/*! ./shared/LayoutApp/Header/Header */ \"./src/shared/LayoutApp/Header/Header.tsx\");\r\nvar Content_1 = __webpack_require__(/*! ./shared/LayoutApp/Content/Content */ \"./src/shared/LayoutApp/Content/Content.tsx\");\r\nvar CardList_1 = __webpack_require__(/*! ./shared/LayoutApp/CardList/CardList */ \"./src/shared/LayoutApp/CardList/CardList.tsx\");\r\nfunction AppComponent() {\r\n    return (react_1.default.createElement(Layout_1.Layout, null,\r\n        react_1.default.createElement(Header_1.Header, null),\r\n        react_1.default.createElement(Content_1.Content, null,\r\n            react_1.default.createElement(CardList_1.CardList, null))));\r\n}\r\nexports.App = root_1.hot(AppComponent);\r\n\n\n//# sourceURL=webpack:///./src/App.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.App = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar root_1 = __webpack_require__(/*! react-hot-loader/root */ \"react-hot-loader/root\");\r\nvar Layout_1 = __webpack_require__(/*! ./shared/LayoutApp/Layout */ \"./src/shared/LayoutApp/Layout/index.ts\");\r\n__webpack_require__(/*! ./main.global.css */ \"./src/main.global.css\");\r\nvar Header_1 = __webpack_require__(/*! ./shared/LayoutApp/Header */ \"./src/shared/LayoutApp/Header/index.ts\");\r\nvar Content_1 = __webpack_require__(/*! ./shared/LayoutApp/Content/Content */ \"./src/shared/LayoutApp/Content/Content.tsx\");\r\nvar CardList_1 = __webpack_require__(/*! ./shared/LayoutApp/CardList */ \"./src/shared/LayoutApp/CardList/index.ts\");\r\nvar GenericList_1 = __webpack_require__(/*! ./lessons/GenericList */ \"./src/lessons/GenericList.tsx\");\r\nvar generateRandomIndex_1 = __webpack_require__(/*! ./utils/react/generateRandomIndex */ \"./src/utils/react/generateRandomIndex.tsx\");\r\nvar merge_1 = __webpack_require__(/*! ./utils/js/merge */ \"./src/utils/js/merge.ts\");\r\nvar LIST = [\r\n    { text: \"some\" },\r\n    { text: \"other some\" },\r\n    { text: \"some\" },\r\n].map(generateRandomIndex_1.generateId);\r\nfunction AppComponent() {\r\n    var _a = react_1.default.useState(LIST), list = _a[0], setList = _a[1];\r\n    var handleItemClick = function (id) {\r\n        setList(list.filter(function (item) { return item.id != id; }));\r\n    };\r\n    var handleAdd = function () {\r\n        setList(list.concat(generateRandomIndex_1.generateId({ text: generateRandomIndex_1.generateRandomString() })));\r\n    };\r\n    return (react_1.default.createElement(Layout_1.Layout, null,\r\n        react_1.default.createElement(Header_1.Header, null),\r\n        react_1.default.createElement(Content_1.Content, null,\r\n            react_1.default.createElement(CardList_1.CardList, null),\r\n            react_1.default.createElement(\"button\", { onClick: handleAdd }, \"Add Element\"),\r\n            react_1.default.createElement(GenericList_1.GenericList, { list: list.map(merge_1.merge({ onClick: handleItemClick })) }))));\r\n}\r\nexports.App = root_1.hot(function () { return react_1.default.createElement(AppComponent, null); });\r\n\n\n//# sourceURL=webpack:///./src/App.tsx?");
+
+/***/ }),
+
+/***/ "./src/lessons/GenericList.tsx":
+/*!*************************************!*\
+  !*** ./src/lessons/GenericList.tsx ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.GenericList = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nfunction GenericList(_a) {\r\n    var list = _a.list;\r\n    return (react_1.default.createElement(react_1.default.Fragment, null, list.map(function (_a) {\r\n        var _b = _a.As, As = _b === void 0 ? \"div\" : _b, text = _a.text, onClick = _a.onClick, id = _a.id, className = _a.className, href = _a.href;\r\n        return (react_1.default.createElement(As, { className: className, onClick: function () { return onClick(id); }, key: id, href: href }, text));\r\n    })));\r\n}\r\nexports.GenericList = GenericList;\r\n// interface IMyListProps {\r\n//     list: IItem[]\r\n// }\r\n//\r\n// export function MyList({list}: IMyListProps) {\r\n//     return (\r\n//         <ul>\r\n//             {list.map((item) => (\r\n//                 <li onClick={() => item.onClick(item.id)} key={item.id}>{item.value}</li>\r\n//             ))}\r\n//         </ul>\r\n//     )\r\n// }\r\n\n\n//# sourceURL=webpack:///./src/lessons/GenericList.tsx?");
 
 /***/ }),
 
@@ -153,123 +165,380 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Card = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar card_css_1 = __importDefault(__webpack_require__(/*! ./card.css */ \"./src/shared/LayoutApp/CardList/Card/card.css\"));\r\nvar CardTextContent_1 = __webpack_require__(/*! ./CardTextContent */ \"./src/shared/LayoutApp/CardList/Card/CardTextContent/index.ts\");\r\nvar CardPreview_1 = __webpack_require__(/*! ./CardPreview */ \"./src/shared/LayoutApp/CardList/Card/CardPreview/index.ts\");\r\nvar CardMenu_1 = __webpack_require__(/*! ./CardMenu/CardMenu */ \"./src/shared/LayoutApp/CardList/Card/CardMenu/CardMenu.tsx\");\r\nfunction Card() {\r\n    return (react_1.default.createElement(\"li\", { className: card_css_1.default.card },\r\n        react_1.default.createElement(CardPreview_1.CardPreview, null),\r\n        react_1.default.createElement(CardTextContent_1.CardTextContent, null),\r\n        react_1.default.createElement(CardMenu_1.CardMenu, null)));\r\n}\r\nexports.Card = Card;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Card.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Card = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar card_css_1 = __importDefault(__webpack_require__(/*! ./card.css */ \"./src/shared/LayoutApp/CardList/Card/card.css\"));\r\nvar TextContent_1 = __webpack_require__(/*! ./TextContent */ \"./src/shared/LayoutApp/CardList/Card/TextContent/index.ts\");\r\nvar Preview_1 = __webpack_require__(/*! ./Preview */ \"./src/shared/LayoutApp/CardList/Card/Preview/index.ts\");\r\nvar Menu_1 = __webpack_require__(/*! ./Menu */ \"./src/shared/LayoutApp/CardList/Card/Menu/index.ts\");\r\nvar Controls_1 = __webpack_require__(/*! ./Controls */ \"./src/shared/LayoutApp/CardList/Card/Controls/index.ts\");\r\nvar KarmaButton_1 = __webpack_require__(/*! ./Controls/KarmaButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/index.ts\");\r\nvar CommentButton_1 = __webpack_require__(/*! ./Controls/CommentButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/index.ts\");\r\nvar Actions_1 = __webpack_require__(/*! ./Controls/Actions */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/index.ts\");\r\nvar ShareButton_1 = __webpack_require__(/*! ./Controls/Actions/ShareButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/index.ts\");\r\nvar SaveButton_1 = __webpack_require__(/*! ./Controls/Actions/SaveButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/index.ts\");\r\nfunction Card() {\r\n    return (react_1.default.createElement(\"li\", { className: card_css_1.default.card },\r\n        react_1.default.createElement(TextContent_1.TextContent, null),\r\n        react_1.default.createElement(Preview_1.Preview, { imgSource: \"https://avatars.mds.yandex.net/get-pdb/903199/8f573f02-a18b-4d2b-9342-4c0a9f639e3d/s1200?webp=false\" }),\r\n        react_1.default.createElement(Menu_1.Menu, { cssStyle: card_css_1.default.menu }),\r\n        react_1.default.createElement(Controls_1.Controls, null,\r\n            react_1.default.createElement(KarmaButton_1.KarmaButton, { value: \"123\" }),\r\n            react_1.default.createElement(CommentButton_1.CommentButton, { commentCount: \"234\" }),\r\n            react_1.default.createElement(Actions_1.Actions, null,\r\n                react_1.default.createElement(ShareButton_1.ShareButton, null),\r\n                react_1.default.createElement(SaveButton_1.SaveButton, null)))));\r\n}\r\nexports.Card = Card;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Card.tsx?");
 
 /***/ }),
 
-/***/ "./src/shared/LayoutApp/CardList/Card/CardMenu/CardMenu.tsx":
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/Actions.tsx":
+/*!*************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/Actions.tsx ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Actions = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar actions_css_1 = __importDefault(__webpack_require__(/*! ./actions.css */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/actions.css\"));\r\nfunction Actions(_a) {\r\n    var children = _a.children;\r\n    return (react_1.default.createElement(\"div\", { className: actions_css_1.default.actions }, children));\r\n}\r\nexports.Actions = Actions;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/Actions.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/SaveButton.tsx":
+/*!***************************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/SaveButton.tsx ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.SaveButton = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar savebutton_css_1 = __importDefault(__webpack_require__(/*! ./savebutton.css */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/savebutton.css\"));\r\nfunction SaveButton() {\r\n    return (react_1.default.createElement(\"button\", { className: savebutton_css_1.default.saveButton },\r\n        react_1.default.createElement(\"svg\", { width: \"20\", height: \"20\", viewBox: \"0 0 20 20\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n            react_1.default.createElement(\"circle\", { cx: \"10\", cy: \"10\", r: \"10\", fill: \"#C4C4C4\" }),\r\n            react_1.default.createElement(\"path\", { d: \"M6 7H5V14C5 14.55 5.45 15 6 15H13V14H6V7ZM14 5H8C7.45 5 7 5.45 7 6V12C7 12.55 7.45 13 8 13H14C14.55 13 15 12.55 15 12V6C15 5.45 14.55 5 14 5ZM13.5 9.5H11.5V11.5H10.5V9.5H8.5V8.5H10.5V6.5H11.5V8.5H13.5V9.5Z\", fill: \"white\" }))));\r\n}\r\nexports.SaveButton = SaveButton;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/SaveButton.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/index.ts":
+/*!*********************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/index.ts ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./SaveButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/SaveButton.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/savebutton.css":
+/*!***************************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/savebutton.css ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"saveButton\": \"savebutton__saveButton--1OPgN\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/savebutton.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/ShareButton.tsx":
+/*!*****************************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/ShareButton.tsx ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.ShareButton = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar sharebutton_css_1 = __importDefault(__webpack_require__(/*! ./sharebutton.css */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/sharebutton.css\"));\r\nfunction ShareButton() {\r\n    return (react_1.default.createElement(\"button\", { className: sharebutton_css_1.default.shareButton },\r\n        react_1.default.createElement(\"svg\", { width: \"20\", height: \"20\", viewBox: \"0 0 20 20\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n            react_1.default.createElement(\"circle\", { cx: \"10\", cy: \"10\", r: \"10\", fill: \"#C4C4C4\" }),\r\n            react_1.default.createElement(\"path\", { d: \"M11.6667 12.0683C11.3289 12.0683 11.0267 12.2189 10.7956 12.4548L7.62667 10.3715C7.64889 10.256 7.66667 10.1406 7.66667 10.0201C7.66667 9.8996 7.64889 9.78414 7.62667 9.66867L10.76 7.60542C11 7.85643 11.3156 8.01205 11.6667 8.01205C12.4044 8.01205 13 7.33936 13 6.50602C13 5.67269 12.4044 5 11.6667 5C10.9289 5 10.3333 5.67269 10.3333 6.50602C10.3333 6.62651 10.3511 6.74197 10.3733 6.85743L7.24 8.92068C7 8.66968 6.68444 8.51406 6.33333 8.51406C5.59556 8.51406 5 9.18675 5 10.0201C5 10.8534 5.59556 11.5261 6.33333 11.5261C6.68444 11.5261 7 11.3705 7.24 11.1195L10.4044 13.2078C10.3822 13.3133 10.3689 13.4237 10.3689 13.5341C10.3689 14.3424 10.9511 15 11.6667 15C12.3822 15 12.9644 14.3424 12.9644 13.5341C12.9644 12.7259 12.3822 12.0683 11.6667 12.0683Z\", fill: \"white\" }))));\r\n}\r\nexports.ShareButton = ShareButton;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/ShareButton.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/index.ts":
+/*!**********************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/index.ts ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./ShareButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/ShareButton.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/sharebutton.css":
+/*!*****************************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/sharebutton.css ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"shareButton\": \"sharebutton__shareButton--B6DwU\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/sharebutton.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/actions.css":
+/*!*************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/actions.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"actions\": \"actions__actions--1rkM8\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/actions.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Actions/index.ts":
+/*!**********************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Actions/index.ts ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Actions */ \"./src/shared/LayoutApp/CardList/Card/Controls/Actions/Actions.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/CommentButton.tsx":
+/*!*************************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/CommentButton.tsx ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.CommentButton = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar commentbutton_css_1 = __importDefault(__webpack_require__(/*! ./commentbutton.css */ \"./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/commentbutton.css\"));\r\nfunction CommentButton(props) {\r\n    return (react_1.default.createElement(\"div\", { className: commentbutton_css_1.default.commentsButton },\r\n        react_1.default.createElement(\"svg\", { width: \"15\", height: \"15\", viewBox: \"0 0 15 15\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n            react_1.default.createElement(\"path\", { d: \"M12.75 0H1.41667C0.6375 0 0 0.6375 0 1.41667V9.91667C0 10.6958 0.6375 11.3333 1.41667 11.3333H11.3333L14.1667 14.1667V1.41667C14.1667 0.6375 13.5292 0 12.75 0ZM11.3333 8.5H2.83333V7.08333H11.3333V8.5ZM11.3333 6.375H2.83333V4.95833H11.3333V6.375ZM11.3333 4.25H2.83333V2.83333H11.3333V4.25Z\", fill: \"#C4C4C4\" })),\r\n        react_1.default.createElement(\"span\", { className: commentbutton_css_1.default.commentsNumber }, props.commentCount)));\r\n}\r\nexports.CommentButton = CommentButton;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/CommentButton.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/commentbutton.css":
+/*!*************************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/commentbutton.css ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"commentsButton\": \"commentbutton__commentsButton--iFdBH\",\n\t\"commentsNumber\": \"commentbutton__commentsNumber--2tY9G\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/commentbutton.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/index.ts":
+/*!****************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/index.ts ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./CommentButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/CommentButton.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/Controls.tsx":
 /*!******************************************************************!*\
-  !*** ./src/shared/LayoutApp/CardList/Card/CardMenu/CardMenu.tsx ***!
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/Controls.tsx ***!
   \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.CardMenu = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar cardmenu_css_1 = __importDefault(__webpack_require__(/*! ./cardmenu.css */ \"./src/shared/LayoutApp/CardList/Card/CardMenu/cardmenu.css\"));\r\nfunction CardMenu() {\r\n    return (react_1.default.createElement(\"div\", { className: cardmenu_css_1.default.menu },\r\n        react_1.default.createElement(\"button\", { className: cardmenu_css_1.default.menuButton },\r\n            react_1.default.createElement(\"svg\", { width: \"5\", height: \"20\", viewBox: \"0 0 5 20\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n                react_1.default.createElement(\"circle\", { cx: \"2.5\", cy: \"2.5\", r: \"2.5\", fill: \"#D9D9D9\" }),\r\n                react_1.default.createElement(\"circle\", { cx: \"2.5\", cy: \"10\", r: \"2.5\", fill: \"#D9D9D9\" }),\r\n                react_1.default.createElement(\"circle\", { cx: \"2.5\", cy: \"17.5\", r: \"2.5\", fill: \"#D9D9D9\" })))));\r\n}\r\nexports.CardMenu = CardMenu;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/CardMenu/CardMenu.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Controls = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar controls_css_1 = __importDefault(__webpack_require__(/*! ./controls.css */ \"./src/shared/LayoutApp/CardList/Card/Controls/controls.css\"));\r\nfunction Controls(_a) {\r\n    var children = _a.children;\r\n    return (react_1.default.createElement(\"div\", { className: controls_css_1.default.controls }, children));\r\n}\r\nexports.Controls = Controls;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Controls.tsx?");
 
 /***/ }),
 
-/***/ "./src/shared/LayoutApp/CardList/Card/CardMenu/cardmenu.css":
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/KarmaButton.tsx":
+/*!*********************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/KarmaButton.tsx ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.KarmaButton = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar karmabutton_css_1 = __importDefault(__webpack_require__(/*! ./karmabutton.css */ \"./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css\"));\r\nfunction KarmaButton(props) {\r\n    return (react_1.default.createElement(\"div\", { className: karmabutton_css_1.default.karmaCounter },\r\n        react_1.default.createElement(\"button\", { className: karmabutton_css_1.default.up },\r\n            react_1.default.createElement(\"svg\", { width: \"19\", height: \"10\", viewBox: \"0 0 19 10\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n                react_1.default.createElement(\"path\", { d: \"M9.5 0L0 10H19L9.5 0Z\", fill: \"#C4C4C4\" }))),\r\n        react_1.default.createElement(\"span\", { className: karmabutton_css_1.default.karmaValue }, props.value),\r\n        react_1.default.createElement(\"button\", { className: karmabutton_css_1.default.down },\r\n            react_1.default.createElement(\"svg\", { width: \"19\", height: \"10\", viewBox: \"0 0 19 10\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n                react_1.default.createElement(\"path\", { d: \"M9.5 10L19 0L8.74228e-07 -1.66103e-06L9.5 10Z\", fill: \"#C4C4C4\" })))));\r\n}\r\nexports.KarmaButton = KarmaButton;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/KarmaButton.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/index.ts":
+/*!**************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/index.ts ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./KarmaButton */ \"./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/KarmaButton.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css":
+/*!*********************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"karmaValue\": \"karmabutton__karmaValue--3q7b1\",\n\t\"down\": \"karmabutton__down--j9tVe\",\n\t\"karmaCounter\": \"karmabutton__karmaCounter--2d3RE\",\n\t\"up\": \"karmabutton__up--2aWNS\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/controls.css":
 /*!******************************************************************!*\
-  !*** ./src/shared/LayoutApp/CardList/Card/CardMenu/cardmenu.css ***!
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/controls.css ***!
   \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"menu\": \"cardmenu__menu--wjlam\",\n\t\"menuButton\": \"cardmenu__menuButton--3FWNi\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/CardMenu/cardmenu.css?");
+eval("// Exports\nmodule.exports = {\n\t\"controls\": \"controls__controls--_MM-S\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/controls.css?");
 
 /***/ }),
 
-/***/ "./src/shared/LayoutApp/CardList/Card/CardPreview/CardPreview.tsx":
+/***/ "./src/shared/LayoutApp/CardList/Card/Controls/index.ts":
+/*!**************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Controls/index.ts ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Controls */ \"./src/shared/LayoutApp/CardList/Card/Controls/Controls.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Menu/Menu.tsx":
+/*!**********************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Menu/Menu.tsx ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Menu = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar menu_css_1 = __importDefault(__webpack_require__(/*! ./menu.css */ \"./src/shared/LayoutApp/CardList/Card/Menu/menu.css\"));\r\nfunction Menu(props) {\r\n    return (react_1.default.createElement(\"div\", { className: props.cssStyle },\r\n        react_1.default.createElement(\"button\", { className: menu_css_1.default.menuButton },\r\n            react_1.default.createElement(\"svg\", { width: \"5\", height: \"20\", viewBox: \"0 0 5 20\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n                react_1.default.createElement(\"circle\", { cx: \"2.5\", cy: \"2.5\", r: \"2.5\", fill: \"#D9D9D9\" }),\r\n                react_1.default.createElement(\"circle\", { cx: \"2.5\", cy: \"10\", r: \"2.5\", fill: \"#D9D9D9\" }),\r\n                react_1.default.createElement(\"circle\", { cx: \"2.5\", cy: \"17.5\", r: \"2.5\", fill: \"#D9D9D9\" })))));\r\n}\r\nexports.Menu = Menu;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/Menu.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Menu/index.ts":
+/*!**********************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Menu/index.ts ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Menu */ \"./src/shared/LayoutApp/CardList/Card/Menu/Menu.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Menu/menu.css":
+/*!**********************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Menu/menu.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"menuButton\": \"menu__menuButton--2r9em\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/menu.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Preview/Preview.tsx":
+/*!****************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Preview/Preview.tsx ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Preview = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar preview_css_1 = __importDefault(__webpack_require__(/*! ./preview.css */ \"./src/shared/LayoutApp/CardList/Card/Preview/preview.css\"));\r\nfunction Preview(props) {\r\n    return (react_1.default.createElement(\"div\", { className: preview_css_1.default.preview },\r\n        react_1.default.createElement(\"img\", { className: preview_css_1.default.previewImg, src: props.imgSource, alt: \"preview\" })));\r\n}\r\nexports.Preview = Preview;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Preview/Preview.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Preview/index.ts":
+/*!*************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Preview/index.ts ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Preview */ \"./src/shared/LayoutApp/CardList/Card/Preview/Preview.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Preview/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/Preview/preview.css":
+/*!****************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/Preview/preview.css ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"preview\": \"preview__preview--1FGJ-\",\n\t\"previewImg\": \"preview__previewImg--2uURX\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Preview/preview.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/TextContent/TextContent.tsx":
 /*!************************************************************************!*\
-  !*** ./src/shared/LayoutApp/CardList/Card/CardPreview/CardPreview.tsx ***!
+  !*** ./src/shared/LayoutApp/CardList/Card/TextContent/TextContent.tsx ***!
   \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.CardPreview = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar cardPreview_css_1 = __importDefault(__webpack_require__(/*! ./cardPreview.css */ \"./src/shared/LayoutApp/CardList/Card/CardPreview/cardPreview.css\"));\r\nfunction CardPreview() {\r\n    return (react_1.default.createElement(\"div\", { className: cardPreview_css_1.default.preview },\r\n        react_1.default.createElement(\"img\", { className: cardPreview_css_1.default.previewImg, src: \"https://cdn.dribbble.com/users/957117/screenshots/14878181/media/723a5acbfa893285ac01d6cc05a25f42.png?compress=1&resize=800x600\", alt: \"\" })));\r\n}\r\nexports.CardPreview = CardPreview;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/CardPreview/CardPreview.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.TextContent = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar textcontent_css_1 = __importDefault(__webpack_require__(/*! ./textcontent.css */ \"./src/shared/LayoutApp/CardList/Card/TextContent/textcontent.css\"));\r\nvar UserData_1 = __webpack_require__(/*! ./UserData/UserData */ \"./src/shared/LayoutApp/CardList/Card/TextContent/UserData/UserData.tsx\");\r\nvar Title_1 = __webpack_require__(/*! ./Title */ \"./src/shared/LayoutApp/CardList/Card/TextContent/Title/index.ts\");\r\nfunction TextContent() {\r\n    return (react_1.default.createElement(\"div\", { className: textcontent_css_1.default.textContent },\r\n        react_1.default.createElement(UserData_1.UserData, { userAvatar: \"https://avatars.mds.yandex.net/get-pdb/903199/8f573f02-a18b-4d2b-9342-4c0a9f639e3d/s1200?webp=false\", userName: \"\\u0414\\u043C\\u0438\\u0442\\u0440\\u0438\\u0439 \\u0413\\u0440\\u0438\\u0448\\u0438\\u043D\", publishedTimeAgo: \"4 \\u0447\\u0430\\u0441\\u0430 \\u043D\\u0430\\u0437\\u0430\\u0434\" }),\r\n        react_1.default.createElement(Title_1.Title, { text: \"\\u041F\\u0440\\u043E\\u0442\\u0438\\u0432\\u043E\\u043F\\u043E\\u043B\\u043E\\u0436\\u043D\\u0430\\u044F \\u0442\\u043E\\u0447\\u043A\\u0430 \\u0437\\u0440\\u0435\\u043D\\u0438\\u044F \\u043D\\u0430 \\u0434\\u0430\\u043D\\u043D\\u0443\\u044E \\u043F\\u0440\\u043E\\u0431\\u043B\\u0435\\u043C\\u0443\" })));\r\n}\r\nexports.TextContent = TextContent;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/TextContent.tsx?");
 
 /***/ }),
 
-/***/ "./src/shared/LayoutApp/CardList/Card/CardPreview/cardPreview.css":
+/***/ "./src/shared/LayoutApp/CardList/Card/TextContent/Title/Title.tsx":
 /*!************************************************************************!*\
-  !*** ./src/shared/LayoutApp/CardList/Card/CardPreview/cardPreview.css ***!
+  !*** ./src/shared/LayoutApp/CardList/Card/TextContent/Title/Title.tsx ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Title = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar title_css_1 = __importDefault(__webpack_require__(/*! ./title.css */ \"./src/shared/LayoutApp/CardList/Card/TextContent/Title/title.css\"));\r\nfunction Title(props) {\r\n    return (react_1.default.createElement(\"h2\", { className: title_css_1.default.title },\r\n        react_1.default.createElement(\"a\", { className: title_css_1.default.postLink, href: \"#post-link\" }, props.text)));\r\n}\r\nexports.Title = Title;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/Title/Title.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/TextContent/Title/index.ts":
+/*!***********************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/TextContent/Title/index.ts ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Title */ \"./src/shared/LayoutApp/CardList/Card/TextContent/Title/Title.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/Title/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/TextContent/Title/title.css":
+/*!************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/TextContent/Title/title.css ***!
   \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"preview\": \"cardPreview__preview--2s7mw\",\n\t\"previewImg\": \"cardPreview__previewImg--Lc8rh\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/CardPreview/cardPreview.css?");
+eval("// Exports\nmodule.exports = {\n\t\"title\": \"title__title--3eMxY\",\n\t\"postLink\": \"title__postLink--1uUM4\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/Title/title.css?");
 
 /***/ }),
 
-/***/ "./src/shared/LayoutApp/CardList/Card/CardPreview/index.ts":
+/***/ "./src/shared/LayoutApp/CardList/Card/TextContent/UserData/UserData.tsx":
+/*!******************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/TextContent/UserData/UserData.tsx ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.UserData = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar userdata_css_1 = __importDefault(__webpack_require__(/*! ./userdata.css */ \"./src/shared/LayoutApp/CardList/Card/TextContent/UserData/userdata.css\"));\r\nfunction UserData(props) {\r\n    return (react_1.default.createElement(\"div\", { className: userdata_css_1.default.metaData },\r\n        react_1.default.createElement(\"div\", { className: userdata_css_1.default.userLink },\r\n            react_1.default.createElement(\"img\", { className: userdata_css_1.default.avatar, alt: \"avatar\", src: props.userAvatar }),\r\n            react_1.default.createElement(\"a\", { className: userdata_css_1.default.userName, href: \"#user-url\" }, props.userName)),\r\n        react_1.default.createElement(\"span\", { className: userdata_css_1.default.createdAt },\r\n            react_1.default.createElement(\"span\", { className: userdata_css_1.default.publishedLabel }, \"\\u043E\\u043F\\u0443\\u0431\\u043B\\u0438\\u043A\\u043E\\u0432\\u0430\\u043D\\u043E\"),\r\n            props.publishedTimeAgo)));\r\n}\r\nexports.UserData = UserData;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/UserData/UserData.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/TextContent/UserData/userdata.css":
+/*!******************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/TextContent/UserData/userdata.css ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"metaData\": \"userdata__metaData--1Z21l\",\n\t\"userLink\": \"userdata__userLink--2ARi8\",\n\t\"avatar\": \"userdata__avatar--2uZuS\",\n\t\"userName\": \"userdata__userName--1P15N\",\n\t\"createdAt\": \"userdata__createdAt--3HaYo\",\n\t\"publishedLabel\": \"userdata__publishedLabel--3TfSn\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/UserData/userdata.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/TextContent/index.ts":
 /*!*****************************************************************!*\
-  !*** ./src/shared/LayoutApp/CardList/Card/CardPreview/index.ts ***!
+  !*** ./src/shared/LayoutApp/CardList/Card/TextContent/index.ts ***!
   \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./CardPreview */ \"./src/shared/LayoutApp/CardList/Card/CardPreview/CardPreview.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/CardPreview/index.ts?");
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./TextContent */ \"./src/shared/LayoutApp/CardList/Card/TextContent/TextContent.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/index.ts?");
 
 /***/ }),
 
-/***/ "./src/shared/LayoutApp/CardList/Card/CardTextContent/CardTextContent.tsx":
-/*!********************************************************************************!*\
-  !*** ./src/shared/LayoutApp/CardList/Card/CardTextContent/CardTextContent.tsx ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.CardTextContent = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar cardTextContent_css_1 = __importDefault(__webpack_require__(/*! ./cardTextContent.css */ \"./src/shared/LayoutApp/CardList/Card/CardTextContent/cardTextContent.css\"));\r\nvar CardTextContentTitle_1 = __webpack_require__(/*! ./CardTextContentTitile/CardTextContentTitle */ \"./src/shared/LayoutApp/CardList/Card/CardTextContent/CardTextContentTitile/CardTextContentTitle.tsx\");\r\nfunction CardTextContent() {\r\n    return (react_1.default.createElement(\"div\", { className: cardTextContent_css_1.default.textContent },\r\n        react_1.default.createElement(CardTextContentTitle_1.CardTextContentTitle, null)));\r\n}\r\nexports.CardTextContent = CardTextContent;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/CardTextContent/CardTextContent.tsx?");
-
-/***/ }),
-
-/***/ "./src/shared/LayoutApp/CardList/Card/CardTextContent/CardTextContentTitile/CardTextContentTitle.tsx":
-/*!***********************************************************************************************************!*\
-  !*** ./src/shared/LayoutApp/CardList/Card/CardTextContent/CardTextContentTitile/CardTextContentTitle.tsx ***!
-  \***********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.CardTextContentTitle = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar cardtextcontenttitile_css_1 = __importDefault(__webpack_require__(/*! ./cardtextcontenttitile.css */ \"./src/shared/LayoutApp/CardList/Card/CardTextContent/CardTextContentTitile/cardtextcontenttitile.css\"));\r\nfunction CardTextContentTitle() {\r\n    return (react_1.default.createElement(\"h2\", { className: cardtextcontenttitile_css_1.default.title },\r\n        react_1.default.createElement(\"a\", { href: \"#post-url\", className: cardtextcontenttitile_css_1.default.postLink }, \"\\u0421\\u043B\\u0435\\u0434\\u0443\\u0435\\u0442 \\u043E\\u0442\\u043C\\u0435\\u0442\\u0438\\u0442\\u044C, \\u0447\\u0442\\u043E \\u043D\\u043E\\u0432\\u0430\\u044F \\u043C\\u043E\\u0434\\u0435\\u043B\\u044C \\u043E\\u0440\\u0433\\u0430\\u043D\\u0438\\u0437\\u0430\\u0446\\u0438\\u043E\\u043D\\u043D\\u043E\\u0439 \\u0434\\u0435\\u044F\\u0442\\u0435\\u043B\\u044C\\u043D\\u043E\\u0441\\u0442\\u0438.\")));\r\n}\r\nexports.CardTextContentTitle = CardTextContentTitle;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/CardTextContent/CardTextContentTitile/CardTextContentTitle.tsx?");
-
-/***/ }),
-
-/***/ "./src/shared/LayoutApp/CardList/Card/CardTextContent/CardTextContentTitile/cardtextcontenttitile.css":
-/*!************************************************************************************************************!*\
-  !*** ./src/shared/LayoutApp/CardList/Card/CardTextContent/CardTextContentTitile/cardtextcontenttitile.css ***!
-  \************************************************************************************************************/
+/***/ "./src/shared/LayoutApp/CardList/Card/TextContent/textcontent.css":
+/*!************************************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/TextContent/textcontent.css ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"title\": \"cardtextcontenttitile__title--3QuKT\",\n\t\"postLink\": \"cardtextcontenttitile__postLink--2WYX8\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/CardTextContent/CardTextContentTitile/cardtextcontenttitile.css?");
-
-/***/ }),
-
-/***/ "./src/shared/LayoutApp/CardList/Card/CardTextContent/cardTextContent.css":
-/*!********************************************************************************!*\
-  !*** ./src/shared/LayoutApp/CardList/Card/CardTextContent/cardTextContent.css ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("// Exports\nmodule.exports = {\n\t\"textContent\": \"cardTextContent__textContent--2Cg42\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/CardTextContent/cardTextContent.css?");
-
-/***/ }),
-
-/***/ "./src/shared/LayoutApp/CardList/Card/CardTextContent/index.ts":
-/*!*********************************************************************!*\
-  !*** ./src/shared/LayoutApp/CardList/Card/CardTextContent/index.ts ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./CardTextContent */ \"./src/shared/LayoutApp/CardList/Card/CardTextContent/CardTextContent.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/CardTextContent/index.ts?");
+eval("// Exports\nmodule.exports = {\n\t\"textContent\": \"textcontent__textContent--24K2d\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/textcontent.css?");
 
 /***/ }),
 
@@ -280,7 +549,19 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"card\": \"card__card--20YfB\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/card.css?");
+eval("// Exports\nmodule.exports = {\n\t\"card\": \"card__card--20YfB\",\n\t\"menu\": \"card__menu--1eMpG\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/card.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/Card/index.ts":
+/*!*****************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/Card/index.ts ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Card */ \"./src/shared/LayoutApp/CardList/Card/Card.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/index.ts?");
 
 /***/ }),
 
@@ -292,7 +573,7 @@ eval("// Exports\nmodule.exports = {\n\t\"card\": \"card__card--20YfB\"\n};\n\n\
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.CardList = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar cardlist_css_1 = __importDefault(__webpack_require__(/*! ./cardlist.css */ \"./src/shared/LayoutApp/CardList/cardlist.css\"));\r\nvar Card_1 = __webpack_require__(/*! ./Card/Card */ \"./src/shared/LayoutApp/CardList/Card/Card.tsx\");\r\nfunction CardList() {\r\n    return (react_1.default.createElement(\"ul\", { className: cardlist_css_1.default.cardsList },\r\n        react_1.default.createElement(Card_1.Card, null)));\r\n}\r\nexports.CardList = CardList;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/CardList.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.CardList = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar cardlist_css_1 = __importDefault(__webpack_require__(/*! ./cardlist.css */ \"./src/shared/LayoutApp/CardList/cardlist.css\"));\r\nvar Card_1 = __webpack_require__(/*! ./Card */ \"./src/shared/LayoutApp/CardList/Card/index.ts\");\r\nfunction CardList() {\r\n    return (react_1.default.createElement(\"ul\", { className: cardlist_css_1.default.cardsList },\r\n        react_1.default.createElement(Card_1.Card, null)));\r\n}\r\nexports.CardList = CardList;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/CardList.tsx?");
 
 /***/ }),
 
@@ -304,6 +585,18 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /***/ (function(module, exports) {
 
 eval("// Exports\nmodule.exports = {\n\t\"cardsList\": \"cardlist__cardsList--Ijeip\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/cardlist.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/CardList/index.ts":
+/*!************************************************!*\
+  !*** ./src/shared/LayoutApp/CardList/index.ts ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./CardList */ \"./src/shared/LayoutApp/CardList/CardList.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/index.ts?");
 
 /***/ }),
 
@@ -422,6 +715,18 @@ eval("// Exports\nmodule.exports = {\n\t\"header\": \"header__header--2Seov\"\n}
 
 /***/ }),
 
+/***/ "./src/shared/LayoutApp/Header/index.ts":
+/*!**********************************************!*\
+  !*** ./src/shared/LayoutApp/Header/index.ts ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Header */ \"./src/shared/LayoutApp/Header/Header.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/index.ts?");
+
+/***/ }),
+
 /***/ "./src/shared/LayoutApp/Layout/Layout.tsx":
 /*!************************************************!*\
   !*** ./src/shared/LayoutApp/Layout/Layout.tsx ***!
@@ -434,6 +739,18 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 
 /***/ }),
 
+/***/ "./src/shared/LayoutApp/Layout/index.ts":
+/*!**********************************************!*\
+  !*** ./src/shared/LayoutApp/Layout/index.ts ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Layout */ \"./src/shared/LayoutApp/Layout/Layout.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Layout/index.ts?");
+
+/***/ }),
+
 /***/ "./src/shared/LayoutApp/Layout/layout.css":
 /*!************************************************!*\
   !*** ./src/shared/LayoutApp/Layout/layout.css ***!
@@ -442,6 +759,42 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /***/ (function(module, exports) {
 
 eval("// Exports\nmodule.exports = {\n\t\"layout\": \"layout__layout--3NsrO\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Layout/layout.css?");
+
+/***/ }),
+
+/***/ "./src/utils/js/assoc.ts":
+/*!*******************************!*\
+  !*** ./src/utils/js/assoc.ts ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assign = Object.assign || function(t) {\r\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n            s = arguments[i];\r\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n                t[p] = s[p];\r\n        }\r\n        return t;\r\n    };\r\n    return __assign.apply(this, arguments);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.assoc = void 0;\r\nfunction assoc(key, value) {\r\n    return function (obj) {\r\n        var _a;\r\n        return (__assign(__assign({}, obj), (_a = {}, _a[key] = value, _a)));\r\n    };\r\n}\r\nexports.assoc = assoc;\r\n\n\n//# sourceURL=webpack:///./src/utils/js/assoc.ts?");
+
+/***/ }),
+
+/***/ "./src/utils/js/merge.ts":
+/*!*******************************!*\
+  !*** ./src/utils/js/merge.ts ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assign = Object.assign || function(t) {\r\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n            s = arguments[i];\r\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n                t[p] = s[p];\r\n        }\r\n        return t;\r\n    };\r\n    return __assign.apply(this, arguments);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.merge = void 0;\r\nfunction merge(obj) {\r\n    return function (obj2) { return (__assign(__assign({}, obj), obj2)); };\r\n}\r\nexports.merge = merge;\r\n\n\n//# sourceURL=webpack:///./src/utils/js/merge.ts?");
+
+/***/ }),
+
+/***/ "./src/utils/react/generateRandomIndex.tsx":
+/*!*************************************************!*\
+  !*** ./src/utils/react/generateRandomIndex.tsx ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.generateId = exports.assignId = exports.generateRandomString = void 0;\r\nvar assoc_1 = __webpack_require__(/*! ../js/assoc */ \"./src/utils/js/assoc.ts\");\r\nvar generateRandomString = function () { return Math.random().toString(36).substring(2, 15); };\r\nexports.generateRandomString = generateRandomString;\r\nexports.assignId = assoc_1.assoc(\"id\", exports.generateRandomString());\r\nvar generateId = function (obj) { return exports.assignId(obj); };\r\nexports.generateId = generateId;\r\n\n\n//# sourceURL=webpack:///./src/utils/react/generateRandomIndex.tsx?");
 
 /***/ }),
 

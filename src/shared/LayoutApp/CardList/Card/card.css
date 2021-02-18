@@ -1,31 +1,41 @@
 .card {
-  background-color: var(--white);
-  border-radius: 7px;
-  position: relative;
+    background-color: var(--white);
+    border-radius: 7px;
+    position: relative;
 }
 
-.card > * {
-  flex: 1 1 100%;
+.menu {
+    position: absolute;
 }
 
 @media (max-width: 1024px) {
-  .card {
-    padding: 22px 0 0 0;
-    margin-bottom: 15px;
-  }
+    .card {
+        padding: 22px 0 0 0;
+        margin-bottom: 15px;
+    }
+
+    .menu {
+        right: 15px;
+        top: 17px;
+    }
 }
 
 @media (min-width: 1024px) {
-  .card {
-    margin-bottom: 42px;
-    display: flex;
-  }
-  .card:hover,
-  .card:focus-within {
-    outline: 1px solid var(--greyD9);
-  }
-  .card:hover h2 a,
-  .card:focus-within h2 a {
-    color: var(--orange);
-  }
+    .card {
+        padding: 0;
+        display: flex;
+    }
+
+    .menu {
+        right: 80px;
+        top: 40px;
+    }
+
+    .card:hover, .card:focus-within {
+        outline: 1px solid var(--greyD9);
+    }
+
+    .card:hover h2 a, .card:focus-within h2 a {
+        color: var(--orange);
+    }
 }
