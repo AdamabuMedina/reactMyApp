@@ -13,9 +13,18 @@
     background-color: rgba(51, 51, 51, .1);
 }
 
+.itemDropdown,
+.hideItemDropdown {
+    border-bottom: 1px solid #ECECEC;
+}
+
 @media (max-width: 1024px) {
     .menuButton {
         transform: rotate(90deg);
+    }
+
+    .itemDropdown {
+        display: none;
     }
 }
 
@@ -26,5 +35,11 @@
 
     .menuButton:hover {
         background-color: rgba(51, 51, 51, .1);
+    }
+
+    .itemDropdown {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
     }
 }
