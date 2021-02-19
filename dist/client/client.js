@@ -275,6 +275,17 @@ eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../.
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js?!./src/shared/LayoutApp/Dropdown/dropdown.css":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/shared/LayoutApp/Dropdown/dropdown.css ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".dropdown__container--1jAab {\\r\\n    width: 100%;\\r\\n    flex: 1 1 0%;\\r\\n}\\r\\n\\r\\n.dropdown__listContainer--2wmC1 {\\r\\n    position: relative;\\r\\n}\\r\\n\\r\\n.dropdown__list--38bgp {\\r\\n    position: absolute;\\r\\n    left: 0;\\r\\n    top: 0;\\r\\n    width: 100%;\\r\\n    height: 100%;\\r\\n}\\r\\n\\r\\n\", \"\"]);\n// Exports\nexports.locals = {\n\t\"container\": \"dropdown__container--1jAab\",\n\t\"listContainer\": \"dropdown__listContainer--2wmC1\",\n\t\"list\": \"dropdown__list--38bgp\"\n};\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Dropdown/dropdown.css?./node_modules/css-loader/dist/cjs.js??ref--5-1");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js?!./src/shared/LayoutApp/Header/SearchBlock/searchblock.css":
 /*!*****************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./src/shared/LayoutApp/Header/SearchBlock/searchblock.css ***!
@@ -650,7 +661,7 @@ eval("\r\nmodule.exports = function (module) {\r\n    if (!module.webpackPolyfil
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.App = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nvar root_1 = __webpack_require__(/*! react-hot-loader/root */ \"./node_modules/react-hot-loader/root.js\");\r\nvar Layout_1 = __webpack_require__(/*! ./shared/LayoutApp/Layout */ \"./src/shared/LayoutApp/Layout/index.ts\");\r\n__webpack_require__(/*! ./main.global.css */ \"./src/main.global.css\");\r\nvar Header_1 = __webpack_require__(/*! ./shared/LayoutApp/Header */ \"./src/shared/LayoutApp/Header/index.ts\");\r\nvar Content_1 = __webpack_require__(/*! ./shared/LayoutApp/Content/Content */ \"./src/shared/LayoutApp/Content/Content.tsx\");\r\nvar CardList_1 = __webpack_require__(/*! ./shared/LayoutApp/CardList */ \"./src/shared/LayoutApp/CardList/index.ts\");\r\nfunction AppComponent() {\r\n    return (react_1.default.createElement(Layout_1.Layout, null,\r\n        react_1.default.createElement(Header_1.Header, null),\r\n        react_1.default.createElement(Content_1.Content, null,\r\n            react_1.default.createElement(CardList_1.CardList, null))));\r\n}\r\nexports.App = root_1.hot(function () { return react_1.default.createElement(AppComponent, null); });\r\n\n\n//# sourceURL=webpack:///./src/App.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.App = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nvar root_1 = __webpack_require__(/*! react-hot-loader/root */ \"./node_modules/react-hot-loader/root.js\");\r\nvar Layout_1 = __webpack_require__(/*! ./shared/LayoutApp/Layout */ \"./src/shared/LayoutApp/Layout/index.ts\");\r\n__webpack_require__(/*! ./main.global.css */ \"./src/main.global.css\");\r\nvar Header_1 = __webpack_require__(/*! ./shared/LayoutApp/Header */ \"./src/shared/LayoutApp/Header/index.ts\");\r\nvar Content_1 = __webpack_require__(/*! ./shared/LayoutApp/Content/Content */ \"./src/shared/LayoutApp/Content/Content.tsx\");\r\nvar CardList_1 = __webpack_require__(/*! ./shared/LayoutApp/CardList */ \"./src/shared/LayoutApp/CardList/index.ts\");\r\nvar Dropdown_1 = __webpack_require__(/*! ./shared/LayoutApp/Dropdown */ \"./src/shared/LayoutApp/Dropdown/index.ts\");\r\nfunction AppComponent() {\r\n    return (react_1.default.createElement(Layout_1.Layout, null,\r\n        react_1.default.createElement(Header_1.Header, null),\r\n        react_1.default.createElement(Content_1.Content, null,\r\n            react_1.default.createElement(CardList_1.CardList, null),\r\n            react_1.default.createElement(\"div\", { style: { padding: 20 } },\r\n                react_1.default.createElement(\"br\", null),\r\n                react_1.default.createElement(Dropdown_1.Dropdown, { onClose: function () { return console.log(\"closed\"); }, onOpen: function () { return console.log(\"opened\"); }, isOpen: false, button: react_1.default.createElement(\"button\", null, \"Test\") },\r\n                    react_1.default.createElement(CardList_1.CardList, null))))));\r\n}\r\nexports.App = root_1.hot(function () { return react_1.default.createElement(AppComponent, null); });\r\n\n\n//# sourceURL=webpack:///./src/App.tsx?");
 
 /***/ }),
 
@@ -1155,6 +1166,42 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_5_1_content_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./content.css */ \"./node_modules/css-loader/dist/cjs.js?!./src/shared/LayoutApp/Content/content.css\");\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_5_1_content_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_5_1_content_css__WEBPACK_IMPORTED_MODULE_1__);\n\n            \n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ref_5_1_content_css__WEBPACK_IMPORTED_MODULE_1___default.a, options);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_css_loader_dist_cjs_js_ref_5_1_content_css__WEBPACK_IMPORTED_MODULE_1___default.a.locals || {});\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Content/content.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/Dropdown/Dropdown.tsx":
+/*!****************************************************!*\
+  !*** ./src/shared/LayoutApp/Dropdown/Dropdown.tsx ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Dropdown = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nvar dropdown_css_1 = __importDefault(__webpack_require__(/*! ./dropdown.css */ \"./src/shared/LayoutApp/Dropdown/dropdown.css\"));\r\nvar NOOP = function () {\r\n};\r\nfunction Dropdown(_a) {\r\n    var button = _a.button, children = _a.children, isOpen = _a.isOpen, _b = _a.onOpen, onOpen = _b === void 0 ? NOOP : _b, _c = _a.onClose, onClose = _c === void 0 ? NOOP : _c;\r\n    var _d = react_1.default.useState(isOpen), isDropdownOpen = _d[0], setIsDropdownOpen = _d[1];\r\n    react_1.default.useEffect(function () { return setIsDropdownOpen(isOpen); }, [isOpen]);\r\n    react_1.default.useEffect(function () { return isDropdownOpen ? onOpen() : onClose(); }, [isDropdownOpen]);\r\n    var handleOpen = function () {\r\n        if (isOpen == undefined) {\r\n            setIsDropdownOpen(!isDropdownOpen);\r\n        }\r\n    };\r\n    return (react_1.default.createElement(\"div\", { className: dropdown_css_1.default.container },\r\n        react_1.default.createElement(\"div\", { onClick: handleOpen }, button),\r\n        isDropdownOpen && (react_1.default.createElement(\"div\", { className: dropdown_css_1.default.listContainer },\r\n            react_1.default.createElement(\"div\", { className: dropdown_css_1.default.list, onClick: function () { return setIsDropdownOpen(false); } }, children)))));\r\n}\r\nexports.Dropdown = Dropdown;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Dropdown/Dropdown.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/Dropdown/dropdown.css":
+/*!****************************************************!*\
+  !*** ./src/shared/LayoutApp/Dropdown/dropdown.css ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_5_1_dropdown_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./dropdown.css */ \"./node_modules/css-loader/dist/cjs.js?!./src/shared/LayoutApp/Dropdown/dropdown.css\");\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_5_1_dropdown_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_5_1_dropdown_css__WEBPACK_IMPORTED_MODULE_1__);\n\n            \n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ref_5_1_dropdown_css__WEBPACK_IMPORTED_MODULE_1___default.a, options);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_css_loader_dist_cjs_js_ref_5_1_dropdown_css__WEBPACK_IMPORTED_MODULE_1___default.a.locals || {});\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Dropdown/dropdown.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/Dropdown/index.ts":
+/*!************************************************!*\
+  !*** ./src/shared/LayoutApp/Dropdown/index.ts ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Dropdown */ \"./src/shared/LayoutApp/Dropdown/Dropdown.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Dropdown/index.ts?");
 
 /***/ }),
 

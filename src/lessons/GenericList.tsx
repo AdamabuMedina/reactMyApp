@@ -3,7 +3,7 @@ import React from "react";
 interface IItem {
     id: string
     text: string
-    onClick: (id: string) => void
+    onClick?: (id: string) => void
     className?: string
     As?: "a" | "li" | "button" | "div"
     href?: string
@@ -13,11 +13,15 @@ interface IMyGenericProps {
     list: IItem[]
 }
 
+const noop = () => {
+}
+
 export function GenericList({list}: IMyGenericProps) {
     return (
         <>
-            {list.map(({As = "div", text, onClick, id, className, href}) => (
-                <As className={className}
+            {list.map(({As = "div", text, onClick = noop, id, className, href}) => (
+                <As
+                    className={className}
                     onClick={() => onClick(id)}
                     key={id}
                     href={href}
