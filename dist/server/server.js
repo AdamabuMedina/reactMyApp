@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/classnames/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/classnames/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;\r\n/*!\r\n  Copyright (c) 2017 Jed Watson.\r\n  Licensed under the MIT License (MIT), see\r\n  http://jedwatson.github.io/classnames\r\n*/\r\n/* global define */\r\n(function () {\r\n    'use strict';\r\n    var hasOwn = {}.hasOwnProperty;\r\n    function classNames() {\r\n        var classes = [];\r\n        for (var i = 0; i < arguments.length; i++) {\r\n            var arg = arguments[i];\r\n            if (!arg)\r\n                continue;\r\n            var argType = typeof arg;\r\n            if (argType === 'string' || argType === 'number') {\r\n                classes.push(arg);\r\n            }\r\n            else if (Array.isArray(arg) && arg.length) {\r\n                var inner = classNames.apply(null, arg);\r\n                if (inner) {\r\n                    classes.push(inner);\r\n                }\r\n            }\r\n            else if (argType === 'object') {\r\n                for (var key in arg) {\r\n                    if (hasOwn.call(arg, key) && arg[key]) {\r\n                        classes.push(key);\r\n                    }\r\n                }\r\n            }\r\n        }\r\n        return classes.join(' ');\r\n    }\r\n    if ( true && module.exports) {\r\n        classNames.default = classNames;\r\n        module.exports = classNames;\r\n    }\r\n    else if (true) {\r\n        // register as 'classnames', consistent with npm package name\r\n        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {\r\n            return classNames;\r\n        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),\n\t\t\t\t__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));\r\n    }\r\n    else {}\r\n}());\r\n\n\n//# sourceURL=webpack:///./node_modules/classnames/index.js?");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/runtime/api.js":
 /*!*****************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/api.js ***!
@@ -375,7 +387,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Menu = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar menu_css_1 = __importDefault(__webpack_require__(/*! ./menu.css */ \"./src/shared/LayoutApp/CardList/Card/Menu/menu.css\"));\r\nvar Dropdown_1 = __webpack_require__(/*! ../../../Dropdown */ \"./src/shared/LayoutApp/Dropdown/index.ts\");\r\nvar Icons_1 = __webpack_require__(/*! ../../../Icons */ \"./src/shared/LayoutApp/Icons/index.ts\");\r\nfunction Menu(props) {\r\n    return (react_1.default.createElement(\"div\", { className: props.cssStyle },\r\n        react_1.default.createElement(Dropdown_1.Dropdown, { button: react_1.default.createElement(\"button\", { className: menu_css_1.default.menuButton },\r\n                react_1.default.createElement(Icons_1.MenuIcon, null)) }, \"Menu CloseButton\")));\r\n}\r\nexports.Menu = Menu;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/Menu.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Menu = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar menu_css_1 = __importDefault(__webpack_require__(/*! ./menu.css */ \"./src/shared/LayoutApp/CardList/Card/Menu/menu.css\"));\r\nvar Dropdown_1 = __webpack_require__(/*! ../../../Dropdown */ \"./src/shared/LayoutApp/Dropdown/index.ts\");\r\nvar Icons_1 = __webpack_require__(/*! ../../../Icons */ \"./src/shared/LayoutApp/Icons/index.ts\");\r\nvar Text_1 = __webpack_require__(/*! ../../../Text */ \"./src/shared/LayoutApp/Text/index.ts\");\r\nfunction Menu(props) {\r\n    return (react_1.default.createElement(\"div\", { className: props.cssStyle },\r\n        react_1.default.createElement(Dropdown_1.Dropdown, { button: react_1.default.createElement(\"button\", { className: menu_css_1.default.menuButton },\r\n                react_1.default.createElement(Icons_1.MenuIcon, null)) },\r\n            react_1.default.createElement(\"div\", { className: menu_css_1.default.dropdown },\r\n                \"Menu\",\r\n                react_1.default.createElement(\"button\", { className: menu_css_1.default.closeButton },\r\n                    react_1.default.createElement(Text_1.Text, { size: 14, mobileSize: 12, color: Text_1.EColor.gray66 }, \"\\u0417\\u0430\\u043A\\u0440\\u044B\\u0442\\u044C\"))))));\r\n}\r\nexports.Menu = Menu;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/Menu.tsx?");
 
 /***/ }),
 
@@ -398,7 +410,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"menuButton\": \"menu__menuButton--2r9em\",\n\t\"itemDropdown\": \"menu__itemDropdown--2Z9Fr\",\n\t\"hideItemDropdown\": \"menu__hideItemDropdown--2gTCS\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/menu.css?");
+eval("// Exports\nmodule.exports = {\n\t\"menuButton\": \"menu__menuButton--2r9em\",\n\t\"dropdown\": \"menu__dropdown--2hOmQ\",\n\t\"closeButton\": \"menu__closeButton--2JNak\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/menu.css?");
 
 /***/ }),
 
@@ -619,7 +631,7 @@ eval("// Exports\nmodule.exports = {\n\t\"content\": \"content__content--2Da88\"
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Dropdown = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar dropdown_css_1 = __importDefault(__webpack_require__(/*! ./dropdown.css */ \"./src/shared/LayoutApp/Dropdown/dropdown.css\"));\r\nvar NOOP = function () {\r\n};\r\nfunction Dropdown(_a) {\r\n    var button = _a.button, children = _a.children, isOpen = _a.isOpen, _b = _a.onOpen, onOpen = _b === void 0 ? NOOP : _b, _c = _a.onClose, onClose = _c === void 0 ? NOOP : _c;\r\n    var _d = react_1.default.useState(isOpen), isDropdownOpen = _d[0], setIsDropdownOpen = _d[1];\r\n    react_1.default.useEffect(function () { return setIsDropdownOpen(isOpen); }, [isOpen]);\r\n    react_1.default.useEffect(function () { return isDropdownOpen ? onOpen() : onClose(); }, [isDropdownOpen]);\r\n    var handleOpen = function () {\r\n        if (isOpen === undefined) {\r\n            setIsDropdownOpen(isDropdownOpen);\r\n        }\r\n    };\r\n    return (react_1.default.createElement(\"div\", { className: dropdown_css_1.default.container },\r\n        react_1.default.createElement(\"div\", { onClick: handleOpen }, button),\r\n        isDropdownOpen && (react_1.default.createElement(\"div\", { className: dropdown_css_1.default.listContainer },\r\n            react_1.default.createElement(\"div\", { className: dropdown_css_1.default.list, onClick: function () { return setIsDropdownOpen(false); } }, children)))));\r\n}\r\nexports.Dropdown = Dropdown;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Dropdown/Dropdown.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Dropdown = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar dropdown_css_1 = __importDefault(__webpack_require__(/*! ./dropdown.css */ \"./src/shared/LayoutApp/Dropdown/dropdown.css\"));\r\nvar NOOP = function () {\r\n};\r\nfunction Dropdown(_a) {\r\n    var button = _a.button, children = _a.children, isOpen = _a.isOpen, _b = _a.onOpen, onOpen = _b === void 0 ? NOOP : _b, _c = _a.onClose, onClose = _c === void 0 ? NOOP : _c;\r\n    var _d = react_1.default.useState(isOpen), isDropdownOpen = _d[0], setIsDropdownOpen = _d[1];\r\n    react_1.default.useEffect(function () { return setIsDropdownOpen(isOpen); }, [isOpen]);\r\n    react_1.default.useEffect(function () { return isDropdownOpen ? onOpen() : onClose(); }, [isDropdownOpen]);\r\n    var handleOpen = function () {\r\n        if (isOpen === undefined) {\r\n            setIsDropdownOpen(!isDropdownOpen);\r\n        }\r\n    };\r\n    return (react_1.default.createElement(\"div\", { className: dropdown_css_1.default.container },\r\n        react_1.default.createElement(\"div\", { onClick: handleOpen }, button),\r\n        isDropdownOpen && (react_1.default.createElement(\"div\", { className: dropdown_css_1.default.listContainer },\r\n            react_1.default.createElement(\"div\", { className: dropdown_css_1.default.list, onClick: function () { return setIsDropdownOpen(false); } }, children)))));\r\n}\r\nexports.Dropdown = Dropdown;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Dropdown/Dropdown.tsx?");
 
 /***/ }),
 
@@ -866,6 +878,41 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /***/ (function(module, exports) {
 
 eval("// Exports\nmodule.exports = {\n\t\"layout\": \"layout__layout--3NsrO\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Layout/layout.css?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/Text/Text.tsx":
+/*!********************************************!*\
+  !*** ./src/shared/LayoutApp/Text/Text.tsx ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Text = exports.EColor = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar text_css_1 = __importDefault(__webpack_require__(/*! ./text.css */ \"./src/shared/LayoutApp/Text/text.css\"));\r\nvar classnames_1 = __importDefault(__webpack_require__(/*! classnames */ \"./node_modules/classnames/index.js\"));\r\nvar EColor;\r\n(function (EColor) {\r\n    EColor[\"black\"] = \"black\";\r\n    EColor[\"orange\"] = \"orange\";\r\n    EColor[\"green\"] = \"green\";\r\n    EColor[\"white\"] = \"white\";\r\n    EColor[\"grayF4\"] = \"grayF4\";\r\n    EColor[\"grayF3\"] = \"grayF3\";\r\n    EColor[\"grayEC\"] = \"grayEC\";\r\n    EColor[\"grayD9\"] = \"grayD9\";\r\n    EColor[\"grayC4\"] = \"grayC4\";\r\n    EColor[\"gray99\"] = \"gray99\";\r\n    EColor[\"gray66\"] = \"gray66\";\r\n})(EColor = exports.EColor || (exports.EColor = {}));\r\nfunction Text(props) {\r\n    var _a, _b, _c, _d;\r\n    var _e = props.As, As = _e === void 0 ? 'span' : _e, _f = props.color, color = _f === void 0 ? EColor.black : _f, _g = props.bold, bold = _g === void 0 ? false : _g, children = props.children, size = props.size, mobileSize = props.mobileSize, tabletSize = props.tabletSize, desktopSize = props.desktopSize;\r\n    var classes = classnames_1.default(text_css_1.default[\"s\" + size], text_css_1.default[color], (_a = {}, _a[text_css_1.default.bold] = bold, _a), (_b = {}, _b[text_css_1.default[\"m\" + mobileSize]] = mobileSize, _b), (_c = {}, _c[text_css_1.default[\"t\" + tabletSize]] = tabletSize, _c), (_d = {}, _d[text_css_1.default[\"d\" + desktopSize]] = desktopSize, _d));\r\n    return react_1.default.createElement(As, { className: classes }, children);\r\n}\r\nexports.Text = Text;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Text/Text.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/Text/index.ts":
+/*!********************************************!*\
+  !*** ./src/shared/LayoutApp/Text/index.ts ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Text */ \"./src/shared/LayoutApp/Text/Text.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Text/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/Text/text.css":
+/*!********************************************!*\
+  !*** ./src/shared/LayoutApp/Text/text.css ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"s28\": \"text__s28--3bBfV\",\n\t\"s20\": \"text__s20--1G05K\",\n\t\"s16\": \"text__s16--5HPPR\",\n\t\"s14\": \"text__s14--3cXzr\",\n\t\"s12\": \"text__s12--3XJ4N\",\n\t\"s10\": \"text__s10--3FOXj\",\n\t\"black\": \"text__black--2qh6f\",\n\t\"orange\": \"text__orange--2NRUc\",\n\t\"green\": \"text__green--rM0ic\",\n\t\"white\": \"text__white--bFzWb\",\n\t\"grayF4\": \"text__grayF4--39iaU\",\n\t\"grayF3\": \"text__grayF3--3Qf6s\",\n\t\"grayEC\": \"text__grayEC--2YzMh\",\n\t\"grayD9\": \"text__grayD9--1XeCi\",\n\t\"grayC4\": \"text__grayC4--STTgp\",\n\t\"gray99\": \"text__gray99--3Xhna\",\n\t\"gray66\": \"text__gray66--u1mKd\",\n\t\"bold\": \"text__bold--LPkcR\",\n\t\"m28\": \"text__m28--LqzJ7\",\n\t\"m20\": \"text__m20--3DLNk\",\n\t\"m16\": \"text__m16--2aGy1\",\n\t\"m14\": \"text__m14--1E_NT\",\n\t\"m12\": \"text__m12--1LfYP\",\n\t\"m10\": \"text__m10--1I0fo\",\n\t\"t28\": \"text__t28--1FFKf\",\n\t\"t20\": \"text__t20--2g3Z6\",\n\t\"t16\": \"text__t16--R6CbO\",\n\t\"t14\": \"text__t14--1QyuR\",\n\t\"t12\": \"text__t12--1Z2SP\",\n\t\"t10\": \"text__t10--2zomu\",\n\t\"d28\": \"text__d28--39JJZ\",\n\t\"d20\": \"text__d20--Y9MRl\",\n\t\"d16\": \"text__d16--1FT14\",\n\t\"d14\": \"text__d14--NfwHu\",\n\t\"d12\": \"text__d12--1balA\",\n\t\"d10\": \"text__d10--18ZSG\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Text/text.css?");
 
 /***/ }),
 

@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./menu.css"
 import {Dropdown} from "../../../Dropdown";
-import {
-    MenuIcon,
-} from "../../../Icons";
+import {MenuIcon,} from "../../../Icons";
+import {EColor, Text} from "../../../Text";
 
 interface IMenuProps {
     cssStyle: string
@@ -19,8 +18,14 @@ export function Menu(props: IMenuProps) {
                         <MenuIcon/>
                     </button>
                 }>
-                Menu
-                CloseButton
+                <div className={styles.dropdown}>
+                    Menu
+                    <button className={styles.closeButton}>
+                        <Text size={14} mobileSize={12} color={EColor.gray66}>
+                            Закрыть
+                        </Text>
+                    </button>
+                </div>
             </Dropdown>
         </div>
     )
