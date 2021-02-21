@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./menu.css"
 import {Dropdown} from "../../../Dropdown";
 import {MenuIcon,} from "../../../Icons";
-import {EColor, Text} from "../../../Text";
+import {EColor, Text} from "../../../../Text";
 import {MenuItemsList} from "./MenuItemsList";
 
 interface IMenuProps {

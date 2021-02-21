@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./menuitemslist.css"
 import {CommentIcon, WarningIcon, BlockIcon, SaveIcon, ShareIcon} from "../../../../Icons";
-import {EColor, Text} from "../../../../Text";
+import {EColor, Text} from "../../../../../Text";
 
 interface IMenuItemsProps {
     postId: string
