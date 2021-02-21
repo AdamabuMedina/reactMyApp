@@ -1,17 +1,17 @@
 import React from "react";
 import styles from "./menuitemslist.css"
-import {BlockIcon, CommentIcon, SaveIcon, ShareIcon, WarningIcon} from "../../../../Icons";
+import {EIcons, Icon} from "../../../../../Icon";
 import {EColor, Text} from "../../../../../Text";
 import classNames from "classnames"
 import {generateId} from "../../../../../../utils/react/generateRandomIndex";
-import {GenericList} from "../../../../../../lessons/GenericList";
 import {merge} from "../../../../../../utils/js/merge";
+import {GenericList} from "../../../../GenericList";
 
 const ITEMS_LIST = [
     {
         As: "li" as const,
         className: classNames(styles.menuItem, styles.menuItemComments),
-        icon: <CommentIcon/>,
+        icon: <Icon name={EIcons.comments} size={14}/>,
         text: (
             <Text size={14} mobileSize={12} color={EColor.gray99}>
                 Комментарии
@@ -21,17 +21,7 @@ const ITEMS_LIST = [
     {
         As: "li" as const,
         className: classNames(styles.menuItem, styles.menuItemShared),
-        icon: <ShareIcon/>,
-        text: (
-            <Text size={14} mobileSize={12} color={EColor.gray99}>
-                Поделиться
-            </Text>
-        )
-    },
-    {
-        As: "li" as const,
-        className: classNames(styles.menuItem, styles.menuItemShared),
-        icon: <ShareIcon/>,
+        icon: <Icon name={EIcons.shared} size={14}/>,
         text: (
             <Text size={14} mobileSize={12} color={EColor.gray99}>
                 Поделиться
@@ -41,7 +31,7 @@ const ITEMS_LIST = [
     {
         As: "li" as const,
         className: styles.menuItem,
-        icon: <BlockIcon/>,
+        icon: <Icon name={EIcons.block} size={14}/>,
         text: (
             <Text size={14} mobileSize={12} color={EColor.gray99}>
                 Скрыть
@@ -51,7 +41,7 @@ const ITEMS_LIST = [
     {
         As: "li" as const,
         className: classNames(styles.menuItem, styles.menuItemSave),
-        icon: <SaveIcon/>,
+        icon: <Icon name={EIcons.saving} size={14}/>,
         text: (
             <Text size={14} mobileSize={12} color={EColor.gray99}>
                 Сохранить
@@ -61,7 +51,7 @@ const ITEMS_LIST = [
     {
         As: "li" as const,
         className: styles.menuItem,
-        icon: <WarningIcon/>,
+        icon: <Icon name={EIcons.warning} size={14}/>,
         text: (
             <Text size={14} mobileSize={12} color={EColor.gray99}>
                 Пожаловаться
