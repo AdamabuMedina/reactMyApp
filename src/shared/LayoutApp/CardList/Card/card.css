@@ -4,19 +4,11 @@
     position: relative;
 }
 
-.menu {
-    position: absolute;
-}
 
 @media (max-width: 1024px) {
     .card {
         padding: 22px 0 0 0;
         margin-bottom: 15px;
-    }
-
-    .menu {
-        right: 15px;
-        top: 17px;
     }
 }
 
@@ -24,11 +16,6 @@
     .card {
         padding: 0;
         display: flex;
-    }
-
-    .menu {
-        right: 80px;
-        top: 40px;
     }
 
     .card:hover, .card:focus-within {

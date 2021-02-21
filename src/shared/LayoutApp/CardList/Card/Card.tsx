@@ -17,7 +17,7 @@ export function Card() {
             <Preview
                 imgSource="https://avatars.mds.yandex.net/get-pdb/903199/8f573f02-a18b-4d2b-9342-4c0a9f639e3d/s1200?webp=false"
             />
-            <Menu cssStyle={styles.menu}/>
+            <Menu/>
             <Controls>
                 <KarmaButton value="123"/>
                 <CommentButton commentCount="234"/>
