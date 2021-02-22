@@ -141,7 +141,42 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nex
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar express_1 = __importDefault(__webpack_require__(/*! express */ \"express\"));\r\nvar server_1 = __importDefault(__webpack_require__(/*! react-dom/server */ \"react-dom/server\"));\r\nvar indexTemplate_js_1 = __webpack_require__(/*! ./indexTemplate.js */ \"./src/server/indexTemplate.js\");\r\nvar App_1 = __webpack_require__(/*! ../App */ \"./src/App.tsx\");\r\nvar app = express_1.default();\r\napp.use(\"/static\", express_1.default.static(\"./dist/client\"));\r\napp.get(\"/\", function (req, res) {\r\n    res.send(indexTemplate_js_1.indexTemplate(server_1.default.renderToString(App_1.App())));\r\n});\r\napp.listen(3000, function () {\r\n    console.log(\"Server started on http://localhost:3000\");\r\n});\r\n\n\n//# sourceURL=webpack:///./src/server/server.js?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar express_1 = __importDefault(__webpack_require__(/*! express */ \"express\"));\r\nvar server_1 = __importDefault(__webpack_require__(/*! react-dom/server */ \"react-dom/server\"));\r\nvar indexTemplate_js_1 = __webpack_require__(/*! ./indexTemplate.js */ \"./src/server/indexTemplate.js\");\r\nvar App_1 = __webpack_require__(/*! ../App */ \"./src/App.tsx\");\r\nvar app = express_1.default();\r\napp.use(\"/static\", express_1.default.static(\"./dist/client\"));\r\napp.get(\"/\", function (req, res) {\r\n    res.send(indexTemplate_js_1.indexTemplate(server_1.default.renderToString(App_1.App())));\r\n});\r\napp.get(\"/auth\", function (req, res) {\r\n    // req.query.code\r\n    res.send(indexTemplate_js_1.indexTemplate(server_1.default.renderToString(App_1.App())));\r\n});\r\napp.listen(3000, function () {\r\n    console.log(\"Server started on http://localhost:3000\");\r\n});\r\n\n\n//# sourceURL=webpack:///./src/server/server.js?");
+
+/***/ }),
+
+/***/ "./src/shared/Break/Break.tsx":
+/*!************************************!*\
+  !*** ./src/shared/Break/Break.tsx ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Break = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar break_css_1 = __importDefault(__webpack_require__(/*! ./break.css */ \"./src/shared/Break/break.css\"));\r\nvar classnames_1 = __importDefault(__webpack_require__(/*! classnames */ \"classnames\"));\r\nfunction Break(props) {\r\n    var _a, _b, _c, _d, _e;\r\n    var _f = props.top, top = _f === void 0 ? false : _f, _g = props.inline, inline = _g === void 0 ? false : _g, desktopSize = props.desktopSize, tabletSize = props.tabletSize, mobileSize = props.mobileSize, size = props.size;\r\n    return (react_1.default.createElement(\"div\", { className: classnames_1.default(break_css_1.default[\"s\" + size], (_a = {}, _a[break_css_1.default[\"mobile_s\" + mobileSize]] = mobileSize, _a), (_b = {}, _b[break_css_1.default[\"tablet_s\" + mobileSize]] = tabletSize, _b), (_c = {}, _c[break_css_1.default[\"desktop_s\" + mobileSize]] = desktopSize, _c), (_d = {}, _d[break_css_1.default.inline] = inline, _d), (_e = {}, _e[break_css_1.default.top] = top, _e)) }));\r\n}\r\nexports.Break = Break;\r\n\n\n//# sourceURL=webpack:///./src/shared/Break/Break.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/Break/break.css":
+/*!************************************!*\
+  !*** ./src/shared/Break/break.css ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"s4\": \"src-shared-Break-break__s4--rnbuA\",\n\t\"s8\": \"src-shared-Break-break__s8--2ubV4\",\n\t\"s12\": \"src-shared-Break-break__s12--3dSW2\",\n\t\"s16\": \"src-shared-Break-break__s16--2bop2\",\n\t\"s20\": \"src-shared-Break-break__s20--PBhCB\",\n\t\"s32\": \"src-shared-Break-break__s32--17-kQ\",\n\t\"inline\": \"src-shared-Break-break__inline--22pcx\",\n\t\"top\": \"src-shared-Break-break__top--25ISJ\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/Break/break.css?");
+
+/***/ }),
+
+/***/ "./src/shared/Break/index.ts":
+/*!***********************************!*\
+  !*** ./src/shared/Break/index.ts ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Break */ \"./src/shared/Break/Break.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/Break/index.ts?");
 
 /***/ }),
 
@@ -164,7 +199,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"icon\": \"icon__icon--1AjE9\",\n\t\"s12\": \"icon__s12--LuYYL\",\n\t\"s14\": \"icon__s14--m4nyp\",\n\t\"s16\": \"icon__s16--NYdak\",\n\t\"s20\": \"icon__s20--1h1Sg\",\n\t\"s24\": \"icon__s24--3z--D\",\n\t\"s32\": \"icon__s32--2PTTb\",\n\t\"s40\": \"icon__s40--1K_6X\",\n\t\"m12\": \"icon__m12--1-U0b\",\n\t\"m14\": \"icon__m14--Pdbj_\",\n\t\"m16\": \"icon__m16--1W2nF\",\n\t\"m20\": \"icon__m20--22ACs\",\n\t\"m24\": \"icon__m24--7VU2S\",\n\t\"m32\": \"icon__m32--3ZZ4y\",\n\t\"m40\": \"icon__m40--1LqIF\",\n\t\"t12\": \"icon__t12--3KfvD\",\n\t\"t14\": \"icon__t14--1aldr\",\n\t\"t16\": \"icon__t16--2OInr\",\n\t\"t20\": \"icon__t20--uj2iv\",\n\t\"t24\": \"icon__t24--1QLFv\",\n\t\"t32\": \"icon__t32--1ZGzi\",\n\t\"t40\": \"icon__t40--1CLQt\",\n\t\"d12\": \"icon__d12--29ZTk\",\n\t\"d14\": \"icon__d14--2AAv4\",\n\t\"d16\": \"icon__d16--3Gdce\",\n\t\"d20\": \"icon__d20--3J3ju\",\n\t\"d24\": \"icon__d24--gKKZm\",\n\t\"d32\": \"icon__d32--3F4Zz\",\n\t\"d40\": \"icon__d40--1OidS\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/Icon/icon.css?");
+eval("// Exports\nmodule.exports = {\n\t\"icon\": \"src-shared-Icon-icon__icon--1AjE9\",\n\t\"s12\": \"src-shared-Icon-icon__s12--LuYYL\",\n\t\"s14\": \"src-shared-Icon-icon__s14--m4nyp\",\n\t\"s16\": \"src-shared-Icon-icon__s16--NYdak\",\n\t\"s20\": \"src-shared-Icon-icon__s20--1h1Sg\",\n\t\"s24\": \"src-shared-Icon-icon__s24--3z--D\",\n\t\"s32\": \"src-shared-Icon-icon__s32--2PTTb\",\n\t\"s40\": \"src-shared-Icon-icon__s40--1K_6X\",\n\t\"m12\": \"src-shared-Icon-icon__m12--1-U0b\",\n\t\"m14\": \"src-shared-Icon-icon__m14--Pdbj_\",\n\t\"m16\": \"src-shared-Icon-icon__m16--1W2nF\",\n\t\"m20\": \"src-shared-Icon-icon__m20--22ACs\",\n\t\"m24\": \"src-shared-Icon-icon__m24--7VU2S\",\n\t\"m32\": \"src-shared-Icon-icon__m32--3ZZ4y\",\n\t\"m40\": \"src-shared-Icon-icon__m40--1LqIF\",\n\t\"t12\": \"src-shared-Icon-icon__t12--3KfvD\",\n\t\"t14\": \"src-shared-Icon-icon__t14--1aldr\",\n\t\"t16\": \"src-shared-Icon-icon__t16--2OInr\",\n\t\"t20\": \"src-shared-Icon-icon__t20--uj2iv\",\n\t\"t24\": \"src-shared-Icon-icon__t24--1QLFv\",\n\t\"t32\": \"src-shared-Icon-icon__t32--1ZGzi\",\n\t\"t40\": \"src-shared-Icon-icon__t40--1CLQt\",\n\t\"d12\": \"src-shared-Icon-icon__d12--29ZTk\",\n\t\"d14\": \"src-shared-Icon-icon__d14--2AAv4\",\n\t\"d16\": \"src-shared-Icon-icon__d16--3Gdce\",\n\t\"d20\": \"src-shared-Icon-icon__d20--3J3ju\",\n\t\"d24\": \"src-shared-Icon-icon__d24--gKKZm\",\n\t\"d32\": \"src-shared-Icon-icon__d32--3F4Zz\",\n\t\"d40\": \"src-shared-Icon-icon__d40--1OidS\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/Icon/icon.css?");
 
 /***/ }),
 
@@ -235,7 +270,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"saveButton\": \"savebutton__saveButton--1OPgN\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/savebutton.css?");
+eval("// Exports\nmodule.exports = {\n\t\"saveButton\": \"src-shared-LayoutApp-CardList-Card-Controls-Actions-SaveButton-savebutton__saveButton--1OPgN\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/SaveButton/savebutton.css?");
 
 /***/ }),
 
@@ -270,7 +305,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"shareButton\": \"sharebutton__shareButton--B6DwU\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/sharebutton.css?");
+eval("// Exports\nmodule.exports = {\n\t\"shareButton\": \"src-shared-LayoutApp-CardList-Card-Controls-Actions-ShareButton-sharebutton__shareButton--B6DwU\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/ShareButton/sharebutton.css?");
 
 /***/ }),
 
@@ -281,7 +316,7 @@ eval("// Exports\nmodule.exports = {\n\t\"shareButton\": \"sharebutton__shareBut
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"actions\": \"actions__actions--1rkM8\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/actions.css?");
+eval("// Exports\nmodule.exports = {\n\t\"actions\": \"src-shared-LayoutApp-CardList-Card-Controls-Actions-actions__actions--1rkM8\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/Actions/actions.css?");
 
 /***/ }),
 
@@ -316,7 +351,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"commentsButton\": \"commentbutton__commentsButton--iFdBH\",\n\t\"commentsNumber\": \"commentbutton__commentsNumber--2tY9G\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/commentbutton.css?");
+eval("// Exports\nmodule.exports = {\n\t\"commentsButton\": \"src-shared-LayoutApp-CardList-Card-Controls-CommentButton-commentbutton__commentsButton--iFdBH\",\n\t\"commentsNumber\": \"src-shared-LayoutApp-CardList-Card-Controls-CommentButton-commentbutton__commentsNumber--2tY9G\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/CommentButton/commentbutton.css?");
 
 /***/ }),
 
@@ -375,7 +410,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"karmaValue\": \"karmabutton__karmaValue--3q7b1\",\n\t\"down\": \"karmabutton__down--j9tVe\",\n\t\"karmaCounter\": \"karmabutton__karmaCounter--2d3RE\",\n\t\"up\": \"karmabutton__up--2aWNS\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css?");
+eval("// Exports\nmodule.exports = {\n\t\"karmaValue\": \"src-shared-LayoutApp-CardList-Card-Controls-KarmaButton-karmabutton__karmaValue--3q7b1\",\n\t\"down\": \"src-shared-LayoutApp-CardList-Card-Controls-KarmaButton-karmabutton__down--j9tVe\",\n\t\"karmaCounter\": \"src-shared-LayoutApp-CardList-Card-Controls-KarmaButton-karmabutton__karmaCounter--2d3RE\",\n\t\"up\": \"src-shared-LayoutApp-CardList-Card-Controls-KarmaButton-karmabutton__up--2aWNS\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/KarmaButton/karmabutton.css?");
 
 /***/ }),
 
@@ -386,7 +421,7 @@ eval("// Exports\nmodule.exports = {\n\t\"karmaValue\": \"karmabutton__karmaValu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"controls\": \"controls__controls--_MM-S\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/controls.css?");
+eval("// Exports\nmodule.exports = {\n\t\"controls\": \"src-shared-LayoutApp-CardList-Card-Controls-controls__controls--_MM-S\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Controls/controls.css?");
 
 /***/ }),
 
@@ -445,7 +480,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"menuItemsList\": \"menuitemslist__menuItemsList--1vApK\",\n\t\"menuItem\": \"menuitemslist__menuItem--2X5G4\",\n\t\"menuItemComments\": \"menuitemslist__menuItemComments--1P-Kt\",\n\t\"menuItemShared\": \"menuitemslist__menuItemShared--KaX-7\",\n\t\"menuItemSave\": \"menuitemslist__menuItemSave--16e4U\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/MenuItemsList/menuitemslist.css?");
+eval("// Exports\nmodule.exports = {\n\t\"menuItemsList\": \"src-shared-LayoutApp-CardList-Card-Menu-MenuItemsList-menuitemslist__menuItemsList--1vApK\",\n\t\"menuItem\": \"src-shared-LayoutApp-CardList-Card-Menu-MenuItemsList-menuitemslist__menuItem--2X5G4\",\n\t\"menuItemComments\": \"src-shared-LayoutApp-CardList-Card-Menu-MenuItemsList-menuitemslist__menuItemComments--1P-Kt\",\n\t\"menuItemShared\": \"src-shared-LayoutApp-CardList-Card-Menu-MenuItemsList-menuitemslist__menuItemShared--KaX-7\",\n\t\"menuItemSave\": \"src-shared-LayoutApp-CardList-Card-Menu-MenuItemsList-menuitemslist__menuItemSave--16e4U\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/MenuItemsList/menuitemslist.css?");
 
 /***/ }),
 
@@ -468,7 +503,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"menu\": \"menu__menu--3hn1y\",\n\t\"menuButton\": \"menu__menuButton--2r9em\",\n\t\"dropdown\": \"menu__dropdown--2hOmQ\",\n\t\"closeButton\": \"menu__closeButton--2JNak\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/menu.css?");
+eval("// Exports\nmodule.exports = {\n\t\"menu\": \"src-shared-LayoutApp-CardList-Card-Menu-menu__menu--3hn1y\",\n\t\"menuButton\": \"src-shared-LayoutApp-CardList-Card-Menu-menu__menuButton--2r9em\",\n\t\"dropdown\": \"src-shared-LayoutApp-CardList-Card-Menu-menu__dropdown--2hOmQ\",\n\t\"closeButton\": \"src-shared-LayoutApp-CardList-Card-Menu-menu__closeButton--2JNak\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Menu/menu.css?");
 
 /***/ }),
 
@@ -503,7 +538,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"preview\": \"preview__preview--1FGJ-\",\n\t\"previewImg\": \"preview__previewImg--2uURX\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Preview/preview.css?");
+eval("// Exports\nmodule.exports = {\n\t\"preview\": \"src-shared-LayoutApp-CardList-Card-Preview-preview__preview--1FGJ-\",\n\t\"previewImg\": \"src-shared-LayoutApp-CardList-Card-Preview-preview__previewImg--2uURX\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/Preview/preview.css?");
 
 /***/ }),
 
@@ -550,7 +585,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"title\": \"title__title--3eMxY\",\n\t\"postLink\": \"title__postLink--1uUM4\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/Title/title.css?");
+eval("// Exports\nmodule.exports = {\n\t\"title\": \"src-shared-LayoutApp-CardList-Card-TextContent-Title-title__title--3eMxY\",\n\t\"postLink\": \"src-shared-LayoutApp-CardList-Card-TextContent-Title-title__postLink--1uUM4\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/Title/title.css?");
 
 /***/ }),
 
@@ -573,7 +608,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"metaData\": \"userdata__metaData--1Z21l\",\n\t\"userLink\": \"userdata__userLink--2ARi8\",\n\t\"avatar\": \"userdata__avatar--2uZuS\",\n\t\"userName\": \"userdata__userName--1P15N\",\n\t\"createdAt\": \"userdata__createdAt--3HaYo\",\n\t\"publishedLabel\": \"userdata__publishedLabel--3TfSn\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/UserData/userdata.css?");
+eval("// Exports\nmodule.exports = {\n\t\"metaData\": \"src-shared-LayoutApp-CardList-Card-TextContent-UserData-userdata__metaData--1Z21l\",\n\t\"userLink\": \"src-shared-LayoutApp-CardList-Card-TextContent-UserData-userdata__userLink--2ARi8\",\n\t\"avatar\": \"src-shared-LayoutApp-CardList-Card-TextContent-UserData-userdata__avatar--2uZuS\",\n\t\"userName\": \"src-shared-LayoutApp-CardList-Card-TextContent-UserData-userdata__userName--1P15N\",\n\t\"createdAt\": \"src-shared-LayoutApp-CardList-Card-TextContent-UserData-userdata__createdAt--3HaYo\",\n\t\"publishedLabel\": \"src-shared-LayoutApp-CardList-Card-TextContent-UserData-userdata__publishedLabel--3TfSn\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/UserData/userdata.css?");
 
 /***/ }),
 
@@ -596,7 +631,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"textContent\": \"textcontent__textContent--24K2d\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/textcontent.css?");
+eval("// Exports\nmodule.exports = {\n\t\"textContent\": \"src-shared-LayoutApp-CardList-Card-TextContent-textcontent__textContent--24K2d\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/TextContent/textcontent.css?");
 
 /***/ }),
 
@@ -607,7 +642,7 @@ eval("// Exports\nmodule.exports = {\n\t\"textContent\": \"textcontent__textCont
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"card\": \"card__card--20YfB\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/card.css?");
+eval("// Exports\nmodule.exports = {\n\t\"card\": \"src-shared-LayoutApp-CardList-Card-card__card--20YfB\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/Card/card.css?");
 
 /***/ }),
 
@@ -642,7 +677,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"cardsList\": \"cardlist__cardsList--Ijeip\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/cardlist.css?");
+eval("// Exports\nmodule.exports = {\n\t\"cardsList\": \"src-shared-LayoutApp-CardList-cardlist__cardsList--Ijeip\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/CardList/cardlist.css?");
 
 /***/ }),
 
@@ -677,7 +712,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"content\": \"content__content--2Da88\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Content/content.css?");
+eval("// Exports\nmodule.exports = {\n\t\"content\": \"src-shared-LayoutApp-Content-content__content--2Da88\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Content/content.css?");
 
 /***/ }),
 
@@ -700,7 +735,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"container\": \"dropdown__container--1jAab\",\n\t\"listContainer\": \"dropdown__listContainer--2wmC1\",\n\t\"list\": \"dropdown__list--38bgp\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Dropdown/dropdown.css?");
+eval("// Exports\nmodule.exports = {\n\t\"container\": \"src-shared-LayoutApp-Dropdown-dropdown__container--1jAab\",\n\t\"listContainer\": \"src-shared-LayoutApp-Dropdown-dropdown__listContainer--2wmC1\",\n\t\"list\": \"src-shared-LayoutApp-Dropdown-dropdown__list--38bgp\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Dropdown/dropdown.css?");
 
 /***/ }),
 
@@ -760,7 +795,42 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.SearchBlock = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar searchblock_css_1 = __importDefault(__webpack_require__(/*! ./searchblock.css */ \"./src/shared/LayoutApp/Header/SearchBlock/searchblock.css\"));\r\nfunction SearchBlock() {\r\n    return (react_1.default.createElement(\"div\", { className: searchblock_css_1.default.searchBlock }, \"search block\"));\r\n}\r\nexports.SearchBlock = SearchBlock;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/SearchBlock/SearchBlock.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.SearchBlock = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar searchblock_css_1 = __importDefault(__webpack_require__(/*! ./searchblock.css */ \"./src/shared/LayoutApp/Header/SearchBlock/searchblock.css\"));\r\nvar UserBlock_1 = __webpack_require__(/*! ./UserBlock */ \"./src/shared/LayoutApp/Header/SearchBlock/UserBlock/index.ts\");\r\nfunction SearchBlock() {\r\n    return (react_1.default.createElement(\"div\", { className: searchblock_css_1.default.searchBlock },\r\n        react_1.default.createElement(UserBlock_1.UserBlock, null)));\r\n}\r\nexports.SearchBlock = SearchBlock;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/SearchBlock/SearchBlock.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/Header/SearchBlock/UserBlock/UserBlock.tsx":
+/*!*************************************************************************!*\
+  !*** ./src/shared/LayoutApp/Header/SearchBlock/UserBlock/UserBlock.tsx ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.UserBlock = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar userblock_css_1 = __importDefault(__webpack_require__(/*! ./userblock.css */ \"./src/shared/LayoutApp/Header/SearchBlock/UserBlock/userblock.css\"));\r\nvar Icons_1 = __webpack_require__(/*! ../../../Icons */ \"./src/shared/LayoutApp/Icons/index.ts\");\r\nvar Break_1 = __webpack_require__(/*! ../../../../Break */ \"./src/shared/Break/index.ts\");\r\nvar Text_1 = __webpack_require__(/*! ../../../../Text */ \"./src/shared/Text/index.ts\");\r\nfunction UserBlock(_a) {\r\n    var avatarSrc = _a.avatarSrc, username = _a.username;\r\n    return (react_1.default.createElement(\"a\", { href: \"https://www.reddit.com/api/v1/authorize?client_id=SCJobOW3EGzptg&response_type=code&state=random_string&redirect_uri=http://localhost:3000/auth&duration=permanent&scope=read submit identity\", className: userblock_css_1.default.userBox },\r\n        react_1.default.createElement(\"div\", { className: userblock_css_1.default.avatarBox }, avatarSrc\r\n            ? react_1.default.createElement(\"img\", { src: avatarSrc, alt: \"user avatar\", className: userblock_css_1.default.avatarImage })\r\n            : react_1.default.createElement(Icons_1.AnonIcon, null)),\r\n        react_1.default.createElement(\"div\", { className: userblock_css_1.default.username },\r\n            react_1.default.createElement(Break_1.Break, { size: 12 }),\r\n            react_1.default.createElement(Text_1.Text, { size: 20, color: username ? Text_1.EColor.black : Text_1.EColor.gray99 }, username || \"Аноним\"))));\r\n}\r\nexports.UserBlock = UserBlock;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/SearchBlock/UserBlock/UserBlock.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/Header/SearchBlock/UserBlock/index.ts":
+/*!********************************************************************!*\
+  !*** ./src/shared/LayoutApp/Header/SearchBlock/UserBlock/index.ts ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./UserBlock */ \"./src/shared/LayoutApp/Header/SearchBlock/UserBlock/UserBlock.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/SearchBlock/UserBlock/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/Header/SearchBlock/UserBlock/userblock.css":
+/*!*************************************************************************!*\
+  !*** ./src/shared/LayoutApp/Header/SearchBlock/UserBlock/userblock.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"userBox\": \"src-shared-LayoutApp-Header-SearchBlock-UserBlock-userblock__userBox--3Irgt\",\n\t\"avatarBox\": \"src-shared-LayoutApp-Header-SearchBlock-UserBlock-userblock__avatarBox--o6BzF\",\n\t\"avatarImage\": \"src-shared-LayoutApp-Header-SearchBlock-UserBlock-userblock__avatarImage--7nxkA\",\n\t\"username\": \"src-shared-LayoutApp-Header-SearchBlock-UserBlock-userblock__username--NSrUo\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/SearchBlock/UserBlock/userblock.css?");
 
 /***/ }),
 
@@ -771,7 +841,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"searchBlock\": \"searchblock__searchBlock--2jdFN\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/SearchBlock/searchblock.css?");
+eval("// Exports\nmodule.exports = {\n\t\"searchBlock\": \"src-shared-LayoutApp-Header-SearchBlock-searchblock__searchBlock--2jdFN\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/SearchBlock/searchblock.css?");
 
 /***/ }),
 
@@ -794,7 +864,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"sortBlock\": \"sortblock__sortBlock--3iOiL\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/SortBlock/sortblock.css?");
+eval("// Exports\nmodule.exports = {\n\t\"sortBlock\": \"src-shared-LayoutApp-Header-SortBlock-sortblock__sortBlock--3iOiL\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/SortBlock/sortblock.css?");
 
 /***/ }),
 
@@ -817,7 +887,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"threadTitle\": \"threadtitle__threadTitle--28P-A\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/ThreadTitle/threadtitle.css?");
+eval("// Exports\nmodule.exports = {\n\t\"threadTitle\": \"src-shared-LayoutApp-Header-ThreadTitle-threadtitle__threadTitle--28P-A\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/ThreadTitle/threadtitle.css?");
 
 /***/ }),
 
@@ -828,7 +898,7 @@ eval("// Exports\nmodule.exports = {\n\t\"threadTitle\": \"threadtitle__threadTi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"header\": \"header__header--2Seov\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/header.css?");
+eval("// Exports\nmodule.exports = {\n\t\"header\": \"src-shared-LayoutApp-Header-header__header--2Seov\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/header.css?");
 
 /***/ }),
 
@@ -841,6 +911,18 @@ eval("// Exports\nmodule.exports = {\n\t\"header\": \"header__header--2Seov\"\n}
 
 "use strict";
 eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Header */ \"./src/shared/LayoutApp/Header/Header.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Header/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/LayoutApp/Icons/AnonIcon.tsx":
+/*!*************************************************!*\
+  !*** ./src/shared/LayoutApp/Icons/AnonIcon.tsx ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.AnonIcon = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nfunction AnonIcon() {\r\n    return (react_1.default.createElement(\"svg\", { width: \"50\", height: \"50\", viewBox: \"0 0 50 50\", fill: \"none\", xmlns: \"http://www.w3.org/2000/svg\" },\r\n        react_1.default.createElement(\"path\", { d: \"M25 0C11.2 0 0 11.2 0 25C0 38.8 11.2 50 25 50C38.8 50 50 38.8 50 25C50 11.2 38.8 0 25 0ZM25 7.5C29.15 7.5 32.5 10.85 32.5 15C32.5 19.15 29.15 22.5 25 22.5C20.85 22.5 17.5 19.15 17.5 15C17.5 10.85 20.85 7.5 25 7.5ZM25 43C18.75 43 13.225 39.8 10 34.95C10.075 29.975 20 27.25 25 27.25C29.975 27.25 39.925 29.975 40 34.95C36.775 39.8 31.25 43 25 43Z\", fill: \"#D9D9D9\" })));\r\n}\r\nexports.AnonIcon = AnonIcon;\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Icons/AnonIcon.tsx?");
 
 /***/ }),
 
@@ -924,7 +1006,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./MenuIcon */ \"./src/shared/LayoutApp/Icons/MenuIcon.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./CommentIcon */ \"./src/shared/LayoutApp/Icons/CommentIcon.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./ShareIcon */ \"./src/shared/LayoutApp/Icons/ShareIcon.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./BlockIcon */ \"./src/shared/LayoutApp/Icons/BlockIcon.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./SaveIcon */ \"./src/shared/LayoutApp/Icons/SaveIcon.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./WarningIcon */ \"./src/shared/LayoutApp/Icons/WarningIcon.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Icons/index.ts?");
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./MenuIcon */ \"./src/shared/LayoutApp/Icons/MenuIcon.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./CommentIcon */ \"./src/shared/LayoutApp/Icons/CommentIcon.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./ShareIcon */ \"./src/shared/LayoutApp/Icons/ShareIcon.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./BlockIcon */ \"./src/shared/LayoutApp/Icons/BlockIcon.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./SaveIcon */ \"./src/shared/LayoutApp/Icons/SaveIcon.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./WarningIcon */ \"./src/shared/LayoutApp/Icons/WarningIcon.tsx\"), exports);\r\n__exportStar(__webpack_require__(/*! ./AnonIcon */ \"./src/shared/LayoutApp/Icons/AnonIcon.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Icons/index.ts?");
 
 /***/ }),
 
@@ -959,7 +1041,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"layout\": \"layout__layout--3NsrO\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Layout/layout.css?");
+eval("// Exports\nmodule.exports = {\n\t\"layout\": \"src-shared-LayoutApp-Layout-layout__layout--3NsrO\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/LayoutApp/Layout/layout.css?");
 
 /***/ }),
 
@@ -994,7 +1076,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"s28\": \"text__s28--Puvgs\",\n\t\"s20\": \"text__s20--3Xq66\",\n\t\"s16\": \"text__s16--G_lUr\",\n\t\"s14\": \"text__s14--jvCoO\",\n\t\"s12\": \"text__s12--2S2T2\",\n\t\"s10\": \"text__s10--DYLfy\",\n\t\"black\": \"text__black--1zchg\",\n\t\"orange\": \"text__orange--1RyAM\",\n\t\"green\": \"text__green--3mYQn\",\n\t\"white\": \"text__white--13JGE\",\n\t\"grayF4\": \"text__grayF4--2X2jV\",\n\t\"grayF3\": \"text__grayF3--1zp-f\",\n\t\"grayEC\": \"text__grayEC--3Eu3l\",\n\t\"grayD9\": \"text__grayD9--3Y4yY\",\n\t\"grayC4\": \"text__grayC4--3U0c5\",\n\t\"gray99\": \"text__gray99--DhweW\",\n\t\"gray66\": \"text__gray66--3ORMR\",\n\t\"bold\": \"text__bold--gb02H\",\n\t\"m28\": \"text__m28--2u2zs\",\n\t\"m20\": \"text__m20--1gFlM\",\n\t\"m16\": \"text__m16--cSY4u\",\n\t\"m14\": \"text__m14--s6pnr\",\n\t\"m12\": \"text__m12--1W0av\",\n\t\"m10\": \"text__m10--UtIkW\",\n\t\"t28\": \"text__t28--A4rHF\",\n\t\"t20\": \"text__t20--78tCz\",\n\t\"t16\": \"text__t16--nkVMz\",\n\t\"t14\": \"text__t14--1Rj72\",\n\t\"t12\": \"text__t12--7txjW\",\n\t\"t10\": \"text__t10--n2R7f\",\n\t\"d28\": \"text__d28--3oIok\",\n\t\"d20\": \"text__d20--uwHxr\",\n\t\"d16\": \"text__d16--1Pwd1\",\n\t\"d14\": \"text__d14--3Futo\",\n\t\"d12\": \"text__d12--5X_qc\",\n\t\"d10\": \"text__d10--3pWnc\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/Text/text.css?");
+eval("// Exports\nmodule.exports = {\n\t\"s28\": \"src-shared-Text-text__s28--Puvgs\",\n\t\"s20\": \"src-shared-Text-text__s20--3Xq66\",\n\t\"s16\": \"src-shared-Text-text__s16--G_lUr\",\n\t\"s14\": \"src-shared-Text-text__s14--jvCoO\",\n\t\"s12\": \"src-shared-Text-text__s12--2S2T2\",\n\t\"s10\": \"src-shared-Text-text__s10--DYLfy\",\n\t\"black\": \"src-shared-Text-text__black--1zchg\",\n\t\"orange\": \"src-shared-Text-text__orange--1RyAM\",\n\t\"green\": \"src-shared-Text-text__green--3mYQn\",\n\t\"white\": \"src-shared-Text-text__white--13JGE\",\n\t\"grayF4\": \"src-shared-Text-text__grayF4--2X2jV\",\n\t\"grayF3\": \"src-shared-Text-text__grayF3--1zp-f\",\n\t\"grayEC\": \"src-shared-Text-text__grayEC--3Eu3l\",\n\t\"grayD9\": \"src-shared-Text-text__grayD9--3Y4yY\",\n\t\"grayC4\": \"src-shared-Text-text__grayC4--3U0c5\",\n\t\"gray99\": \"src-shared-Text-text__gray99--DhweW\",\n\t\"gray66\": \"src-shared-Text-text__gray66--3ORMR\",\n\t\"bold\": \"src-shared-Text-text__bold--gb02H\",\n\t\"m28\": \"src-shared-Text-text__m28--2u2zs\",\n\t\"m20\": \"src-shared-Text-text__m20--1gFlM\",\n\t\"m16\": \"src-shared-Text-text__m16--cSY4u\",\n\t\"m14\": \"src-shared-Text-text__m14--s6pnr\",\n\t\"m12\": \"src-shared-Text-text__m12--1W0av\",\n\t\"m10\": \"src-shared-Text-text__m10--UtIkW\",\n\t\"t28\": \"src-shared-Text-text__t28--A4rHF\",\n\t\"t20\": \"src-shared-Text-text__t20--78tCz\",\n\t\"t16\": \"src-shared-Text-text__t16--nkVMz\",\n\t\"t14\": \"src-shared-Text-text__t14--1Rj72\",\n\t\"t12\": \"src-shared-Text-text__t12--7txjW\",\n\t\"t10\": \"src-shared-Text-text__t10--n2R7f\",\n\t\"d28\": \"src-shared-Text-text__d28--3oIok\",\n\t\"d20\": \"src-shared-Text-text__d20--uwHxr\",\n\t\"d16\": \"src-shared-Text-text__d16--1Pwd1\",\n\t\"d14\": \"src-shared-Text-text__d14--3Futo\",\n\t\"d12\": \"src-shared-Text-text__d12--5X_qc\",\n\t\"d10\": \"src-shared-Text-text__d10--3pWnc\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/Text/text.css?");
 
 /***/ }),
 
