@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./icon.css"
 import classNames from "classnames"
-import {BlockIcon, CommentIcon, MenuIcon, SaveIcon, ShareIcon, WarningIcon} from "../LayoutApp/Icons";
+import {AnonIcon, BlockIcon, CommentIcon, MenuIcon, SaveIcon, ShareIcon, WarningIcon} from "../LayoutApp/Icons";
 
 export enum EIcons {
     block,
@@ -10,9 +10,10 @@ export enum EIcons {
     saving,
     shared,
     warning,
+    anon
 }
 
-type TSizes = 12 | 14 | 16 | 20 | 24 | 32 | 40
+type TSizes = 12 | 14 | 16 | 20 | 24 | 32 | 40 | 50
 
 interface IIconProps {
     name: EIcons;
@@ -36,6 +37,8 @@ const getIcon = (name: EIcons) => {
             return <ShareIcon/>
         case EIcons.warning:
             return <WarningIcon/>
+        case EIcons.anon:
+            return <AnonIcon/>
     }
 }
 

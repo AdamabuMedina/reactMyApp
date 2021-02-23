@@ -28,11 +28,11 @@
 }
 
 .username {
-    display: none;
+    display: flex;
 }
 
 @media all and(min-width: 1024px) {
     .username {
-        display: flex;
+        display: none;
     }
 }
