@@ -5,12 +5,15 @@ import "./main.global.css"
 import {Header} from "./shared/LayoutApp/Header";
 import {Content} from "./shared/LayoutApp/Content/Content";
 import {CardList} from "./shared/LayoutApp/CardList";
+import { useToken } from "./hooks/useToken";
 
 
 function AppComponent() {
+const [token] = useToken()
+
     return (
         <Layout>
-            <Header/>
+            <Header token={token}/>
             <Content>
                 <CardList/>
             </Content>

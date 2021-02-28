@@ -1,38 +1,40 @@
 .userBox {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .userBox:hover span {
-    color: var(--orange)
+  color: var(--orange);
 }
 
 .userBox:hover .avatarBox {
-    box-shadow: 0 0 0 1px var(--orange);
+  box-shadow: 0 0 0 1px var(--orange);
 }
 
 .avatarBox {
-    width: 60px;
-    height: 60px;
-    padding: 5px;
-    border-radius: 100%;
-    box-shadow: none;
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  border-radius: 100%;
+  box-shadow: none;
 }
 
 .avatarImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100%;
 }
 
 .username {
-    display: flex;
+  padding-left: 12px;
+  font-size: 20px;
+  display: none;
 }
 
 @media all and(min-width: 1024px) {
-    .username {
-        display: none;
-    }
+  .username {
+    display: flex;
+  }
 }
