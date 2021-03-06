@@ -9,7 +9,7 @@ import { useToken } from "./hooks/useToken";
 
 
 function AppComponent() {
-const [token] = useToken()
+    const [token] = useToken()
 
     return (
         <Layout>
