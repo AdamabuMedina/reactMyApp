@@ -1,0 +1,7 @@
+.closeButton {
+  font-size: 14px;
+  padding: 10px 13px;
+  width: 100%;
+  background-color: var(--greyD9);
+  cursor: pointer;
+}

@@ -1,0 +1,15 @@
+.controls {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 1024px) {
+  .controls {
+    flex: 0 0 10%;
+    order: 2;
+    padding: 0;
+  }
+}

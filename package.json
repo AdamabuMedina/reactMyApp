@@ -1,28 +1,32 @@
 {
-  "name": "reactmyapp",
+  "name": "sbreact",
   "version": "1.0.0",
-  "description": "",
+  "description": "Skillbox react course",
   "main": "index.js",
   "scripts": {
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
     "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "dev": "cross-env NODE_ENV=development CLIENT_ID=SCJobOW3EGzptg node ./bin/dev.js",
-    "test": "jest"
+    "test": "test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AdamabuMedina/reactMyApp.git"
-  },
-  "author": "Adam Barkinkhoev",
-  "license": "MIT",
+  "keywords": [
+    "React",
+    "Skillbox"
+  ],
   "bugs": {
     "url": "https://github.com/AdamabuMedina/reactMyApp/issues"
   },
   "homepage": "https://github.com/AdamabuMedina/reactMyApp#readme",
+  "author": "Adam Barkinkhoev <adamabujamila@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamabuMedina/reactMyApp.git"
+  },
   "devDependencies": {
     "@hot-loader/react-dom": "^17.0.0-rc.2",
     "@types/classnames": "^2.2.11",
-    "@types/jest": "^26.0.20",
+    "@types/jest": "^26.0.19",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "classnames": "^2.2.6",

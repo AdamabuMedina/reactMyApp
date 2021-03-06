@@ -1,7 +1,0 @@
-export * from "./MenuIcon"
-export * from "./CommentIcon"
-export * from "./ShareIcon"
-export * from "./BlockIcon"
-export * from "./SaveIcon"
-export * from "./WarningIcon"
-export * from "./AnonIcon"
