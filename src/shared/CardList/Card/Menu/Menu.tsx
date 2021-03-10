@@ -1,6 +1,6 @@
 import React from 'react'
 import { Dropdown } from '../../../Dropdown/Dropdown'
-import IconMenu from '../../../Icons/IconMenu'
+import {IconMenu} from '../../../Icons/IconMenu'
 import CloseButton from './CloseButton/CloseButton'
 import styles from './menu.css'
 import MenuItem from './MenuItem/MenuItem'
@@ -13,7 +13,7 @@ export function Menu() {
           <IconMenu />
         </button>}>
         <div className={styles.menuContainer}>
-          <MenuItem />  
+          <MenuItem />
           <CloseButton />
         </div>
       </Dropdown>

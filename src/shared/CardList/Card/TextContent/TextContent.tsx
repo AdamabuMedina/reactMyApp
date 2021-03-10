@@ -7,7 +7,7 @@ interface ITextContent {
     title?: string
 }
 
-export function TextContent({name, title}: ITextContent) {
+export function TextContent({name, title="text"}: ITextContent) {
     const [isModalOpened, setIsModalOpened] = React.useState(false)
 
     return (
@@ -35,7 +35,7 @@ export function TextContent({name, title}: ITextContent) {
                     {title}
                 </a>
                 {isModalOpened && (
-                    <Post/>
+                    <Post onClose={() => {setIsModalOpened(false)}}/>
                 )}
             </h2>
         </div>

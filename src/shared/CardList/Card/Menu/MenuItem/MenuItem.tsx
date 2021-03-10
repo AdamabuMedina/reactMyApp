@@ -1,6 +1,6 @@
 import React from 'react'
-import IconHide from '../../../../Icons/IconHide'
-import IconWarning from '../../../../Icons/IconWarning'
+import {IconHide} from '../../../../Icons/IconHide'
+import {IconWarning} from '../../../../Icons/IconWarning'
 import SaveButton from '../../Controls/Actions/SaveButton/SaveButton'
 import ShareButton from '../../Controls/Actions/ShareButton/ShareButton'
 import CommentsButton from '../../Controls/Comments/CommentsButton/CommentsButton'
@@ -42,5 +42,5 @@ export default function MenuItem() {
       </li>
     </ul>
     </>
-  ) 
+  )
 }

@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react'
 import axios from 'axios'
-import tokenContext from '../shared/context/tokenContext'
+import tokenContext from '../context/tokenContext'
 
 interface IPostsData {
   posts?: []

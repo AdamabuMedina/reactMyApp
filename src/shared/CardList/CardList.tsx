@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import PostsContext from '../context/PostsContext';
+import PostsContext from '../../context/PostsContext';
 import {Card} from './Card/Card';
 import styles from './cardList.css';
 

@@ -17,7 +17,6 @@ interface ICardData {
 
 export function Card({posts}: ICard) {
     const {thumbnail, author, title}: ICardData = posts
-    console.log(posts)
 
     function PreviewShow() {
         if (thumbnail) {

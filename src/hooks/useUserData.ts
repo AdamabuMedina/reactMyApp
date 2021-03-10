@@ -1,6 +1,6 @@
 import {useState, useEffect, useContext} from 'react'
 import axios from 'axios'
-import tokenContext from '../shared/context/tokenContext'
+import tokenContext from '../context/tokenContext'
 
 interface IUserData {
   name?: string;

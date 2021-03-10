@@ -7,9 +7,9 @@ import { Header } from './shared/Header/Header';
 import { Content } from './shared/Content/Content';
 import { CardList } from './shared/CardList/CardList';
 import useToken from './hooks/useToken';
-import tokenContext from './shared/context/tokenContext';
-import { UserContextProvider } from './shared/context/userContext';
-import { PostsContextProvider } from './shared/context/PostsContext';
+import tokenContext from './context/tokenContext';
+import { UserContextProvider } from './context/userContext';
+import { PostsContextProvider } from './context/PostsContext';
 
 function AppComponent() {
   const [token] = useToken();

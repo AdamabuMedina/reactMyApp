@@ -1,5 +1,5 @@
 import React from 'react'
-import IconAnon from '../../../Icons/iconAnon'
+import {IconAnon} from '../../../Icons/iconAnon'
 import styles from './userBlock.css'
 
 interface IUserBlockProps {
