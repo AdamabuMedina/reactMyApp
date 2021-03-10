@@ -7,28 +7,31 @@
   color: var(--greyC4);
 }
 
-.down {
-  margin-left: 4px;
+.up {
+  margin-left: 5px;
 }
-
 svg.down {
   transform: rotate(180deg);
 }
 
-@media all and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .karmaCounter {
     display: flex;
     flex-direction: column;
-    margin-left: 73px;
+  }
+
+  .karmaCounter > button.up:hover > svg > path {
+    fill: var(--green);
+  }
+
+  .karmaCounter > button.down:hover > svg > path {
+    fill: var(--orange);
   }
 
   .karmaValue {
-    margin: 0;
-    padding: 7px 0;
-  }
-
-  .down {
-    margin: 0;
-    padding: 0;
+    margin: 7px 0;
+    color: var(--black);
+    font-size: 14px;
+    line-height: 16px;
   }
 }
