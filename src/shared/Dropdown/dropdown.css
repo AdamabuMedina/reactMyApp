@@ -4,7 +4,7 @@
 }
 
 .listContainer {
-  position: relative;
+  position: absolute;
 }
 
 .list {
@@ -13,4 +13,11 @@
   top: 0;
   height: 100%;
   width: 100%;
+}
+
+.button {
+  width: fit-content;
+  float: right;
+  top: 15px;
+  position: relative;
 }

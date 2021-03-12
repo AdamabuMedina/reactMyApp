@@ -1,6 +1,6 @@
 .menu {
   position: absolute;
-  top: 17px;
+  top: 41px;
   right: 15px;
 }
 
@@ -32,10 +32,6 @@
 }
 
 @media all and (min-width: 1024px) {
-  .menu {
-    top: 56px;
-  }
-
   .menuContainer {
     left: -66px;
     right: unset;
