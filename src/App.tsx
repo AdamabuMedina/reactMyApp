@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './main.global.css';
-//import {nanoid} from 'nanoid';
 import { hot } from 'react-hot-loader/root';
 import { Layout } from './shared/Layout/Layout';
 import { Header } from './shared/Header/Header';
@@ -30,4 +29,4 @@ function AppComponent() {
   )
 };
 
-export const App = hot(() => <AppComponent />); 
+export const App = hot(() => <AppComponent />);

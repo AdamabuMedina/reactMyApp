@@ -1,41 +1,37 @@
 import React from 'react'
-import {IconHide} from '../../../../Icons/IconHide'
-import {IconWarning} from '../../../../Icons/IconWarning'
-import SaveButton from '../../Controls/Actions/SaveButton/SaveButton'
-import ShareButton from '../../Controls/Actions/ShareButton/ShareButton'
-import CommentsButton from '../../Controls/Comments/CommentsButton/CommentsButton'
+import { EIcons, Icon } from '../../../../Icons/Icon'
 import styles from './menuItem.css'
 
-export default function MenuItem() {
+export function MenuItem() {
   return (
     <>
     <ul className={styles.menuList}>
       <li className={styles.menuItem}>
-        <CommentsButton />
+        <Icon name={EIcons.message} size={20} />
         <p className={styles.menuItemTitle}>
           Комментарии
         </p>
       </li>
       <li className={styles.menuItem}>
-        <ShareButton />
+        <Icon name={EIcons.share} size={20} />
         <p className={styles.menuItemTitle}>
           Поделиться
         </p>
       </li>
       <li className={styles.menuItem}>
-        <IconHide />
+        <Icon name={EIcons.hide} size={20} />
         <p className={styles.menuItemTitle}>
           Скрыть
         </p>
       </li>
       <li className={styles.menuItem}>
-        <SaveButton />
+        <Icon name={EIcons.save} size={20} />
         <p className={styles.menuItemTitle}>
           Сохранить
         </p>
       </li>
       <li className={styles.menuItem}>
-        <IconWarning />
+        <Icon name={EIcons.complain} size={20}/>
         <p className={styles.menuItemTitle}>
           Пожаловаться
         </p>

@@ -8,7 +8,7 @@ interface IPreview {
 export function Preview({img}: IPreview) {
   return (
     <div className={styles.preview}>
-        <img 
+        <img
         className={styles.previewImg}
         src={img}
         alt=""/>
