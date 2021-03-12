@@ -7,6 +7,8 @@ import { IconMessage } from "./IconMessage";
 import { IconSave } from "./IconSave";
 import { IconShare } from "./IconShare";
 import { IconComment } from "./IconComment";
+import { IconKarmaUp } from "./IconKarmaUp";
+import { IconKarmaDown } from "./IconKarmaDown";
 
 const Icons: { [key in keyof typeof EIcons]: any } = {
    menu: IconMenu,
@@ -16,7 +18,9 @@ const Icons: { [key in keyof typeof EIcons]: any } = {
    share: IconShare,
    hide: IconHide,
    anonIcon: IconAnon,
-   comment: IconComment
+   comment: IconComment,
+   karmaUp: IconKarmaUp,
+   karmaDown: IconKarmaDown,
 }
 
 interface IIconProps {
@@ -32,7 +36,9 @@ export enum EIcons {
    share="share",
    hide="hide",
    anonIcon="anonIcon",
-   comment="comment"
+   comment="comment",
+   karmaUp="karmaUp",
+   karmaDown="karmaDown"
 }
 
 export  function Icon({size, name}: IIconProps) {

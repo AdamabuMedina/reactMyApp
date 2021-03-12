@@ -7,31 +7,31 @@ export function MenuItem() {
     <>
     <ul className={styles.menuList}>
       <li className={styles.menuItem}>
-        <Icon name={EIcons.message} size={20} />
+        <Icon name={EIcons.message} size={14} />
         <p className={styles.menuItemTitle}>
           Комментарии
         </p>
       </li>
       <li className={styles.menuItem}>
-        <Icon name={EIcons.share} size={20} />
+        <Icon name={EIcons.share} size={14} />
         <p className={styles.menuItemTitle}>
           Поделиться
         </p>
       </li>
       <li className={styles.menuItem}>
-        <Icon name={EIcons.hide} size={20} />
+        <Icon name={EIcons.hide} size={14} />
         <p className={styles.menuItemTitle}>
           Скрыть
         </p>
       </li>
       <li className={styles.menuItem}>
-        <Icon name={EIcons.save} size={20} />
+        <Icon name={EIcons.save} size={14} />
         <p className={styles.menuItemTitle}>
           Сохранить
         </p>
       </li>
       <li className={styles.menuItem}>
-        <Icon name={EIcons.complain} size={20}/>
+        <Icon name={EIcons.complain} size={14}/>
         <p className={styles.menuItemTitle}>
           Пожаловаться
         </p>

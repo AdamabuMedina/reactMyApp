@@ -1,29 +1,35 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React from 'react'
 import axios from 'axios'
-import tokenContext from '../context/tokenContext'
+import {tokenContext} from "../context";
 
-interface IPostsData {
-  posts?: []
+interface IPostsItem {
+    id: string
+    text: string
+    onClick: (id: string) => void
 }
 
-export default function usePostsData() {
-  const [post, setPost] = useState<IPostsData>({})
-  const token = useContext(tokenContext)
+export function usePostsData() {
+    const [post, setPosts] = React.useState<IPostsItem[]>([])
+    const token = React.useContext(tokenContext)
 
-  useEffect(() => {
-    axios.get(
-      'https://oauth.reddit.com/best',
-      {
-        headers: { authorization: `bearer ${token}` }
-      }
-    )
-    .then((response) => {
-      const data = response.data.data
-      setPost({posts: data.children})
-    })
-    .catch(console.log)
+    React.useEffect(() => {
+        if (token && token != 'undefined' && token != 'false') {
+            axios.get('https://oauth.reddit.com/best', {
+                headers: {
+                    Authorization: `bearer ${token}`
+                },
+            }).then((resp) => {
+                const bestPosts = resp.data.data.children;
+                bestPosts.map((post: any) => {
+                    post.text = post.data.title;
+                    post.id = post.data.id;
+                })
+                console.log(bestPosts, 'NEW ! posts');
+                setPosts(bestPosts);
+            })
+                .catch(console.log);
+        }
+    }, [token])
 
-  },[token])
-
-  return [post]
+    return [post]
 }

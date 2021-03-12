@@ -1,22 +1,21 @@
-import React, {useContext} from 'react';
-import PostsContext from '../../context/PostsContext';
-import {Card} from './Card/Card';
+import React from 'react';
+import {Card} from './Card';
 import styles from './cardList.css';
+import postContext from "../../context/postContext";
 
 export function CardList() {
-    const {posts} = useContext(PostsContext)
+    const posts = React.useContext(postContext)
 
     return (
         <ul className={styles.cardList}>
-            {posts
-                ? posts.map((item) => {
-                    const {data} = item
-                    return <Card posts={data}/>
-                })
-                : <Card posts="text"/>
+            {
+                posts.length ?
+                    posts.map(({text, id}) => (
+                        <Card text={text} key={id}/>
+                    ))
+                    :
+                    <Card text={"text"}/>
             }
         </ul>
     );
 }
-
-;

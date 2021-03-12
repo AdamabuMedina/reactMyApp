@@ -13,3 +13,28 @@
   padding: 60px;
   box-sizing: border-box;
 }
+
+.modal:hover,
+.modal:focus-within {
+  outline: 1px solid var(--greyD9);
+}
+
+.modal:hover h2 p,
+.modal:focus-within h2 p {
+  color: var(--orange);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 10px 0;
+}
+
+.descr {
+  font-size: 14px;
+  line-height: 24px;
+  color: #333;
+}

@@ -4,10 +4,10 @@ import {Post} from "../../../Post";
 
 interface ITextContent {
     name?: string
-    title?: string
+    text?: string
 }
 
-export function TextContent({name, title="text"}: ITextContent) {
+export function TextContent({name, text}: ITextContent) {
     const [isModalOpened, setIsModalOpened] = React.useState(false)
 
     return (
@@ -32,10 +32,12 @@ export function TextContent({name, title="text"}: ITextContent) {
                 <a href="#post-url" className={styles.postLink} onClick={() => {
                     setIsModalOpened(true)
                 }}>
-                    {title}
+                    {text}
                 </a>
                 {isModalOpened && (
-                    <Post onClose={() => {setIsModalOpened(false)}}/>
+                    <Post onClose={() => {
+                        setIsModalOpened(false)
+                    }}/>
                 )}
             </h2>
         </div>

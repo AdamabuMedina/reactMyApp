@@ -8,7 +8,7 @@ export type comment ={
    ref?: any,
    visibleComment?: boolean,
    id: number,
-   comments: Array<comment>
+   comments?: Array<comment>
 }
 
 type commentContextType ={

@@ -28,8 +28,8 @@ export function CommentForm(
             >
                 {
                     uncontrolled ?
-                    <textarea ref={myRef} className={styles.input}/> :
-                    <textarea ref={myRef} className={styles.input} value={value} onChange={handleChange}/>
+                    <textarea ref={myRef} className={styles.input} placeholder="Введите комментарий"/> :
+                    <textarea ref={myRef} className={styles.input} value={value} onChange={handleChange} placeholder="Введите комментарий"/>
                 }
                 <button className={styles.button} type="submit">Comment</button>
             </form>

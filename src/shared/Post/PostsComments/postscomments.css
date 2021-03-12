@@ -23,7 +23,7 @@
 }
 
 .down:hover path {
-  fill: var(--red);
+  fill: var(--orange);
 }
 
 .greyPillar {
@@ -58,6 +58,7 @@
 .username {
   color: var(--orange);
   padding-left: 7px;
+  margin: 5px 0;
 }
 
 .username:hover {
@@ -74,7 +75,7 @@
 }
 
 .category {
-  margin-left: 10px;
+  margin: 10px 0 10px 10px;
   padding: 2px 7px 4px 7px;
   background-color: var(--greyD9);
   color: var(--black);
@@ -82,6 +83,10 @@
 
 .commentText {
   margin-bottom: 30px;
+}
+
+.commentDescr {
+  margin: 10px 0;
 }
 
 .commentAction {

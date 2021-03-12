@@ -7,15 +7,15 @@ interface IPostsItem {
     onClick: (id: string) => void
 }
 
-const postsContext = React.createContext<IPostsItem[]>([])
-export default postsContext
+const postContext = React.createContext<IPostsItem[]>([])
+export default postContext
 
 export function PostsContextProvider({children}: { children: React.ReactNode }) {
     const [posts] = usePostsData()
 
     return (
-        <postsContext.Provider value={posts}>
+        <postContext.Provider value={posts}>
             {children}
-        </postsContext.Provider>
+        </postContext.Provider>
     )
 }
