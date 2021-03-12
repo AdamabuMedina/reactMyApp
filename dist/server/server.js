@@ -98,6 +98,18 @@ eval("\r\n/*\r\n  MIT License http://www.opensource.org/licenses/mit-license.php
 
 /***/ }),
 
+/***/ "./node_modules/redux-devtools-extension/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/redux-devtools-extension/index.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar compose = __webpack_require__(/*! redux */ \"redux\").compose;\r\nexports.__esModule = true;\r\nexports.composeWithDevTools =\r\n    typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__\r\n        ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__\r\n        : function () {\r\n            if (arguments.length === 0)\r\n                return undefined;\r\n            if (typeof arguments[0] === 'object')\r\n                return compose;\r\n            return compose.apply(null, arguments);\r\n        };\r\nexports.devToolsEnhancer =\r\n    typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__\r\n        ? window.__REDUX_DEVTOOLS_EXTENSION__\r\n        : function () {\r\n            return function (noop) {\r\n                return noop;\r\n            };\r\n        };\r\n\n\n//# sourceURL=webpack:///./node_modules/redux-devtools-extension/index.js?");
+
+/***/ }),
+
 /***/ "./src/App.tsx":
 /*!*********************!*\
   !*** ./src/App.tsx ***!
@@ -106,7 +118,7 @@ eval("\r\n/*\r\n  MIT License http://www.opensource.org/licenses/mit-license.php
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.App = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\n__webpack_require__(/*! ./main.global.css */ \"./src/main.global.css\");\r\nvar root_1 = __webpack_require__(/*! react-hot-loader/root */ \"react-hot-loader/root\");\r\nvar Layout_1 = __webpack_require__(/*! ./shared/Layout */ \"./src/shared/Layout/index.ts\");\r\nvar Header_1 = __webpack_require__(/*! ./shared/Header/Header */ \"./src/shared/Header/Header.tsx\");\r\nvar Content_1 = __webpack_require__(/*! ./shared/Content */ \"./src/shared/Content/index.ts\");\r\nvar CardList_1 = __webpack_require__(/*! ./shared/CardList */ \"./src/shared/CardList/index.ts\");\r\nvar context_1 = __webpack_require__(/*! ./context */ \"./src/context/index.ts\");\r\nvar postContext_1 = __webpack_require__(/*! ./context/postContext */ \"./src/context/postContext.tsx\");\r\nvar hooks_1 = __webpack_require__(/*! ./hooks */ \"./src/hooks/index.ts\");\r\nvar commentContext_1 = __webpack_require__(/*! ./context/commentContext */ \"./src/context/commentContext.ts\");\r\nfunction AppComponent() {\r\n    var token = hooks_1.useToken()[0];\r\n    var _a = react_1.default.useState(\"\"), commentValue = _a[0], setCommentValue = _a[1];\r\n    var _b = react_1.default.useState(-1), commentActive = _b[0], setCommentActive = _b[1];\r\n    var CommentProvider = commentContext_1.commentContext.Provider;\r\n    var _c = react_1.default.useState([\r\n        {\r\n            name: \"Adam 1\",\r\n            time: \"1 час назад\",\r\n            text: \"Комментарий 1, Комментарий 1, Комментарий 1\",\r\n            category: \"Спорт\",\r\n            id: 1,\r\n            ref: react_1.default.useRef(null)\r\n        },\r\n        {\r\n            name: \"Adam 2\",\r\n            time: \"2 часа назад\",\r\n            text: \"Комментарий 2, Комментарий 2, Комментарий 2\",\r\n            category: \"Спорт\",\r\n            id: 2,\r\n            ref: react_1.default.useRef(null),\r\n            comments: [\r\n                {\r\n                    name: \"Adam 3\",\r\n                    time: \"3 часа назад\",\r\n                    text: \"Комментарий 3, Комментарий 3, Комментарий 3\",\r\n                    category: \"Спорт\",\r\n                    id: 3,\r\n                    ref: react_1.default.useRef(null)\r\n                },\r\n            ]\r\n        },\r\n        {\r\n            name: \"Adam 4\",\r\n            time: \"24 часа назад\",\r\n            text: \"Комментарий 4, Комментарий 4, Комментарий 4\",\r\n            category: \"Спорт\",\r\n            id: 24,\r\n            ref: react_1.default.useRef(null)\r\n        }\r\n    ]), commentComments = _c[0], setComments = _c[1];\r\n    return (react_1.default.createElement(context_1.tokenContext.Provider, { value: token },\r\n        react_1.default.createElement(CommentProvider, { value: {\r\n                value: commentValue,\r\n                onChange: setCommentValue,\r\n                onChangeActive: setCommentActive,\r\n                activeComment: commentActive,\r\n                allComments: commentComments,\r\n                onChangeComments: setComments,\r\n            } },\r\n            react_1.default.createElement(context_1.UserContextProvider, null,\r\n                react_1.default.createElement(postContext_1.PostsContextProvider, null,\r\n                    react_1.default.createElement(Layout_1.Layout, null,\r\n                        react_1.default.createElement(Header_1.Header, null),\r\n                        react_1.default.createElement(Content_1.Content, null,\r\n                            react_1.default.createElement(CardList_1.CardList, null))))))));\r\n}\r\n;\r\nexports.App = root_1.hot(function () { return react_1.default.createElement(AppComponent, null); });\r\n\n\n//# sourceURL=webpack:///./src/App.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.App = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\n__webpack_require__(/*! ./main.global.css */ \"./src/main.global.css\");\r\nvar root_1 = __webpack_require__(/*! react-hot-loader/root */ \"react-hot-loader/root\");\r\nvar Layout_1 = __webpack_require__(/*! ./shared/Layout */ \"./src/shared/Layout/index.ts\");\r\nvar Header_1 = __webpack_require__(/*! ./shared/Header/Header */ \"./src/shared/Header/Header.tsx\");\r\nvar Content_1 = __webpack_require__(/*! ./shared/Content */ \"./src/shared/Content/index.ts\");\r\nvar CardList_1 = __webpack_require__(/*! ./shared/CardList */ \"./src/shared/CardList/index.ts\");\r\nvar context_1 = __webpack_require__(/*! ./context */ \"./src/context/index.ts\");\r\nvar postContext_1 = __webpack_require__(/*! ./context/postContext */ \"./src/context/postContext.tsx\");\r\nvar hooks_1 = __webpack_require__(/*! ./hooks */ \"./src/hooks/index.ts\");\r\nvar commentContext_1 = __webpack_require__(/*! ./context/commentContext */ \"./src/context/commentContext.ts\");\r\nvar redux_1 = __webpack_require__(/*! redux */ \"redux\");\r\nvar react_redux_1 = __webpack_require__(/*! react-redux */ \"react-redux\");\r\nvar redux_devtools_extension_1 = __webpack_require__(/*! redux-devtools-extension */ \"./node_modules/redux-devtools-extension/index.js\");\r\nvar store = redux_1.createStore(function () { }, redux_devtools_extension_1.composeWithDevTools());\r\nfunction AppComponent() {\r\n    var token = hooks_1.useToken()[0];\r\n    var CommentProvider = commentContext_1.commentContext.Provider;\r\n    var TokenProvider = context_1.tokenContext.Provider;\r\n    var _a = react_1.default.useState(\"\"), commentValue = _a[0], setCommentValue = _a[1];\r\n    var _b = react_1.default.useState(-1), commentActive = _b[0], setCommentActive = _b[1];\r\n    var _c = react_1.default.useState([\r\n        {\r\n            name: \"Adam 1\",\r\n            time: \"1 час назад\",\r\n            text: \"Комментарий 1, Комментарий 1, Комментарий 1\",\r\n            category: \"Спорт\",\r\n            id: 1,\r\n            ref: react_1.default.useRef(null)\r\n        },\r\n        {\r\n            name: \"Adam 2\",\r\n            time: \"2 часа назад\",\r\n            text: \"Комментарий 2, Комментарий 2, Комментарий 2\",\r\n            category: \"Спорт\",\r\n            id: 2,\r\n            ref: react_1.default.useRef(null),\r\n            comments: [\r\n                {\r\n                    name: \"Adam 3\",\r\n                    time: \"3 часа назад\",\r\n                    text: \"Комментарий 3, Комментарий 3, Комментарий 3\",\r\n                    category: \"Спорт\",\r\n                    id: 3,\r\n                    ref: react_1.default.useRef(null)\r\n                },\r\n            ]\r\n        },\r\n        {\r\n            name: \"Adam 4\",\r\n            time: \"24 часа назад\",\r\n            text: \"Комментарий 4, Комментарий 4, Комментарий 4\",\r\n            category: \"Спорт\",\r\n            id: 24,\r\n            ref: react_1.default.useRef(null)\r\n        }\r\n    ]), commentComments = _c[0], setComments = _c[1];\r\n    return (react_1.default.createElement(react_redux_1.Provider, { store: store },\r\n        react_1.default.createElement(CommentProvider, { value: {\r\n                value: commentValue,\r\n                onChange: setCommentValue,\r\n                onChangeActive: setCommentActive,\r\n                activeComment: commentActive,\r\n                allComments: commentComments,\r\n                onChangeComments: setComments,\r\n            } },\r\n            react_1.default.createElement(TokenProvider, { value: token },\r\n                react_1.default.createElement(context_1.UserContextProvider, null,\r\n                    react_1.default.createElement(postContext_1.PostsContextProvider, null,\r\n                        react_1.default.createElement(Layout_1.Layout, null,\r\n                            react_1.default.createElement(Header_1.Header, null),\r\n                            react_1.default.createElement(Content_1.Content, null,\r\n                                react_1.default.createElement(CardList_1.CardList, null)))))))));\r\n}\r\n;\r\nexports.App = root_1.hot(function () { return react_1.default.createElement(AppComponent, null); });\r\n\n\n//# sourceURL=webpack:///./src/App.tsx?");
 
 /***/ }),
 
@@ -1277,6 +1289,28 @@ eval("module.exports = require(\"react-dom/server\");\n\n//# sourceURL=webpack:/
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"react-hot-loader/root\");\n\n//# sourceURL=webpack:///external_%22react-hot-loader/root%22?");
+
+/***/ }),
+
+/***/ "react-redux":
+/*!******************************!*\
+  !*** external "react-redux" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-redux\");\n\n//# sourceURL=webpack:///external_%22react-redux%22?");
+
+/***/ }),
+
+/***/ "redux":
+/*!************************!*\
+  !*** external "redux" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"redux\");\n\n//# sourceURL=webpack:///external_%22redux%22?");
 
 /***/ })
 

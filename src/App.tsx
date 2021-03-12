@@ -9,12 +9,18 @@ import {tokenContext, UserContextProvider} from './context';
 import {PostsContextProvider} from './context/postContext';
 import {useToken} from "./hooks";
 import { comment, commentContext } from './context/commentContext';
+import { createStore } from 'redux';
+import {Provider} from "react-redux"
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+const store = createStore(() => {}, composeWithDevTools())
 
 function AppComponent() {
     const [token] = useToken();
+    const CommentProvider = commentContext.Provider
+    const TokenProvider = tokenContext.Provider
     const [commentValue, setCommentValue] = React.useState("")
     const [commentActive, setCommentActive] = React.useState(-1)
-    const CommentProvider = commentContext.Provider
     const [commentComments, setComments] = React.useState<comment[]|null>(
         [
             {
@@ -56,7 +62,7 @@ function AppComponent() {
     )
 
     return (
-        <tokenContext.Provider value={token}>
+        <Provider store={store}>
             <CommentProvider value={{
                 value: commentValue,
                 onChange: setCommentValue,
@@ -65,18 +71,20 @@ function AppComponent() {
                 allComments: commentComments,
                 onChangeComments: setComments,
             }}>
-            <UserContextProvider>
-                <PostsContextProvider>
-                    <Layout>
-                        <Header/>
-                        <Content>
-                            <CardList/>
-                        </Content>
-                    </Layout>
-                </PostsContextProvider>
-            </UserContextProvider>
+                <TokenProvider value={token}>
+                    <UserContextProvider>
+                        <PostsContextProvider>
+                            <Layout>
+                                <Header/>
+                                <Content>
+                                    <CardList/>
+                                </Content>
+                            </Layout>
+                        </PostsContextProvider>
+                    </UserContextProvider>
+                </TokenProvider>
             </CommentProvider>
-        </tokenContext.Provider>
+        </Provider>
     )
 };
 
