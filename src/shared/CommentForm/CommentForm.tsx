@@ -1,5 +1,6 @@
 import React from "react";
-import { commentContext } from "../../context/commentContext";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState, updateComment } from "../../store";
 import styles from "./commentform.css"
 
 export function CommentForm(
@@ -11,14 +12,15 @@ export function CommentForm(
         uncontrolled?: boolean,
         mainComment?:boolean
     }) {
-        const {value, onChange } = React.useContext(commentContext)
+        const value = useSelector<RootState, string>(state => state.commentText)
+        const dispatch = useDispatch()
 
         function handleSubmit(event: React.FormEvent) {
             event.preventDefault();
         }
 
         function handleChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
-            onChange(event.target.value)
+            dispatch(updateComment(event.target.value))
         }
 
         return (
@@ -31,7 +33,7 @@ export function CommentForm(
                     <textarea ref={myRef} className={styles.input} placeholder="Введите комментарий"/> :
                     <textarea ref={myRef} className={styles.input} value={value} onChange={handleChange} placeholder="Введите комментарий"/>
                 }
-                <button className={styles.button} type="submit">Comment</button>
+                <button className={styles.button} type="submit">Комментировать</button>
             </form>
         )
 }

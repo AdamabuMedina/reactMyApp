@@ -9,11 +9,13 @@ import {tokenContext, UserContextProvider} from './context';
 import {PostsContextProvider} from './context/postContext';
 import {useToken} from "./hooks";
 import { comment, commentContext } from './context/commentContext';
-import { createStore } from 'redux';
 import {Provider} from "react-redux"
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { rootReducer } from './store';
+import { createStore } from 'redux';
 
-const store = createStore(() => {}, composeWithDevTools())
+
+const store = createStore(rootReducer, composeWithDevTools())
 
 function AppComponent() {
     const [token] = useToken();
