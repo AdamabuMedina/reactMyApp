@@ -1,6 +1,7 @@
-import React from 'react'
-import axios from 'axios'
-import {tokenContext} from "../context";
+import { useSelector } from "react-redux";
+import React from "react"
+import axios from "axios"
+import { RootState } from "../store/actionCreator";
 
 interface IPostsItem {
     id: string
@@ -10,11 +11,12 @@ interface IPostsItem {
 
 export function usePostsData() {
     const [post, setPosts] = React.useState<IPostsItem[]>([])
-    const token = React.useContext(tokenContext)
+
+    const token = useSelector<RootState, string>(state => state.token)
 
     React.useEffect(() => {
-        if (token && token != 'undefined' && token != 'false') {
-            axios.get('https://oauth.reddit.com/best', {
+        if (token && token != "undefined" && token != "false") {
+            axios.get("https://oauth.reddit.com/best", {
                 headers: {
                     Authorization: `bearer ${token}`
                 },
@@ -24,7 +26,7 @@ export function usePostsData() {
                     post.text = post.data.title;
                     post.id = post.data.id;
                 })
-                console.log(bestPosts, 'NEW ! posts');
+                console.log(bestPosts, "NEW ! posts");
                 setPosts(bestPosts);
             })
                 .catch(console.log);

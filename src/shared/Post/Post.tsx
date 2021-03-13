@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { CommentForm } from "../CommentForm";
+import { CommentFormContainer } from "../CommentForm/CommentFormContainer";
 import styles from "./post.css"
 import { PostsComments } from "./PostsComments";
 
@@ -37,7 +37,7 @@ export function Post(props: IPost) {
                     Есть над чем задуматься: тщятельное иследование конкурентов представляют собой Есть над чем задуматься: тщятельное иследование конкурентов представляют собой Есть над чем задуматься: тщятельное иследование конкурентов представляют собой Есть над чем задуматься: тщятельное иследование конкурентов представляют собой Есть над чем задуматься: тщятельное иследование конкурентов представляют собой Есть над чем задуматься: тщятельное иследование конкурентов представляют собой
                 </p>
             </div>
-            <CommentForm mainComment={true} uncontrolled={false}/>
+            <CommentFormContainer mainComment={true} uncontrolled={false}/>
             <PostsComments/>
         </div>
     ), node)

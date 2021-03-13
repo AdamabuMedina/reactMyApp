@@ -1,6 +1,7 @@
+import { useSelector } from 'react-redux';
 import React from 'react'
 import axios from 'axios'
-import {tokenContext} from "../context";
+import { RootState } from '../store/actionCreator';
 
 interface IUserData {
     name?: string;
@@ -8,21 +9,27 @@ interface IUserData {
 }
 
 export function useUserData() {
-    const [data, setData] = React.useState<IUserData>({})
-    const token = React.useContext(tokenContext)
+    const [data, setData] = React.useState<IUserData>({
+        name: "",
+        iconImg: "",
+    })
+
+    const token = useSelector<RootState, string>(state => state.token)
 
     React.useEffect(() => {
-        axios.get(
-            'https://oauth.reddit.com/api/v1/me',
-            {
-                headers: {authorization: `bearer ${token}`}
-            }
-        )
-            .then((resp) => {
-                const userData = resp.data
-                setData({name: userData.name, iconImg: userData.icon_img});
-            })
-            .catch(console.log)
+        if (token && token != "undefined" && token != "false") {
+            axios.get(
+                'https://oauth.reddit.com/api/v1/me',
+                {
+                    headers: {authorization: `bearer ${token}`}
+                }
+            )
+                .then((res) => {
+                    const userData = res.data
+                    setData({name: userData.name, iconImg: userData.icon_img});
+                })
+                .catch(console.log)
+        }
     }, [token])
 
     return [data]

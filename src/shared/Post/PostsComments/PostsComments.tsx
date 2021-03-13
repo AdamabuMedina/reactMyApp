@@ -1,6 +1,6 @@
 import React from "react"
 import { comment, commentContext } from "../../../context/commentContext"
-import { CommentForm } from "../../CommentForm";
+import { CommentFormContainer } from "../../CommentForm/CommentFormContainer";
 import { EIcons, Icon } from "../../Icons/Icon";
 import styles from "./postscomments.css"
 
@@ -110,7 +110,7 @@ export function PostsComments({comments}: IPostComments) {
                               <span>Пожаловаться</span>
                            </span>
                         </div>
-                        <CommentForm myRef={ref} uncontrolled={true}/>
+                        <CommentFormContainer myRef={ref} uncontrolled={true}/>
                         {
                            comments &&
                            <div>

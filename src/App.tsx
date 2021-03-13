@@ -5,16 +5,36 @@ import {Layout} from './shared/Layout';
 import {Header} from './shared/Header/Header';
 import {Content} from './shared/Content';
 import {CardList} from './shared/CardList'
-import {tokenContext, UserContextProvider} from './context';
+import { UserContextProvider} from './context';
 import {PostsContextProvider} from './context/postContext';
-import {useToken} from "./hooks";
 import { comment, commentContext } from './context/commentContext';
+import {Provider, useDispatch} from "react-redux"
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore } from 'redux';
+import { rootReducer } from './store/rootReducer';
+import { setToken } from './store/actionCreator';
+
+const store = createStore(rootReducer, composeWithDevTools())
+
+const AppWrapper = () => {
+    return (
+        <Provider store={store}>
+            <AppComponent/>
+        </Provider>
+    )
+}
 
 function AppComponent() {
-    const [token] = useToken();
+    const dispatch = useDispatch()
+    React.useEffect(() => {
+        if (window.__token__) {
+            dispatch(setToken(window.__token__))
+        }
+    }, [])
+
+    const CommentProvider = commentContext.Provider
     const [commentValue, setCommentValue] = React.useState("")
     const [commentActive, setCommentActive] = React.useState(-1)
-    const CommentProvider = commentContext.Provider
     const [commentComments, setComments] = React.useState<comment[]|null>(
         [
             {
@@ -56,15 +76,14 @@ function AppComponent() {
     )
 
     return (
-        <tokenContext.Provider value={token}>
-            <CommentProvider value={{
-                value: commentValue,
-                onChange: setCommentValue,
-                onChangeActive: setCommentActive,
-                activeComment: commentActive,
-                allComments: commentComments,
-                onChangeComments: setComments,
-            }}>
+        <CommentProvider value={{
+            value: commentValue,
+            onChange: setCommentValue,
+            onChangeActive: setCommentActive,
+            activeComment: commentActive,
+            allComments: commentComments,
+            onChangeComments: setComments,
+        }}>
             <UserContextProvider>
                 <PostsContextProvider>
                     <Layout>
@@ -75,9 +94,8 @@ function AppComponent() {
                     </Layout>
                 </PostsContextProvider>
             </UserContextProvider>
-            </CommentProvider>
-        </tokenContext.Provider>
+        </CommentProvider>
     )
 };
 
-export const App = hot(() => <AppComponent/>);
+export const App = hot(() => <AppWrapper/>);

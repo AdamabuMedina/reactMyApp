@@ -1,37 +1,32 @@
 import React from "react";
-import { commentContext } from "../../context/commentContext";
 import styles from "./commentform.css"
 
-export function CommentForm(
-    {
-        myRef,
-        uncontrolled=true,
-        mainComment=false}:
-        {myRef?: React.Ref<HTMLTextAreaElement>,
-        uncontrolled?: boolean,
-        mainComment?:boolean
-    }) {
-        const {value, onChange } = React.useContext(commentContext)
+interface ICommentForm {
+    myRef?: React.Ref<HTMLTextAreaElement>,
+    uncontrolled?: boolean,
+    mainComment?: boolean,
+    value: string,
+    onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,
+    onSubmit: (event: React.FormEvent) => void,
+}
 
-        function handleSubmit(event: React.FormEvent) {
-            event.preventDefault();
-        }
-
-        function handleChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
-            onChange(event.target.value)
-        }
+export function CommentForm({
+    myRef, uncontrolled=true, mainComment=false, onChange, onSubmit, value
+    }: ICommentForm) {
 
         return (
             <form
                 className={mainComment? styles.form:styles.hidden}
-                onSubmit={handleSubmit}
+                onSubmit={onSubmit}
             >
                 {
                     uncontrolled ?
                     <textarea ref={myRef} className={styles.input} placeholder="Введите комментарий"/> :
-                    <textarea ref={myRef} className={styles.input} value={value} onChange={handleChange} placeholder="Введите комментарий"/>
+                    <textarea ref={myRef} className={styles.input} value={value} onChange={onChange} placeholder="Введите комментарий"/>
                 }
-                <button className={styles.button} type="submit">Comment</button>
+                <button className={styles.button} type="submit">
+                    Комментировать
+                </button>
             </form>
         )
 }
