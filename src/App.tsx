@@ -24,16 +24,28 @@ const store = createStore(rootReducer, composeWithDevTools(
 
 const AppWrapper = () => {
     return (
+<<<<<<< HEAD
         <Provider store={store}>
             <AppComponent />
         </Provider>
+=======
+      <Provider store={store}>
+        <AppComponent />
+      </Provider>
+>>>>>>> 4a6617dcd040d70e2c76b823b2fffebfdeccf1ca
     )
-}
+  }
 
 function AppComponent() {
     const dispatch = useDispatch();
     React.useEffect(() => {
+<<<<<<< HEAD
         dispatch(saveToken());
+=======
+    if (window.__token__) {
+            dispatch(setToken(window.__token__));
+        }
+>>>>>>> 4a6617dcd040d70e2c76b823b2fffebfdeccf1ca
     }, []);
 
     const CommentProvider = commentContext.Provider
