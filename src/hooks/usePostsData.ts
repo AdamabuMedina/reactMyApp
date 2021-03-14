@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import React from "react"
 import axios from "axios"
-import { RootState } from "../store/actionCreator";
+import { RootState } from "../store/rootReducer";
 
 interface IPostsItem {
     id: string

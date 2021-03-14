@@ -11,8 +11,7 @@ import { comment, commentContext } from './context/commentContext';
 import {Provider, useDispatch} from "react-redux"
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {  applyMiddleware, createStore } from 'redux';
-import { rootReducer } from './store/rootReducer';
-import {  setToken } from './store/actionCreator';
+import { rootReducer, setToken } from './store/rootReducer';
 import thunk from 'redux-thunk';
 
 const store = createStore(rootReducer, composeWithDevTools(

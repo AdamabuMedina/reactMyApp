@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.userBox:hover  span{
+.userBox:hover span {
   color: var(--orange);
 }
 
@@ -28,7 +28,6 @@
 }
 
 .username {
-  padding-left: 12px;
   font-size: 20px;
   display: none;
 }

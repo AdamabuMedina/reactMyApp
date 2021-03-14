@@ -1,14 +1,17 @@
 import React from 'react'
+import { Break } from '../../../Break'
 import {IconAnon} from '../../../Icons/iconAnon'
+import { EColors, Text } from '../../../Text'
 import styles from './userBlock.css'
 
 interface IUserBlockProps {
   avatarSrc?: string
   username?: string
+  loading?: boolean
 }
 
 
-export function UserBlock({ avatarSrc, username }: IUserBlockProps) {
+export function UserBlock({ avatarSrc, username, loading }: IUserBlockProps) {
 
   return (
     <a
@@ -23,9 +26,17 @@ export function UserBlock({ avatarSrc, username }: IUserBlockProps) {
         }
       </div>
       <div className={styles.username}>
-        <span>
-          {username || 'Аноним'}
-        </span>
+        <Break size={12}/>
+        {loading ? (
+            <Text size={20} color={EColors.grey99}>
+              Загрузка...
+            </Text>
+          ) : (
+            <Text size={20} color={username ? EColors.black : EColors.grey99}>
+              {username || "Аноним"}
+            </Text>
+          )
+        }
       </div>
     </a>
   )
