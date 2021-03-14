@@ -10,20 +10,27 @@ import {PostsContextProvider} from './context/postContext';
 import { comment, commentContext } from './context/commentContext';
 import {Provider, useDispatch} from "react-redux"
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { applyMiddleware, createStore, Middleware } from 'redux';
+import { Action, applyMiddleware, createStore, Middleware } from 'redux';
 import { rootReducer } from './store/rootReducer';
-import { setToken } from './store/actionCreator';
+import { RootState, setToken } from './store/actionCreator';
+import thunk, { ThunkAction } from 'redux-thunk';
 
-const logger: Middleware = (store) => (next) => (action) => {
-    next(action)
+const store = createStore(rootReducer, composeWithDevTools(
+    applyMiddleware(thunk)))
+
+const timeout = (): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch, _getState) => {
+    dispatch({type: "START"})
+    setTimeout(() => {
+        dispatch({type: "FINISH"})
+    }, 1500)
 }
-
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(logger)))
 
 function AppComponent() {
     React.useEffect(() => {
         const token = localStorage.getItem("token") || window.__token__
         store.dispatch(setToken(token))
+        // @ts-ignore
+        store.dispatch(timeout())
         if (token) {
             localStorage.setItem("token", token)
         }
