@@ -18,19 +18,19 @@ const store = createStore(rootReducer, composeWithDevTools())
 
 const AppWrapper = () => {
     return (
-        <Provider store={store}>
-            <AppComponent/>
-        </Provider>
+      <Provider store={store}>
+        <AppComponent />
+      </Provider>
     )
-}
+  }
 
 function AppComponent() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     React.useEffect(() => {
-        if (window.__token__) {
-            dispatch(setToken(window.__token__))
+    if (window.__token__) {
+            dispatch(setToken(window.__token__));
         }
-    }, [])
+    }, []);
 
     const CommentProvider = commentContext.Provider
     const [commentValue, setCommentValue] = React.useState("")
