@@ -10,31 +10,29 @@ import {PostsContextProvider} from './context/postContext';
 import { comment, commentContext } from './context/commentContext';
 import {Provider, useDispatch} from "react-redux"
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { Action, applyMiddleware, createStore, Middleware } from 'redux';
+import {  applyMiddleware, createStore } from 'redux';
 import { rootReducer } from './store/rootReducer';
-import { RootState, setToken } from './store/actionCreator';
-import thunk, { ThunkAction } from 'redux-thunk';
+import {  setToken } from './store/actionCreator';
+import thunk from 'redux-thunk';
 
 const store = createStore(rootReducer, composeWithDevTools(
     applyMiddleware(thunk)))
 
-const timeout = (): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch, _getState) => {
-    dispatch({type: "START"})
-    setTimeout(() => {
-        dispatch({type: "FINISH"})
-    }, 1500)
+const AppWrapper = () => {
+    return (
+        <Provider store={store}>
+            <AppComponent />
+        </Provider>
+    )
 }
 
 function AppComponent() {
+    const dispatch = useDispatch();
     React.useEffect(() => {
-        const token = localStorage.getItem("token") || window.__token__
-        store.dispatch(setToken(token))
-        // @ts-ignore
-        store.dispatch(timeout())
-        if (token) {
-            localStorage.setItem("token", token)
+        if (window.__token__) {
+        dispatch(setToken(window.__token__));
         }
-    }, [])
+    }, []);
 
     const CommentProvider = commentContext.Provider
     const [commentValue, setCommentValue] = React.useState("")
@@ -80,28 +78,26 @@ function AppComponent() {
     )
 
     return (
-        <Provider store={store}>
-            <CommentProvider value={{
-                value: commentValue,
-                onChange: setCommentValue,
-                onChangeActive: setCommentActive,
-                activeComment: commentActive,
-                allComments: commentComments,
-                onChangeComments: setComments,
-            }}>
-                <UserContextProvider>
-                    <PostsContextProvider>
-                        <Layout>
-                            <Header/>
-                            <Content>
-                                <CardList/>
-                            </Content>
-                        </Layout>
-                    </PostsContextProvider>
-                </UserContextProvider>
-            </CommentProvider>
-        </Provider>
+        <CommentProvider value={{
+            value: commentValue,
+            onChange: setCommentValue,
+            onChangeActive: setCommentActive,
+            activeComment: commentActive,
+            allComments: commentComments,
+            onChangeComments: setComments,
+        }}>
+            <UserContextProvider>
+                <PostsContextProvider>
+                    <Layout>
+                        <Header/>
+                        <Content>
+                            <CardList/>
+                        </Content>
+                    </Layout>
+                </PostsContextProvider>
+            </UserContextProvider>
+        </CommentProvider>
     )
 };
 
-export const App = hot(() => <AppComponent/>);
+export const App = hot(() => <AppWrapper/>);
