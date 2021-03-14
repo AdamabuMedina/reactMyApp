@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/ts-loader/index.js):\\nError: ENOENT: no such file or directory, open 'C:\\\\Users\\\\adama\\\\Documents\\\\GitHub\\\\reactMyApp\\\\src\\\\server\\\\server.js'\");\n\n//# sourceURL=webpack:///./src/server/server.js?");
+eval("throw new Error(\"Module build failed (from ./node_modules/ts-loader/index.js):\\nError: ENOENT: no such file or directory, open 'D:\\\\Users\\\\adam\\\\Documents\\\\my_studies\\\\Програмирование\\\\Skillbox\\\\Homework\\\\react\\\\reactMyApp\\\\src\\\\server\\\\server.js'\");\n\n//# sourceURL=webpack:///./src/server/server.js?");
 
 /***/ })
 
