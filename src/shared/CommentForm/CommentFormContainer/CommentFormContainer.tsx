@@ -25,12 +25,12 @@ export function CommentFormContainer(
 
         return (
            <CommentForm
-            value={value}
-            onChange={handleChange}
-            onSubmit={handleSubmit}
-            myRef = {myRef}
-            uncontrolled = {uncontrolled}
-            mainComment  = {mainComment}
+            // value={value}
+            // onChange={handleChange}
+            // onSubmit={handleSubmit}
+            // myRef = {myRef}
+            // uncontrolled = {uncontrolled}
+            // mainComment  = {mainComment}
            />
         )
 }
