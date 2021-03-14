@@ -5,14 +5,19 @@ import {Layout} from './shared/Layout';
 import {Header} from './shared/Header/Header';
 import {Content} from './shared/Content';
 import {CardList} from './shared/CardList'
-import { UserContextProvider} from './context';
 import {PostsContextProvider} from './context/postContext';
 import { comment, commentContext } from './context/commentContext';
 import {Provider, useDispatch} from "react-redux"
 import { composeWithDevTools } from 'redux-devtools-extension';
-import {  applyMiddleware, createStore } from 'redux';
-import { rootReducer, setToken } from './store/rootReducer';
-import thunk from 'redux-thunk';
+import {  Action, applyMiddleware, createStore } from 'redux';
+import { rootReducer, RootState, setToken } from './store/rootReducer';
+import thunk, { ThunkAction } from 'redux-thunk';
+
+const saveToken = (): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch, getState) => {
+    if (window.__token__) {
+        dispatch(setToken(window.__token__))
+    }
+}
 
 const store = createStore(rootReducer, composeWithDevTools(
     applyMiddleware(thunk)))
@@ -28,9 +33,7 @@ const AppWrapper = () => {
 function AppComponent() {
     const dispatch = useDispatch();
     React.useEffect(() => {
-        if (window.__token__) {
-        dispatch(setToken(window.__token__));
-        }
+        dispatch(saveToken());
     }, []);
 
     const CommentProvider = commentContext.Provider
@@ -85,16 +88,14 @@ function AppComponent() {
             allComments: commentComments,
             onChangeComments: setComments,
         }}>
-            <UserContextProvider>
-                <PostsContextProvider>
-                    <Layout>
-                        <Header/>
-                        <Content>
-                            <CardList/>
-                        </Content>
-                    </Layout>
-                </PostsContextProvider>
-            </UserContextProvider>
+            <PostsContextProvider>
+                <Layout>
+                    <Header/>
+                    <Content>
+                        <CardList/>
+                    </Content>
+                </Layout>
+            </PostsContextProvider>
         </CommentProvider>
     )
 };

@@ -13,9 +13,7 @@ export function useUserData() {
 
     React.useEffect(() => {
         if (!token) return
-        if (token && token != "undefined" && token != "false") {
-            dispatch(meRequestAsync())
-        }
+        dispatch(meRequestAsync())
     }, [token])
 
     return {
