@@ -10,25 +10,22 @@ import {PostsContextProvider} from './context/postContext';
 import { comment, commentContext } from './context/commentContext';
 import {Provider, useDispatch} from "react-redux"
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore, Middleware } from 'redux';
 import { rootReducer } from './store/rootReducer';
 import { setToken } from './store/actionCreator';
 
-const store = createStore(rootReducer, composeWithDevTools())
-
-const AppWrapper = () => {
-    return (
-        <Provider store={store}>
-            <AppComponent/>
-        </Provider>
-    )
+const logger: Middleware = (store) => (next) => (action) => {
+    next(action)
 }
 
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(logger)))
+
 function AppComponent() {
-    const dispatch = useDispatch()
     React.useEffect(() => {
-        if (window.__token__) {
-            dispatch(setToken(window.__token__))
+        const token = localStorage.getItem("token") || window.__token__
+        store.dispatch(setToken(token))
+        if (token) {
+            localStorage.setItem("token", token)
         }
     }, [])
 
@@ -76,26 +73,28 @@ function AppComponent() {
     )
 
     return (
-        <CommentProvider value={{
-            value: commentValue,
-            onChange: setCommentValue,
-            onChangeActive: setCommentActive,
-            activeComment: commentActive,
-            allComments: commentComments,
-            onChangeComments: setComments,
-        }}>
-            <UserContextProvider>
-                <PostsContextProvider>
-                    <Layout>
-                        <Header/>
-                        <Content>
-                            <CardList/>
-                        </Content>
-                    </Layout>
-                </PostsContextProvider>
-            </UserContextProvider>
-        </CommentProvider>
+        <Provider store={store}>
+            <CommentProvider value={{
+                value: commentValue,
+                onChange: setCommentValue,
+                onChangeActive: setCommentActive,
+                activeComment: commentActive,
+                allComments: commentComments,
+                onChangeComments: setComments,
+            }}>
+                <UserContextProvider>
+                    <PostsContextProvider>
+                        <Layout>
+                            <Header/>
+                            <Content>
+                                <CardList/>
+                            </Content>
+                        </Layout>
+                    </PostsContextProvider>
+                </UserContextProvider>
+            </CommentProvider>
+        </Provider>
     )
 };
 
-export const App = hot(() => <AppWrapper/>);
+export const App = hot(() => <AppComponent/>);
