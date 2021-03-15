@@ -1,32 +1,33 @@
 import React from "react";
 import styles from "./commentform.css"
+import {Form, Formik, Field} from "formik"
 
-interface ICommentForm {
-    myRef?: React.Ref<HTMLTextAreaElement>,
-    uncontrolled?: boolean,
-    mainComment?: boolean,
-    value: string,
-    onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,
-    onSubmit: (event: React.FormEvent) => void,
+
+function validateComment(value: string) {
+    let error = '';
+    if (value.length <= 3) error = "Должно быть больше 3х символов!"
+    return error;
 }
 
-export function CommentForm({
-    myRef, uncontrolled=true, mainComment=false, onChange, onSubmit, value
-    }: ICommentForm) {
+export function CommentForm() {
+    return (
+        <Formik
+            initialValues={{
+                commentText: '',
+            }}
+            onSubmit={values => {
+                console.log(values);
+                alert(`Отправка формы`);
+            }}
+        >
+            {({errors, touched, isValidating}) => (
+                <Form className={styles.form}>
 
-        return (
-            <form
-                className={mainComment? styles.form:styles.hidden}
-                onSubmit={onSubmit}
-            >
-                {
-                    uncontrolled ?
-                    <textarea ref={myRef} className={styles.input} placeholder="Введите комментарий"/> :
-                    <textarea ref={myRef} className={styles.input} value={value} onChange={onChange} placeholder="Введите комментарий"/>
-                }
-                <button className={styles.button} type="submit">
-                    Комментировать
-                </button>
-            </form>
-        )
+                    <Field name="comment" validate={validateComment} as='textarea' className={styles.input}/>
+                    {errors.commentText && touched.commentText && <div>{errors.commentText}</div>}
+
+                    <button type="submit" className={styles.button}>Комментировать</button>
+                </Form>
+            )}
+        </Formik>)
 }

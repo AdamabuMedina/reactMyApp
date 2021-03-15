@@ -11,6 +11,10 @@
   padding: 10px;
 }
 
+.input[aria-invalid] {
+  border-color: red;
+}
+
 .button {
   background: #cc6633;
   border-radius: 0 0 3px 0;
@@ -21,6 +25,11 @@
   margin: 15px 0;
   padding: 0;
   cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
 .hidden {
