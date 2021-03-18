@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './textContent.css';
-import {Post} from "../../../Post";
+import { Title } from './Title';
 
 interface ITextContent {
     name?: string
-    text?: string
+    title: string
 }
 
-export function TextContent({name, text}: ITextContent) {
-    const [isModalOpened, setIsModalOpened] = React.useState(false)
+export function TextContent({name, title}: ITextContent) {
+
 
     return (
         <div className={styles.textContent}>
@@ -23,23 +23,12 @@ export function TextContent({name, text}: ITextContent) {
                         {name}
                     </a>
                     <span className={styles.createdAt}>
-              <span className={styles.publishedLabel}>Опубликовано</span>
-              4 часа назад
-            </span>
+                        <span className={styles.publishedLabel}>Опубликовано</span>
+                        4 часа назад
+                    </span>
                 </div>
             </div>
-            <h2 className={styles.title}>
-                <a href="#post-url" className={styles.postLink} onClick={() => {
-                    setIsModalOpened(true)
-                }}>
-                    {text}
-                </a>
-                {isModalOpened && (
-                    <Post onClose={() => {
-                        setIsModalOpened(false)
-                    }}/>
-                )}
-            </h2>
+            <Title title={title}/>
         </div>
     )
 }
