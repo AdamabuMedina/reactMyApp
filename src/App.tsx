@@ -5,13 +5,14 @@ import {Layout} from './shared/Layout';
 import {Header} from './shared/Header/Header';
 import {Content} from './shared/Content';
 import {CardList} from './shared/CardList'
-import {PostsContextProvider} from './context/postContext';
 import { comment, commentContext } from './context/commentContext';
 import {Provider, useDispatch} from "react-redux"
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {  Action, applyMiddleware, createStore } from 'redux';
 import { rootReducer, RootState, setToken } from './store/rootReducer';
 import thunk, { ThunkAction } from 'redux-thunk';
+import { BrowserRouter, Route } from "react-router-dom"
+import { Post } from './shared/Post';
 
 const saveToken = (): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch, getState) => {
     if (window.__token__) {
@@ -31,7 +32,13 @@ const AppWrapper = () => {
 }
 
 function AppComponent() {
+    const [mounted, setMounted] = React.useState(false)
     const dispatch = useDispatch();
+
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
     React.useEffect(() => {
         dispatch(saveToken());
     }, []);
@@ -88,14 +95,19 @@ function AppComponent() {
             allComments: commentComments,
             onChangeComments: setComments,
         }}>
-            <PostsContextProvider>
-                <Layout>
-                    <Header/>
-                    <Content>
-                        <CardList/>
-                    </Content>
-                </Layout>
-            </PostsContextProvider>
+            {mounted && (
+                <BrowserRouter>
+                    <Layout>
+                        <Header/>
+                        <Content>
+                            <CardList/>
+                            <Route path="/posts/:id">
+                                <Post />
+                            </Route>
+                        </Content>
+                    </Layout>
+                </BrowserRouter>
+            )}
         </CommentProvider>
     )
 };
