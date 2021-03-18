@@ -10,20 +10,26 @@ export function CardList() {
     const [posts, setPosts] = React.useState<any[]>([])
     const [loading, setLoading] = React.useState(false)
     const [errorLoading, setErrorLoading] = React.useState("")
+    const [nextafter, setNextAfter] = React.useState("")
+
+    const bottomOfList = React.useRef<HTMLDivElement>(null)
 
     React.useEffect(() => {
-        if(!token) return
-
         async function load() {
             setLoading(true)
             setErrorLoading("")
 
             try {
-                const { data: {data: {children}} } = await axios.get("https://oauth.reddit.com/rising/", {
-                    headers: {authorization: `bearer ${token}`}
+                const { data: {data: {after, children}} } = await axios.get("https://oauth.reddit.com/rising/", {
+                    headers: {authorization: `bearer ${token}`},
+                    params: {
+                        limit: 10,
+                        after: nextafter
+                    }
                 })
 
-                setPosts(children)
+                setNextAfter(after)
+                setPosts(prevChildren => prevChildren.concat(...children))
             } catch (error) {
                 setErrorLoading(String(error))
             }
@@ -31,8 +37,24 @@ export function CardList() {
             setLoading(false)
         }
 
-        load()
-    }, [token])
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                load()
+            }
+        }, {
+            rootMargin: "10px"
+        })
+
+        if(bottomOfList.current) {
+            observer.observe(bottomOfList.current)
+        }
+
+        return () => {
+            if(bottomOfList.current) {
+                observer.unobserve(bottomOfList.current)
+            }
+        }
+    }, [bottomOfList.current, nextafter, token])
 
     return (
         <ul className={styles.cardList}>
@@ -47,6 +69,9 @@ export function CardList() {
                 key={post.data.id}
                 title={post.data.title}/>
             ))}
+
+            <div ref={bottomOfList}/>
+
             {loading && (
                 <div style={{textAlign: "center"}}>
                     Загрузка...

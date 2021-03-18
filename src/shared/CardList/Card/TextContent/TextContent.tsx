@@ -3,11 +3,10 @@ import styles from './textContent.css';
 import { Title } from './Title';
 
 interface ITextContent {
-    name?: string
     title: string
 }
 
-export function TextContent({name, title}: ITextContent) {
+export function TextContent({title}: ITextContent) {
 
 
     return (
@@ -20,10 +19,10 @@ export function TextContent({name, title}: ITextContent) {
                         alt="avatar"
                     />
                     <a href="#use-url" className={styles.username}>
-                        {name}
+                        Дмитрий Гришин
                     </a>
                     <span className={styles.createdAt}>
-                        <span className={styles.publishedLabel}>Опубликовано</span>
+                        <span className={styles.publishedLabel}>Опубликовано</  span>
                         4 часа назад
                     </span>
                 </div>
