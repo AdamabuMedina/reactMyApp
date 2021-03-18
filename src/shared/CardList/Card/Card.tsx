@@ -5,11 +5,15 @@ import {Menu} from './Menu';
 import {TextContent} from './TextContent';
 import {Preview} from "./Preview";
 
-export function Card({text}: { text: string }) {
+interface ICardProps {
+    title: string
+}
+
+export function Card({title}: ICardProps) {
 
     return (
         <li className={styles.card}>
-            <TextContent text={text}/>
+            <TextContent title={title}/>
             <Preview/>
             <Menu/>
             <Controls/>
