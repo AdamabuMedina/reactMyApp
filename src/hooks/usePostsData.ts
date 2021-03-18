@@ -26,7 +26,6 @@ export function usePostsData() {
                     post.text = post.data.title;
                     post.id = post.data.id;
                 })
-                console.log(bestPosts, "NEW ! posts");
                 setPosts(bestPosts);
             })
                 .catch(console.log);
