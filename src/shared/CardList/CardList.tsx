@@ -1,9 +1,9 @@
-import React from 'react';
-import {Card} from './Card';
-import styles from './cardList.css';
-import axios from 'axios';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/rootReducer';
+import React from "react";
+import {Card} from "./Card";
+import styles from "./cardList.css";
+import axios from "axios";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/rootReducer";
 
 export function CardList() {
     const token = useSelector<RootState>(state => state.token)
@@ -11,34 +11,41 @@ export function CardList() {
     const [loading, setLoading] = React.useState(false)
     const [errorLoading, setErrorLoading] = React.useState("")
     const [nextafter, setNextAfter] = React.useState("")
+    const [count, setCount] = React.useState(0)
 
     const bottomOfList = React.useRef<HTMLDivElement>(null)
 
-    React.useEffect(() => {
-        async function load() {
-            setLoading(true)
-            setErrorLoading("")
+    async function load() {
+        setLoading(true)
+        setErrorLoading("")
 
-            try {
-                const { data: {data: {after, children}} } = await axios.get("https://oauth.reddit.com/rising/", {
-                    headers: {authorization: `bearer ${token}`},
-                    params: {
-                        limit: 10,
-                        after: nextafter
-                    }
-                })
+        try {
+            const { data: {data: {after, children}} } = await axios.get("https://oauth.reddit.com/rising/", {
+                headers: {authorization: `bearer ${token}`},
+                params: {
+                    limit: 10,
+                    after: nextafter
+                }
+            })
 
-                setNextAfter(after)
-                setPosts(prevChildren => prevChildren.concat(...children))
-            } catch (error) {
-                setErrorLoading(String(error))
-            }
-
-            setLoading(false)
+            setPosts(prevChildren => prevChildren.concat(...children))
+            setCount((count) => {
+                if (count === 2) return 1
+                return count + 1
+            })
+            setNextAfter(after)
+        } catch (error) {
+            setErrorLoading(String(error))
         }
 
+        setLoading(false)
+    }
+
+    React.useEffect(() => {
+        if (!token || token == "undefined" || token=="false") return
+
         const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
+            if (entries[0].isIntersecting && count < 2) {
                 load()
             }
         }, {
@@ -77,6 +84,13 @@ export function CardList() {
                     Загрузка...
                 </div>
             )}
+
+            {count >= 2 && (
+                <button onClick={load} className={styles.count}>
+                    Загрузить еще
+                </button>
+            )}
+
             {errorLoading && (
                 <div role="alert" style={{textAlign: "center"}}>
                     {errorLoading}
