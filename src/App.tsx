@@ -11,8 +11,10 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import {  Action, applyMiddleware, createStore } from 'redux';
 import { rootReducer, RootState, setToken } from './store/rootReducer';
 import thunk, { ThunkAction } from 'redux-thunk';
-import { BrowserRouter, Route } from "react-router-dom"
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom"
 import { Post } from './shared/Post';
+import { PostsContextProvider } from './context/postContext';
+import { NotFound } from './shared/NotFound';
 
 const saveToken = (): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch, getState) => {
     if (window.__token__) {
@@ -95,19 +97,30 @@ function AppComponent() {
             allComments: commentComments,
             onChangeComments: setComments,
         }}>
-            {mounted && (
-                <BrowserRouter>
-                    <Layout>
-                        <Header/>
-                        <Content>
-                            <CardList/>
-                            <Route path="/posts/:id">
-                                <Post />
-                            </Route>
-                        </Content>
-                    </Layout>
-                </BrowserRouter>
-            )}
+            <PostsContextProvider>
+                {mounted && (
+                    <BrowserRouter>
+                        <Layout>
+                            <Header/>
+                            <Content>
+                                <CardList/>
+                                <Switch>
+                                    <Redirect exact from="/" to="/posts"/>
+                                    <Redirect from="/auth" to="/posts"/>
+                                    <Route path="/posts">
+                                        <Route path="/posts/:id">
+                                            <Post />
+                                        </Route>
+                                    </Route>
+                                    <Route path="*">
+                                        <NotFound/>
+                                    </Route>
+                                </Switch>
+                            </Content>
+                        </Layout>
+                    </BrowserRouter>
+                )}
+            </PostsContextProvider>
         </CommentProvider>
     )
 };

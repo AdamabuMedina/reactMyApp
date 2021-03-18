@@ -6,14 +6,17 @@ import {TextContent} from './TextContent';
 import {Preview} from "./Preview";
 
 interface ICardProps {
-    title: string
+    data: {
+        id: string,
+        title: string
+     }
 }
 
-export function Card({title}: ICardProps) {
+export function Card({data}: ICardProps) {
 
     return (
         <li className={styles.card}>
-            <TextContent title={title}/>
+            <TextContent data={data}/>
             <Preview/>
             <Menu/>
             <Controls/>

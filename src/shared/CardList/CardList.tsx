@@ -74,7 +74,7 @@ export function CardList() {
             {posts.map(post => (
                 <Card
                 key={post.data.id}
-                title={post.data.title}/>
+                data={post.data}/>
             ))}
 
             <div ref={bottomOfList}/>
@@ -86,7 +86,7 @@ export function CardList() {
             )}
 
             {count >= 2 && (
-                <button onClick={load} className={styles.count}>
+                <button onClick={load} className={styles.buttonLoad}>
                     Загрузить еще
                 </button>
             )}
