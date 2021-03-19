@@ -1,5 +1,5 @@
 import React from "react"
-import { Post } from "../../../../Post"
+import { Link } from "react-router-dom"
 import styles from "./title.css"
 
 interface ITitleProps {
@@ -7,21 +7,11 @@ interface ITitleProps {
 }
 
 export function Title({title}: ITitleProps  ) {
-   const [isModalOpened, setIsModalOpened] = React.useState(false)
-
-   return (
-      <h2 className={styles.title}>
-                <a href="#post-url" className={styles.postLink} onClick={() => {
-                    setIsModalOpened(true)
-                }}>
-                    {title}
-                </a>
-                {isModalOpened && (
-                    <Post onClose={() => {
-                        setIsModalOpened(false)
-                    }}/>
-                )}
-            </h2>
-   )
-
+  return (
+   <h2 className={styles.title}>
+      <Link to="/posts/1" className={styles.postLink}>
+         {title}
+      </Link>
+   </h2>
+  )
 }

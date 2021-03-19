@@ -20,7 +20,7 @@ export function CardList() {
         setErrorLoading("")
 
         try {
-            const { data: {data: {after, children}} } = await axios.get("https://oauth.reddit.com/rising/", {
+            const { data: {data: {after, children}} } = await axios.get("https://oauth.reddit.com/hot/", {
                 headers: {authorization: `bearer ${token}`},
                 params: {
                     limit: 10,
@@ -30,7 +30,7 @@ export function CardList() {
 
             setPosts(prevChildren => prevChildren.concat(...children))
             setCount((count) => {
-                if (count === 2) return 1
+                if (count == 2) return 1
                 return count + 1
             })
             setNextAfter(after)
@@ -61,7 +61,7 @@ export function CardList() {
                 observer.unobserve(bottomOfList.current)
             }
         }
-    }, [bottomOfList.current, nextafter, token])
+    }, [bottomOfList.current, token, nextafter, ])
 
     return (
         <ul className={styles.cardList}>
@@ -71,10 +71,10 @@ export function CardList() {
                 </div>
             )}
 
-            {posts.map(post => (
+            {posts.map(({data:{ id, title}}) => (
                 <Card
-                key={post.data.id}
-                title={post.data.title}/>
+                key={id}
+                title={title}/>
             ))}
 
             <div ref={bottomOfList}/>
@@ -86,7 +86,7 @@ export function CardList() {
             )}
 
             {count >= 2 && (
-                <button onClick={load} className={styles.count}>
+                <button onClick={load} className={styles.buttonLoad}>
                     Загрузить еще
                 </button>
             )}
