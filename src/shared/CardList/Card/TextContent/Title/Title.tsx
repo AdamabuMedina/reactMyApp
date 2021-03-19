@@ -3,18 +3,14 @@ import { Link } from "react-router-dom"
 import styles from "./title.css"
 
 interface ITitleProps {
-   data: {
-      id: string,
-      title: string
-   }
-
+   title: string
 }
 
-export function Title({data}: ITitleProps  ) {
+export function Title({title}: ITitleProps  ) {
   return (
    <h2 className={styles.title}>
-      <Link to={`/posts/${data.id}`} className={styles.postLink}>
-         {data.title}
+      <Link to="/posts/1" className={styles.postLink}>
+         {title}
       </Link>
    </h2>
   )

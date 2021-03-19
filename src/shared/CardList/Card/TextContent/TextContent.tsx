@@ -3,13 +3,10 @@ import styles from './textContent.css';
 import { Title } from './Title';
 
 interface ITextContent {
-    data: {
-        id: string,
-        title: string
-     }
+    title: string
 }
 
-export function TextContent({data}: ITextContent) {
+export function TextContent({title}: ITextContent) {
 
 
     return (
@@ -30,7 +27,7 @@ export function TextContent({data}: ITextContent) {
                     </span>
                 </div>
             </div>
-            <Title data={data}/>
+            <Title title={title}/>
         </div>
     )
 }
