@@ -71,9 +71,9 @@ export function CardList() {
                 </div>
             )}
 
-            {posts.map(({data:{ id, title}}) => (
+            {posts.map(({data:{ id, title}}, index) => (
                 <Card
-                key={id}
+                key={index}
                 title={title}/>
             ))}
 
