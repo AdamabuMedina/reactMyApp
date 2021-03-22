@@ -6,11 +6,10 @@
 
   .buttonLoad {
     background: #cc6633;
-    border-radius: 0px 0px 3px 0px;
+    border-radius: 0 0 3px 0;
     width: 220px;
     height: 50px;
     color: white;
-    margin: 0;
     padding: 0;
     display: block;
     margin: 0 auto;

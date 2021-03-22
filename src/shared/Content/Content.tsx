@@ -11,4 +11,4 @@ export function Content({children}: IContentProps) {
       {children}
     </main>
   )
-};
+}

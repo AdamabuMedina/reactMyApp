@@ -1,8 +1,8 @@
 import React from "react"
-import { Actions } from "./Actions/Actions"
-import { Comments } from "./Comments/Comments"
 import styles from "./controls.css"
 import { KarmaCounter } from "./KarmaCounter"
+import {Comments} from "./Comments";
+import {Actions} from "./Actions";
 
 export function Controls() {
   return (

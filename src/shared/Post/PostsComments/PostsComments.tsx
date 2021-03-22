@@ -1,8 +1,8 @@
 import React from "react"
 import { comment, commentContext } from "../../../context/commentContext"
 import { CommentFormContainer } from "../../CommentForm/CommentFormContainer";
-import { EIcons, Icon } from "../../Icons/Icon";
 import styles from "./postscomments.css"
+import {EIcons, Icon} from "../../Icons";
 
 interface IPostComments {
    comments?: Array<comment>,

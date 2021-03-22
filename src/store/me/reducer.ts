@@ -1,6 +1,6 @@
-import { ME_REQUEST, ME_REQUEST_ERROR, ME_REQUEST_SUCCESS } from './../constant';
 import { Reducer } from 'react';
 import { MeRequestAction, MeRequestSuccessAction, MeRequestErrorAction, IUserData } from './actions';
+import {ME_REQUEST, ME_REQUEST_ERROR, ME_REQUEST_SUCCESS} from "../constant";
 
 export type MeState = {
    loading: boolean

@@ -1,6 +1,6 @@
 import React from 'react'
-import { EIcons, Icon } from '../../../../../Icons/Icon'
 import styles from './saveButton.css'
+import {EIcons, Icon} from "../../../../../Icons";
 
 export function SaveButton() {
   return (

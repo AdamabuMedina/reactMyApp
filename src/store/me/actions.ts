@@ -1,6 +1,5 @@
-import { ME_REQUEST_ERROR } from './../constant';
 import { Action, ActionCreator } from 'redux';
-import { ME_REQUEST, ME_REQUEST_SUCCESS } from "../constant";
+import {ME_REQUEST, ME_REQUEST_ERROR, ME_REQUEST_SUCCESS} from "../constant";
 import { ThunkAction } from 'redux-thunk';
 import { RootState } from '../rootReducer';
 import axios from 'axios';

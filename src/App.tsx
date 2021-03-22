@@ -9,12 +9,13 @@ import { comment, commentContext } from './context/commentContext';
 import {Provider, useDispatch} from "react-redux"
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {  Action, applyMiddleware, createStore } from 'redux';
-import { rootReducer, RootState, setToken } from './store/rootReducer';
+import { rootReducer, RootState} from './store/rootReducer';
 import thunk, { ThunkAction } from 'redux-thunk';
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom"
 import { Post } from './shared/Post';
 import { PostsContextProvider } from './context/postContext';
 import { NotFound } from './shared/NotFound';
+import { setToken } from './store/rootActions';
 
 const saveToken = (): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch, getState) => {
     if (window.__token__) {

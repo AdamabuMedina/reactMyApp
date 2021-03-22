@@ -5,6 +5,10 @@ import { CommentFormContainer } from "../CommentForm/CommentFormContainer";
 import styles from "./post.css"
 import { PostsComments } from "./PostsComments";
 
+interface IPost {
+    postId: string
+    onClose?: () => void
+}
 
 export function Post() {
     const ref = React.useRef<HTMLDivElement>(null)

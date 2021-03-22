@@ -1,8 +1,8 @@
-import { IUserData, meRequestAsync } from "./../store/me/actions";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import React from "react"
 import { RootState } from "../store/rootReducer";
+import {IUserData, meRequestAsync} from "../store/me/actions";
 
 
 export function useUserData() {

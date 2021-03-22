@@ -2,7 +2,6 @@ import React from 'react'
 import { useUserData } from '../../../../hooks'
 import { Break } from '../../../Break'
 import { EIcons, Icon } from '../../../Icons'
-import {IconAnon} from '../../../Icons/iconAnon'
 import { EColors, Text } from '../../../Text'
 import styles from './userBlock.css'
 
