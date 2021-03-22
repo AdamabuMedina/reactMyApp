@@ -1,67 +1,42 @@
 import React from "react";
 import {Card} from "./Card";
 import styles from "./cardList.css";
-import axios from "axios";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/rootReducer";
+import { IPostItem, postsRequestAsync } from "../../store/posts/actions";
 
 export function CardList() {
-    const token = useSelector<RootState>(state => state.token)
-    const [posts, setPosts] = React.useState<any[]>([])
-    const [loading, setLoading] = React.useState(false)
-    const [errorLoading, setErrorLoading] = React.useState("")
-    const [nextafter, setNextAfter] = React.useState("")
-    const [count, setCount] = React.useState(0)
+    const posts = useSelector<RootState, IPostItem[]>(state => state.posts.data.posts)
+    const numberOfLoads = useSelector<RootState, number>(state => state.posts.data.numberOfLoads)
+    const loading = useSelector<RootState, boolean>(state => state.posts.loading)
+    const errorLoading = useSelector<RootState, string>(state => state.posts.error)
+    const dispatch = useDispatch()
+
+    const cards = posts.map((post) => {
+        return <Card key={post.post.id} post={post.post} author={post.author}/>
+    })
 
     const bottomOfList = React.useRef<HTMLDivElement>(null)
 
-    async function load() {
-        setLoading(true)
-        setErrorLoading("")
-
-        try {
-            const { data: {data: {after, children}} } = await axios.get("https://oauth.reddit.com/hot/", {
-                headers: {authorization: `bearer ${token}`},
-                params: {
-                    limit: 10,
-                    after: nextafter
-                }
-            })
-
-            setPosts(prevChildren => prevChildren.concat(...children))
-            setCount((count) => {
-                if (count == 2) return 1
-                return count + 1
-            })
-            setNextAfter(after)
-        } catch (error) {
-            setErrorLoading(String(error))
-        }
-
-        setLoading(false)
-    }
-
     React.useEffect(() => {
-        if (!token || token == "undefined" || token=="false") return
-
         const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting && count < 2) {
-                load()
+            if (entries[0].isIntersecting && (numberOfLoads % 3 !== 0 || numberOfLoads === 0)) {
+                dispatch(postsRequestAsync())
             }
         }, {
-            rootMargin: "10px"
+            rootMargin: '10px',
         })
 
-        if(bottomOfList.current) {
+        if (bottomOfList.current) {
             observer.observe(bottomOfList.current)
         }
 
         return () => {
-            if(bottomOfList.current) {
-                observer.unobserve(bottomOfList.current)
+            if (bottomOfList.current) {
+                observer.unobserve(bottomOfList.current);
             }
         }
-    }, [bottomOfList.current, token, nextafter, ])
+    }, [posts])
 
     return (
         <ul className={styles.cardList}>
@@ -71,11 +46,7 @@ export function CardList() {
                 </div>
             )}
 
-            {posts.map(({data:{ id, title}}, index) => (
-                <Card
-                key={index}
-                title={title}/>
-            ))}
+            {cards}
 
             <div ref={bottomOfList}/>
 
@@ -85,10 +56,8 @@ export function CardList() {
                 </div>
             )}
 
-            {count >= 2 && (
-                <button onClick={load} className={styles.buttonLoad}>
-                    Загрузить еще
-                </button>
+            {numberOfLoads % 3 === 0 && cards.length !== 0 && !loading && !errorLoading && (
+                <button onClick={() => dispatch(postsRequestAsync())} className={styles.buttonLoad}>Загрузить ещё</button>
             )}
 
             {errorLoading && (
