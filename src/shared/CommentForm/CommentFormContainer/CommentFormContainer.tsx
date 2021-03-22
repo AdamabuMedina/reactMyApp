@@ -1,6 +1,7 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {RootState, updateComment} from "../../../store/rootReducer";
+import { updateComment } from "../../../store/rootActions";
+import {RootState} from "../../../store/rootReducer";
 import {CommentForm} from "../CommentForm";
 
 export function CommentFormContainer(
