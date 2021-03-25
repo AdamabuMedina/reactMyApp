@@ -2,12 +2,16 @@
   "name": "sbreact",
   "version": "1.0.0",
   "description": "Skillbox react course",
+  "engines": {
+    "node": "14.x"
+  },
   "main": "index.js",
   "scripts": {
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    "dev": "cross-env NODE_ENV=development CLIENT_ID=SCJobOW3EGzptg node ./bin/dev.js",
-    "test": "test"
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "dev": "cross-env NODE_ENV=development CLIENT_ID=SCJobOW3EGzptg SECRET=wQGhqx-O3P-QYdEZRI14oN5rRMgZGQ node ./bin/dev.js",
+    "test": "test",
+    "start": "env CLIENT_ID=bqQ77LWgH3dUzw SECRET=M5624wpC-kg7nJW5tfJpDJrFS288Iw node ./dist/server/server.js"
   },
   "keywords": [
     "React",
@@ -23,7 +27,20 @@
     "type": "git",
     "url": "git+https://github.com/AdamabuMedina/reactMyApp.git"
   },
-  "devDependencies": {
+  "dependencies": {
+    "@types/react-router-dom": "^5.1.7",
+    "axios": "^0.21.1",
+    "cross-env": "^7.0.2",
+    "formik": "^2.2.6",
+    "nanoid": "^3.1.20",
+    "nodemon": "^2.0.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
     "@hot-loader/react-dom": "^17.0.0-rc.2",
     "@types/classnames": "^2.2.11",
     "@types/jest": "^26.0.19",
@@ -49,20 +66,5 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-node-externals": "^2.5.2"
-  },
-  "dependencies": {
-    "@types/react-router-dom": "^5.1.7",
-    "axios": "^0.21.1",
-    "cross-env": "^7.0.2",
-    "formik": "^2.2.6",
-    "nanoid": "^3.1.20",
-    "nodemon": "^2.0.4",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-redux": "^7.2.2",
-    "react-router-dom": "^5.2.0",
-    "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.3.0"
   }
 }
