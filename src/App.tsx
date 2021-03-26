@@ -4,7 +4,6 @@ import './main.global.css'
 import {Layout} from './shared/Layout';
 import {Header} from "./shared/Header";
 import {Content} from "./shared/Content";
-import {CardsList} from "./shared/CardsList";
 
 import {Action, applyMiddleware, createStore} from "redux";
 import {Provider,} from 'react-redux';
@@ -15,6 +14,7 @@ import {SET_TOKEN} from "./store/actions";
 import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom'
 import {Post} from "./shared/Post";
 import {NoMatch} from "./shared/NoMatch";
+import { CardList } from './shared/CardList';
 
 
 export const store = createStore(rootReducer, composeWithDevTools(
@@ -56,7 +56,7 @@ function AppComponent() {
                                 </Route>
 
                                 <Route path="/posts/">
-                                    <CardsList/>
+                                    <CardList/>
                                     <Route path="/posts/:postId">
                                         <Post/>
                                     </Route>

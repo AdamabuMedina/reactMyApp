@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from './cardauthor.css';
+import styles from './author.css';
 
 interface ICardAuthorProps {
     title: string;
     img?: string;
 }
 
-export function CardAuthor({title, img}: ICardAuthorProps) {
-    const defaultImg = "https://cdn.dribbble.com/users/2531150/screenshots/7381472/media/be977f32a3f5abf4898f2c343ab7bfe0.jpg?compress=1&resize=800x600";
+export function Author({title, img}: ICardAuthorProps) {
+    const defaultImg = "https://cdn.dribbble.com/users/1769954/screenshots/14729942/media/60aadac4997286b2fb2793b7ef5b9928.png?compress=1&resize=1600x1200";
 
     return (
         <a className={styles.userLink} href="#user-url">

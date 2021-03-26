@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './card.css';
-import {CardTextContent} from "./CardTextContent";
-import {CardPreview} from "./CardPreview";
-import {CardMenu} from "./CardMenu";
+import {TextContent} from "./TextContent";
+import {Preview} from "./Preview";
+import {Menu} from "./Menu";
 import { Controls } from './Controls';
 
 interface ICardProps {
@@ -20,9 +20,9 @@ interface ICardProps {
 export function Card({post, author}: ICardProps) {
     return (
         <li className={styles.card}>
-            <CardTextContent post={post} author={author}/>
-            <CardPreview img={post.img}/>
-            <CardMenu/>
+            <TextContent post={post} author={author}/>
+            <Preview img={post.img}/>
+            <Menu/>
             <Controls/>
         </li>
     );

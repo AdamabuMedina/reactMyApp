@@ -1,12 +1,12 @@
 import React, {useEffect, useRef, useState} from 'react';
-import styles from './cardslist.css';
+import styles from './cardList.css';
 import {Card} from "./Card";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../store/reducer";
 import {IPostItem, postsRequestAsync} from "../../store/posts/actions";
 
 
-export function CardsList() {
+export function CardList() {
     const posts = useSelector<RootState, IPostItem[]>(state => state.posts.data.posts)
     const numberOfLoads = useSelector<RootState, number>(state => state.posts.data.numberOfLoads)
     const loading = useSelector<RootState, boolean>(state => state.posts.loading)

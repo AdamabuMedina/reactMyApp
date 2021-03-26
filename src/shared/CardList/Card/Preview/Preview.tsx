@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from './cardpreview.css';
+import styles from './preview.css';
 
 interface ICardPreviewProps {
     img: string;
 }
 
 
-export function CardPreview({img}: ICardPreviewProps) {
-    const defaultImg = "https://cdn.dribbble.com/users/1803663/screenshots/14962221/media/60eb7a363b3689545148f2488d8852f8.jpg"
+export function Preview({img}: ICardPreviewProps) {
+    const defaultImg = "https://i.pinimg.com/originals/e3/76/a7/e376a7f0d7ee2efe7e822e72565e5597.jpg"
 
     return (
         <div className={styles.preview}>

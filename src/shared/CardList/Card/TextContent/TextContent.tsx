@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './cardtextcontent.css';
-import {CardAuthor} from "./CardAuthor";
+import {Author} from "./Author";
 import {Link} from 'react-router-dom'
 
 interface ICardTextContentProps {
@@ -15,11 +15,11 @@ interface ICardTextContentProps {
     };
 }
 
-export function CardTextContent({post, author}: ICardTextContentProps) {
+export function TextContent({post, author}: ICardTextContentProps) {
     return (
         <div className={styles.textContent}>
             <div className={styles.metaData}>
-                <CardAuthor title={author.title} img={author.img}/>
+                <Author title={author.title} img={author.img}/>
             </div>
             <div className={styles.title}>
                 <Link to={`/posts/${post.id}`}
