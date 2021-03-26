@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from './searchBlock.css';
-import {UserBlock} from './UserBlock';
+import {UserBlock} from "./UserBlock";
+import {useUserData} from "../../hooks/useUserData";
+
 
 export function SearchBlock() {
+    const {data, loading} = useUserData()
+
     return (
         <div className={styles.searchBlock}>
-            <UserBlock />
+            Search Block
+            <UserBlock avatarSrc={data.iconImg} username={data.name} loading={loading}/>
         </div>
-    )
+    );
 }

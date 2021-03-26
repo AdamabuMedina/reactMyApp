@@ -1,60 +1,52 @@
 import React from 'react';
 import styles from './dropdown.css';
-import { DropdownPortal } from './DropdownPortal';
+import {DropdownContent} from "./DropdownContent";
+import {getCoords} from "../../utils/dom";
 
 interface IDropdownProps {
-  button: React.ReactNode;
-  children: React.ReactNode;
-  isOpen?: boolean;
-  onOpen?: () => void;
-  onClose?: () => void;
+    button: React.ReactNode;
+    children: React.ReactNode;
+    isOpen?: boolean;
+    onOpen?: () => void;
+    onClose?: () => void;
 }
 
-interface ICoords {
-  x: number
-  y: number
-}
+const NOOP = () => {
+};
 
-const NOOP = () => {};
 
 export function Dropdown({button, children, isOpen, onOpen = NOOP, onClose = NOOP}: IDropdownProps) {
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(isOpen)
-  const [dropdownCoords, setDropdownCoords] = React.useState<ICoords>({x: 0, y: 0})
-  const ref = React.useRef<HTMLDivElement>(null)
+    const [isDropdownOpen, setIsDropdownOpen] = React.useState(isOpen);
+    const [position, setPosition] = React.useState({top: '100px', left: '100px'});
 
-  React.useEffect(() => isDropdownOpen ? onOpen(): onClose(), [isDropdownOpen]);
-  React.useEffect(() => setIsDropdownOpen(isOpen),[isOpen]);
+    React.useEffect(() => setIsDropdownOpen(isOpen), [isOpen]);
+    React.useEffect(() => isDropdownOpen ? onOpen() : onClose(), [isDropdownOpen]);
 
-  const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
-    event.preventDefault()
-    if(isOpen === undefined) {
-      setIsDropdownOpen(!isDropdownOpen)
+    const handleOpen = (event: React.MouseEvent) => {
+        if (isOpen === undefined) {
+            setIsDropdownOpen(!isDropdownOpen);
+        }
+
+        if (event.currentTarget instanceof HTMLElement) {
+            const coords = getCoords(event.currentTarget)
+            setPosition({
+                top: `${coords.top + 30}px`,
+                left: `${coords.left}px`
+            })
+        }
     }
-    const boundings = event.currentTarget.getBoundingClientRect()
-    setDropdownCoords({
-      x: boundings.x,
-      y: event.pageY
-    })
-  }
 
-  React.useEffect(()=> {
-    function handleClick(event: MouseEvent) {
-      if (event.target instanceof Node && !ref.current?.contains(event.target)) {
-        setIsDropdownOpen(false)
-      }
-    }
-    document.addEventListener("click", handleClick)
-    return () => {document.removeEventListener("click", handleClick)}
-  }, [])
-
-  return (
-    <div className={styles.container} ref={ref}>
-      <div onClick={handleOpen} className={styles.button}>
-        {button}
-      </div>
-      {isDropdownOpen && (
-        <DropdownPortal coords={dropdownCoords} children={children} onClick={() => setIsDropdownOpen(false)}/>
-      )}
-    </div>
-  )
+    return (
+        <div className={styles.container}>
+            <div onClick={handleOpen}>
+                {button}
+            </div>
+            {isDropdownOpen && (
+                <DropdownContent children={children}
+                                 setIsDropdownOpen={setIsDropdownOpen}
+                                 onClose={() => setIsDropdownOpen(!isDropdownOpen)}
+                                 position={position}/>
+            )}
+        </div>
+    );
 }
