@@ -11,7 +11,7 @@ const DEV_PLUGINS = [
   new HotModuleReplacementPlugin(),
   new CleanWebpackPlugin(),
 ];
-const COMMON_PLUGINS = [new DefinePlugin({ 'process.env.Client_ID': `'${process.env.CLIENT_ID}'` })]
+const COMMON_PLUGINS = [new DefinePlugin({ 'process.env.CLIENT_ID': `'${process.env.CLIENT_ID}'`, 'process.env.DOMAIN': `'${process.env.DOMAIN}'` })]
 
 function setupDevtool() {
   if (IS_DEV) return 'eval';

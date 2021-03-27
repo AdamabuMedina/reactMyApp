@@ -7,11 +7,11 @@
   },
   "main": "index.js",
   "scripts": {
-    "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    "dev": "cross-env NODE_ENV=development CLIENT_ID=SCJobOW3EGzptg SECRET=wQGhqx-O3P-QYdEZRI14oN5rRMgZGQ node ./bin/dev.js",
+    "build:dev": "cross-env NODE_ENV=development DOMAIN=http://localhost:3000 webpack --config webpack.config.js",
+    "build": "cross-env NODE_ENV=production CLIENT_ID=bqQ77LWgH3dUzw DOMAIN=https://react-skillbox-app.herokuapp.com webpack --config webpack.config.js",
+    "dev": "cross-env NODE_ENV=development CLIENT_ID=SCJobOW3EGzptg SECRET=wQGhqx-O3P-QYdEZRI14oN5rRMgZGQ DOMAIN=http://localhost:3000 node ./bin/dev.js",
     "test": "test",
-    "start": "env CLIENT_ID=bqQ77LWgH3dUzw SECRET=M5624wpC-kg7nJW5tfJpDJrFS288Iw node ./dist/server/server.js"
+    "start": "env CLIENT_ID=bqQ77LWgH3dUzw SECRET=M5624wpC-kg7nJW5tfJpDJrFS288Iw DOMAIN=https://react-skillbox-app.herokuapp.com node ./dist/server/server.js"
   },
   "keywords": [
     "React",
