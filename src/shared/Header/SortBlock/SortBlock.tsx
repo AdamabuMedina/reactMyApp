@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './sortblock.css';
+import styles from './sortBlock.css';
 
 export function SortBlock() {
   return (
-    <div>SortBlock</div>
+    <div className={styles.sortBlock}>SortBlock</div>
   );
 }

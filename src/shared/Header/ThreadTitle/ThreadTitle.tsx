@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './threadtitle.css';
+import styles from './threadTitle.css';
 
 export function ThreadTitle() {
   return (
-    <div>Thread Title</div>
+    <h1 className={styles.threadTitle}>Thread Title</h1>
   );
 }

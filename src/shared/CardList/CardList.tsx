@@ -40,7 +40,7 @@ export function CardList() {
     }, [posts])
 
     return (
-        <ul className={styles.cardsList}>
+        <ul className={styles.cardList}>
 
             {/*case 1*/}
             {cards.length === 0 && !loading && !errorLoading && (
@@ -53,14 +53,21 @@ export function CardList() {
             <div ref={bottomOfList}/>
 
             {/*case 3*/}
-            {loading && (<li>Загрузка...</li>)}
+            {loading && (
+                <div style={{textAlign: "center"}}>
+                    Загрузка...
+                </div>)}
 
             {/*case 4*/}
-            {errorLoading && (<li>{errorLoading}</li>)}
+            {errorLoading && (
+                <div role="alert" style={{textAlign: "center"}}>
+                    {errorLoading}
+                </div>
+            )}
 
             {/*case 5*/}
             {numberOfLoads % 3 === 0 && cards.length !== 0 && !loading && !errorLoading && (
-                <button onClick={() => dispatch(postsRequestAsync())}>Загрузить ещё</button>
+                <button onClick={() => dispatch(postsRequestAsync())} className={styles.buttonLoad}>Загрузить ещё</button>
             )}
         </ul>
     );

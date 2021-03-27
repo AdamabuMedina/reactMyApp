@@ -1,4 +1,11 @@
 .container {
-    width: 100%;
-    flex: 1 1 0;
+  width: 100%;
+  flex: 1 1 0;
+}
+
+.button {
+  width: fit-content;
+  float: right;
+  top: 15px;
+  position: relative;
 }
