@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './cardtextcontent.css';
+import styles from './textContent.css';
 import {Author} from "./Author";
 import {Link} from 'react-router-dom'
 
