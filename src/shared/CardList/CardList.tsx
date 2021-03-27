@@ -2,8 +2,8 @@ import React, {useEffect, useRef, useState} from 'react';
 import styles from './cardList.css';
 import {Card} from "./Card";
 import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "../../store/reducer";
 import {IPostItem, postsRequestAsync} from "../../store/posts/actions";
+import { RootState } from '../../store/rootReducer';
 
 
 export function CardList() {
