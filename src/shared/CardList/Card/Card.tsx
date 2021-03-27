@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './card.css';
-import {Controls} from './Controls';
-import {Menu} from './Menu';
-import {TextContent} from './TextContent';
+import {TextContent} from "./TextContent";
 import {Preview} from "./Preview";
+import {Menu} from "./Menu";
+import { Controls } from './Controls';
 
 interface ICardProps {
     post: {
@@ -14,11 +14,10 @@ interface ICardProps {
     author: {
         title: string;
         img: string;
-    }
+    };
 }
 
 export function Card({post, author}: ICardProps) {
-
     return (
         <li className={styles.card}>
             <TextContent post={post} author={author}/>
@@ -26,5 +25,5 @@ export function Card({post, author}: ICardProps) {
             <Menu/>
             <Controls/>
         </li>
-    )
+    );
 }

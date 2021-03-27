@@ -1,3 +1,30 @@
+.title {
+  flex-basis: 100%;
+  line-height: 19px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0 0 0 7px;
+}
+
+.postLink {
+  font-weight: 400;
+  overflow: hidden;
+  max-width: 90%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+@media all and (min-width: 1024px) {
+  .title {
+    order: 0;
+  }
+
+  .postLink {
+    font-size: 20px;
+  }
+}
+
 .textContent {
   display: flex;
   flex-flow: row wrap;

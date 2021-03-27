@@ -1,8 +1,8 @@
-import React from "react"
-import styles from "./controls.css"
-import { KarmaCounter } from "./KarmaCounter"
-import {Comments} from "./Comments";
-import {Actions} from "./Actions";
+import React from 'react';
+import styles from './controls.css';
+import { Actions } from './Actions';
+import { Comments } from './Comments';
+import { KarmaCounter } from './KarmaCounter';
 
 export function Controls() {
   return (
@@ -11,5 +11,5 @@ export function Controls() {
       <Comments />
       <Actions />
     </div>
-  )
+  );
 }

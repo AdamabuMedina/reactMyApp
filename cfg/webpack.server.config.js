@@ -1,9 +1,11 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
-const NODE_ENV = process.env.NODE_ENV;
-const GLOBAL_CSS_REGEXP = /\.global\.css/;
 const { DefinePlugin } = require('webpack')
 
+const NODE_ENV = process.env.NODE_ENV;
+const GLOBAL_CSS_REGEXP = /\.global\.css/;
+
+const IS_DEV = NODE_ENV == 'development';
 
 module.exports = {
   target: "node",
@@ -14,7 +16,7 @@ module.exports = {
     filename: 'server.js'
   },
   resolve: {
-    extensions: ['.js','.jsx','.ts','.tsx','.json']
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
   },
   externals: [nodeExternals()],
   module: {
@@ -49,7 +51,8 @@ module.exports = {
   optimization: {
     minimize: false,
   },
-  plugins: [ 
-    new DefinePlugin({ 'process.env.Client_ID':  `'${process.env.CLIENT_ID}'` })
+  devtool: IS_DEV ? 'eval' : false,
+  plugins: [
+    new DefinePlugin({ 'process.env.Client_ID': `'${process.env.CLIENT_ID}'`, 'process.env.DOMAIN': `'${process.env.DOMAIN}'` })
   ]
 }

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Author } from './Author';
 import styles from './textContent.css';
-import { Title } from './Title';
+import {Author} from "./Author";
+import {Link} from 'react-router-dom'
 
-interface ITextContent {
+interface ICardTextContentProps {
     post: {
         id: string;
         title: string;
@@ -15,19 +15,18 @@ interface ITextContent {
     };
 }
 
-export function TextContent({post, author}: ITextContent) {
-
-
+export function TextContent({post, author}: ICardTextContentProps) {
     return (
         <div className={styles.textContent}>
             <div className={styles.metaData}>
                 <Author title={author.title} img={author.img}/>
-                    <span className={styles.createdAt}>
-                        <span className={styles.publishedLabel}>Опубликовано</  span>
-                        4 часа назад
-                    </span>
             </div>
-            <Title post={post}/>
+            <div className={styles.title}>
+                <Link to={`/posts/${post.id}`}
+                      className={styles.postLink}>
+                    {post.title}
+                </Link>
+            </div>
         </div>
-    )
+    );
 }
