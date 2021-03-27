@@ -4,6 +4,8 @@ import { App } from "../App";
 import { indexTemplate } from "./indexTemplate";
 import axios from "axios";
 
+const PORT = process.env.PORT || 3000
+
 const app = express();
 
 
@@ -14,7 +16,7 @@ app.get("/auth", (req, res) => {
     "https://www.reddit.com/api/v1/access_token",
     `grant_type=authorization_code&code=${req.query.code}&redirect_uri=https://react-skillbox-app.herokuapp.com/auth`,
     {
-      auth: { username: process.env.CLIENT_ID, password: "M5624wpC-kg7nJW5tfJpDJrFS288Iw" },
+      auth: { username: "bqQ77LWgH3dUzw", password: "M5624wpC-kg7nJW5tfJpDJrFS288Iw" },
       headers: { "Content-type": "application/x-www-form-urlencoded" }
     }
   )
@@ -33,6 +35,6 @@ app.get("*", (req, res) => {
   );
 });
 
-app.listen(3000, () => {
-  console.log(`Server just have started on http://localhost:3000 `);
+app.listen(PORT, () => {
+  console.log(`Server just have started on http://localhost:${PORT} `);
 });
