@@ -45,5 +45,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server just have started on ${process.env.DOMAIN}:${PORT} `);
+  console.log(`Server just have started on http://localhost:${PORT} `);
 });

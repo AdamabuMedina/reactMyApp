@@ -16,6 +16,8 @@ import { Post } from './shared/Post';
 import { PostsContextProvider } from './context/postContext';
 import { NotFound } from './shared/NotFound';
 import { setToken } from './store/rootActions';
+import { StoreContext } from 'storeon/react';
+import { storeonStore } from './store/storeon/store';
 
 const saveToken = (): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch, getState) => {
     if (window.__token__) {
@@ -99,6 +101,7 @@ function AppComponent() {
             onChangeComments: setComments,
         }}>
             <PostsContextProvider>
+                <StoreContext.Provider value={storeonStore}>
                 {mounted && (
                     <BrowserRouter>
                         <Layout>
@@ -121,6 +124,7 @@ function AppComponent() {
                         </Layout>
                     </BrowserRouter>
                 )}
+                </StoreContext.Provider>
             </PostsContextProvider>
         </CommentProvider>
     )
